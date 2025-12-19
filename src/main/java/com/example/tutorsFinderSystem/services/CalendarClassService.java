@@ -1,0 +1,112 @@
+package com.example.tutorsFinderSystem.services;
+
+import com.example.tutorsFinderSystem.dto.response.LearnerCalendarResponse;
+import com.example.tutorsFinderSystem.entities.*;
+import com.example.tutorsFinderSystem.exceptions.AppException;
+import com.example.tutorsFinderSystem.exceptions.ErrorCode;
+import com.example.tutorsFinderSystem.mapper.CalendarClassMapper;
+import com.example.tutorsFinderSystem.repositories.CalendarClassRepository;
+import com.example.tutorsFinderSystem.repositories.LearnerRepository;
+import com.example.tutorsFinderSystem.repositories.RequestScheduleRepository;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.temporal.TemporalAdjusters;
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+@Slf4j
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+public class CalendarClassService {
+    CalendarClassRepository calendarClassRepository;
+    RequestScheduleRepository requestScheduleRepository;
+    UserService userService;
+    LearnerRepository learnerRepository;
+    CalendarClassMapper calendarClassMapper;
+
+    public List<CalendarClass> createTrialCalendar(ClassRequest request, RequestSchedule schedule) {
+        CalendarClass calendar = CalendarClass.builder()
+                .classRequest(request)
+                .dayOfWeek(schedule.getDayOfWeek())
+                .startTime(schedule.getStartTime())
+                .endTime(schedule.getEndTime())
+                .studyDate(request.getStartDate())
+                .createdAt(LocalDateTime.now())
+                .updatedAt(LocalDateTime.now())
+                .completed(false)
+                .build();
+
+        calendarClassRepository.save(calendar);
+        return List.of(calendar);
+    }
+
+    public List<CalendarClass> createOfficialCalendar(ClassRequest request) {
+
+        List<RequestSchedule> schedules =
+                requestScheduleRepository.findByClassRequest_RequestId(
+                        request.getRequestId()
+                );
+
+        LocalDate start = request.getStartDate();
+        LocalDate end   = request.getEndDate();
+
+        List<CalendarClass> calendars = new ArrayList<>();
+
+        for (RequestSchedule schedule : schedules) {
+
+            DayOfWeek targetDay = schedule.getDayOfWeek().toJavaDayOfWeek();
+
+            LocalDate firstDate = start.with(
+                    TemporalAdjusters.nextOrSame(targetDay)
+            );
+
+            for (LocalDate d = firstDate;
+                 !d.isAfter(end);
+                 d = d.plusWeeks(1)) {
+
+                calendars.add(CalendarClass.builder()
+                        .classRequest(request)
+                        .studyDate(d)
+                        .dayOfWeek(schedule.getDayOfWeek())
+                        .startTime(schedule.getStartTime())
+                        .endTime(schedule.getEndTime())
+                        .createdAt(LocalDateTime.now())
+                        .updatedAt(LocalDateTime.now())
+                        .completed(false)
+                        .build());
+            }
+        }
+
+        calendarClassRepository.saveAll(calendars);
+        return calendars;
+    }
+
+    public List<LearnerCalendarResponse> getLearnerCalendar(LocalDate from, LocalDate to) {
+
+        User user = userService.getCurrentUser();
+        Learner learner = learnerRepository.findByUser_Email(user.getEmail()).orElseThrow(()->
+                new AppException(ErrorCode.LEARNER_USER_NOT_FOUND));
+
+        List<CalendarClass> calendars =
+                calendarClassRepository
+                        .findByClassRequest_LearnerAndStudyDateBetween(learner, from, to);
+
+        return calendars.stream()
+                .map(calendarClassMapper::toResponse)
+                .toList();
+    }
+
+
+
+
+
+}
