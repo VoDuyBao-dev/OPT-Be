@@ -22,7 +22,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import jakarta.persistence.criteria.Predicate;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -111,10 +110,32 @@ public class LearnerTutorSearchService {
             return cb.and(predicates.toArray(new jakarta.persistence.criteria.Predicate[0]));
         };
 
-        return learnerTutorSearchMapper.toItems(
-                tutorRepository.findAll(spec));
+        List<Tutor> tutors = tutorRepository.findAll(spec);
+
+        List<TutorSearchItemResponse> result = new ArrayList<>();
+        for (Tutor tutor : tutors) {
+            if (tutor.getSubjects() == null || tutor.getSubjects().isEmpty()) {
+                continue;
+            }
+
+            for (Subject subject : tutor.getSubjects()) {
+
+                // nếu có filter subjectId thì chỉ lấy đúng subject đó
+                if (subjectId != null && !subjectId.equals(subject.getSubjectId())) {
+                    continue;
+                }
+
+                result.add(
+                        learnerTutorSearchMapper.toItem(
+                                tutor,
+                                subject));
+            }
+        }
+
+        return result;
     }
 
+    @Transactional(readOnly = true)
     public List<TutorSearchItemResponse> searchByKeyword(String keyword) {
 
         if (keyword == null || keyword.trim().isEmpty()) {
@@ -124,8 +145,21 @@ public class LearnerTutorSearchService {
         Specification<Tutor> spec = TutorSpecifications.approvedOnly()
                 .and(TutorSpecifications.keywordSearch(keyword));
 
-        return learnerTutorSearchMapper.toItems(
-                tutorRepository.findAll(spec));
+        List<Tutor> tutors = tutorRepository.findAll(spec);
+
+        List<TutorSearchItemResponse> result = new ArrayList<>();
+
+        for (Tutor tutor : tutors) {
+            if (tutor.getSubjects() == null)
+                continue;
+
+            for (Subject subject : tutor.getSubjects()) {
+                result.add(
+                        learnerTutorSearchMapper.toItem(tutor, subject));
+            }
+        }
+
+        return result;
     }
 
 }
