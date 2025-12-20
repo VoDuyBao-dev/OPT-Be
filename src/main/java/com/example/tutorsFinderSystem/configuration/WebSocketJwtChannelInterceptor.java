@@ -27,48 +27,56 @@ public class WebSocketJwtChannelInterceptor implements ChannelInterceptor {
 
     @Override
     public Message<?> preSend(Message<?> message, MessageChannel channel) {
-        StompHeaderAccessor accessor =
-                MessageHeaderAccessor.getAccessor(message, StompHeaderAccessor.class);
+        StompHeaderAccessor accessor = MessageHeaderAccessor.getAccessor(message, StompHeaderAccessor.class);
 
-        if (accessor == null) return message;
+        if (accessor == null)
+            return message;
+        System.out.println("[WS] CONNECT command received");
 
         if (StompCommand.CONNECT.equals(accessor.getCommand())) {
 
-            // Lấy header từ STOMP CONNECT
             String authHeader = accessor.getFirstNativeHeader("Authorization");
-            if (authHeader == null) authHeader = accessor.getFirstNativeHeader("authorization");
+            if (authHeader == null) {
+                System.err.println("[WS] Missing Authorization header");
+                return null; //  KHÔNG throw
+            }
 
             String token = extractBearerToken(authHeader);
             if (token == null) {
-                throw new AppException(ErrorCode.UNAUTHORIZED);
+                System.err.println("[WS] Invalid Bearer token");
+                return null;
             }
 
             Jwt jwt;
             try {
                 jwt = customJwtDecoder.decode(token);
             } catch (Exception e) {
-                throw new AppException(ErrorCode.UNAUTHORIZED);
+                System.err.println("[WS] JWT decode failed");
+                return null;
             }
 
             String email = extractEmail(jwt);
             if (email == null || email.isBlank()) {
-                throw new AppException(ErrorCode.UNAUTHORIZED);
+                System.err.println("[WS] Email not found in token");
+                return null;
             }
 
-            Collection<SimpleGrantedAuthority> authorities = extractAuthorities(jwt);
+            Authentication auth = new UsernamePasswordAuthenticationToken(
+                    email,
+                    null,
+                    extractAuthorities(jwt));
 
-            Authentication authentication =
-                    new UsernamePasswordAuthenticationToken(email, null, authorities);
+            accessor.setUser(auth);
 
-            // QUAN TRỌNG: set Principal cho websocket session
-            accessor.setUser(authentication);
+            System.out.println("[WS] CONNECT OK user=" + email);
         }
 
         return message;
     }
 
     private String extractBearerToken(String authHeader) {
-        if (authHeader == null) return null;
+        if (authHeader == null)
+            return null;
         String h = authHeader.trim();
         if (h.regionMatches(true, 0, "Bearer ", 0, 7)) {
             return h.substring(7).trim();
@@ -78,10 +86,12 @@ public class WebSocketJwtChannelInterceptor implements ChannelInterceptor {
 
     private String extractEmail(Jwt jwt) {
         Object email = jwt.getClaims().get("email");
-        if (email instanceof String s && !s.isBlank()) return s;
+        if (email instanceof String s && !s.isBlank())
+            return s;
 
         String sub = jwt.getSubject();
-        if (sub != null && !sub.isBlank()) return sub;
+        if (sub != null && !sub.isBlank())
+            return sub;
 
         return null;
     }
@@ -92,7 +102,8 @@ public class WebSocketJwtChannelInterceptor implements ChannelInterceptor {
         Object scope = jwt.getClaims().get("scope");
         if (scope instanceof String s && !s.isBlank()) {
             for (String part : s.split("\\s+")) {
-                if (!part.isBlank()) out.add(new SimpleGrantedAuthority(part.trim()));
+                if (!part.isBlank())
+                    out.add(new SimpleGrantedAuthority(part.trim()));
             }
         }
 

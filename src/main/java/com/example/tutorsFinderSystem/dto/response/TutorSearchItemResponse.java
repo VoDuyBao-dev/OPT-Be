@@ -1,9 +1,9 @@
 package com.example.tutorsFinderSystem.dto.response;
 
+import com.example.tutorsFinderSystem.dto.common.SubjectDTO;
 import com.example.tutorsFinderSystem.enums.Gender;
 import lombok.*;
 
-import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -21,5 +21,5 @@ public class TutorSearchItemResponse {
     private Integer pricePerHour;
 
     private String avatarUrl;           // nếu bạn có flow file/avatar
-    private List<String> subjects;      // tên môn
+    private SubjectDTO subject;
 }
