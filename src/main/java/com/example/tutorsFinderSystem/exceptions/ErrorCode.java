@@ -7,8 +7,10 @@ import org.springframework.http.HttpStatusCode;
 // Định nghĩa các mã lỗi và message của lỗi
 @Getter
 public enum ErrorCode {
-    UNCATEGORIZED_EXCEPTION(9999, "uncategorized error", HttpStatus.INTERNAL_SERVER_ERROR), // exception chưa được đinhj
-                                                                                            // nghĩa hoặc loại ex chưa
+    UNCATEGORIZED_EXCEPTION(9999, "uncategorized error", HttpStatus.INTERNAL_SERVER_ERROR), // exception chưa được
+                                                                                            // đinhj
+                                                                                            // nghĩa hoặc loại ex
+                                                                                            // chưa
                                                                                             // bắt
 
     INVALID_TOKEN(9998, "Token invalid", HttpStatus.INTERNAL_SERVER_ERROR),
@@ -75,7 +77,8 @@ public enum ErrorCode {
 
     // RESPONSE VALIDATION (TUTOR REGISTER RESPONSE)
     TUTOR_ID_REQUIRED(2050, "Tutor ID is missing in response", HttpStatus.INTERNAL_SERVER_ERROR),
-    VERIFICATION_STATUS_REQUIRED(2051, "Verification status is missing in response", HttpStatus.INTERNAL_SERVER_ERROR),
+    VERIFICATION_STATUS_REQUIRED(2051, "Verification status is missing in response",
+            HttpStatus.INTERNAL_SERVER_ERROR),
 
     // TUTOR REGISTER EXCEPTION
     SUBJECT_NOT_SELECTED(2100, "No subjects selected", HttpStatus.BAD_REQUEST),
@@ -160,7 +163,8 @@ public enum ErrorCode {
 
     INVALID_TIME_RANGE(4304, "End time must be after start time", HttpStatus.BAD_REQUEST),
     TUTOR_AVAILABILITY_NOT_FOUND(4305, "Tutor availability not found", HttpStatus.NOT_FOUND),
-    DUPLICATED_AVAILABILITY_SLOT(4307, "Availability with same day and time already exists", HttpStatus.BAD_REQUEST),
+    DUPLICATED_AVAILABILITY_SLOT(4307, "Availability with same day and time already exists",
+            HttpStatus.BAD_REQUEST),
     INVALID_AVAILABILITY_STATUS(4308, "Invalid availability status", HttpStatus.BAD_REQUEST),
 
     DATE_REQUIRED(4400, "Date is required", HttpStatus.BAD_REQUEST),
@@ -188,7 +192,7 @@ public enum ErrorCode {
             HttpStatus.BAD_REQUEST),
     LEARNER_TIME_CONFLICT(5113, "Learner time conflict", HttpStatus.BAD_REQUEST),
     SCHEDULE_NOT_FOUND(5114, "Schedule not found", HttpStatus.BAD_REQUEST),
-
+    SCHEDULE_CONFLICT(5115, "Trùng lịch với người học khác", HttpStatus.BAD_REQUEST),
     // official request
     SESSIONS_PER_WEEK_MAX_3(5115, "Sessions per week max 3", HttpStatus.BAD_REQUEST),
     SESSIONS_PER_WEEK_MIN_1(5116, "Sessions per week min 1", HttpStatus.BAD_REQUEST),
@@ -199,7 +203,8 @@ public enum ErrorCode {
     NO_SESSION_GENERATED(5120,
             "No valid study sessions could be generated from the selected date range and weekly schedules",
             HttpStatus.BAD_REQUEST),
-    TIME_CONFLICT(5121, "The selected schedule conflicts with an existing class. Please choose a different day or time",
+    TIME_CONFLICT(5121,
+            "The selected schedule conflicts with an existing class. Please choose a different day or time",
             HttpStatus.BAD_REQUEST),
     START_DATE_REQUIRED(5122, "Start date required", HttpStatus.BAD_REQUEST),
     END_DATE_REQUIRED(5123, "End date required", HttpStatus.BAD_REQUEST),
@@ -207,7 +212,8 @@ public enum ErrorCode {
     SCHEDULE_REQUIRED(5125, "Schedule required", HttpStatus.BAD_REQUEST),
 
     // tutor change password
-    NEW_PASSWORD_SAME_AS_OLD(6002, "New password must be different from the current password", HttpStatus.BAD_REQUEST),
+    NEW_PASSWORD_SAME_AS_OLD(6002, "New password must be different from the current password",
+            HttpStatus.BAD_REQUEST),
     PASSWORD_CONFIRM_MISMATCH(6003, "New password and confirm password do not match", HttpStatus.BAD_REQUEST),
     INVALID_PASSWORD(6004, "Current password is incorrect", HttpStatus.BAD_REQUEST),
     LEARNER_NOT_FOUND(7001, "Learner not found", HttpStatus.NOT_FOUND),

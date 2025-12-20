@@ -1,5 +1,6 @@
 package com.example.tutorsFinderSystem.repositories;
 
+import com.example.tutorsFinderSystem.entities.CalendarClass;
 import com.example.tutorsFinderSystem.entities.ClassRequest;
 import com.example.tutorsFinderSystem.entities.Learner;
 import com.example.tutorsFinderSystem.entities.RequestSchedule;
@@ -16,6 +17,8 @@ import java.util.List;
 @Repository
 public interface RequestScheduleRepository extends JpaRepository<RequestSchedule, Long> {
     List<RequestSchedule> findByClassRequest(ClassRequest classRequest);
+
+    // List<RequestSchedule> findByClassRequest_RequestId(Long requestId);
 
     void deleteByClassRequest(ClassRequest classRequest);
 

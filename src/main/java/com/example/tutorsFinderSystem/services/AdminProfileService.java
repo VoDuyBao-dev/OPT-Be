@@ -9,6 +9,8 @@ import com.example.tutorsFinderSystem.repositories.UserRepository;
 import com.example.tutorsFinderSystem.mapper.AdminProfileMapper;
 import lombok.RequiredArgsConstructor;
 
+import java.time.LocalDateTime;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -33,6 +35,7 @@ public class AdminProfileService {
 
         admin.setFullName(request.getFullName());
         admin.setPhoneNumber(request.getPhoneNumber());
+        admin.setUpdatedAt(LocalDateTime.now());
 
         userRepository.save(admin);
 
