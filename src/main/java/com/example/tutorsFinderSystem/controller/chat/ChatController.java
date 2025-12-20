@@ -2,19 +2,24 @@ package com.example.tutorsFinderSystem.controller.chat;
 
 import com.example.tutorsFinderSystem.dto.chat.ChatConversationResponse;
 import com.example.tutorsFinderSystem.dto.chat.ChatHistoryResponse;
+import com.example.tutorsFinderSystem.dto.chat.StickerResponse;
 import com.example.tutorsFinderSystem.dto.chat.UserMeResponse;
 import com.example.tutorsFinderSystem.entities.User;
+import com.example.tutorsFinderSystem.repositories.StickerRepository;
 import com.example.tutorsFinderSystem.services.ChatService;
+import com.example.tutorsFinderSystem.services.GoogleDriveService;
 import com.example.tutorsFinderSystem.services.UserService;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 
+import java.security.Principal;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/chat")
@@ -23,6 +28,20 @@ public class ChatController {
 
     private final ChatService chatService;
     private final UserService userService;
+    private final StickerRepository stickerRepository;
+    private final GoogleDriveService googleDriveService;
+
+    @GetMapping("/stickers")
+    public List<StickerResponse> getAll() {
+
+        return stickerRepository.findAll().stream()
+                .map(s -> new StickerResponse(
+                        s.getStickerId(),
+                        googleDriveService.buildAvatarUrl(
+                                s.getImageUrl() // fileId
+                        )))
+                .toList();
+    }
 
     /**
      * Sidebar – danh sách hội thoại
@@ -73,6 +92,21 @@ public class ChatController {
                 user.getEmail(),
                 user.getFullName(),
                 role);
+    }
+
+    @PostMapping("/read/{otherUserId}")
+    public ResponseEntity<?> markAsRead(
+            @PathVariable Long otherUserId,
+            Principal principal
+    ) {
+        int updated = chatService.markConversationAsRead(
+                principal.getName(),
+                otherUserId
+        );
+
+        return ResponseEntity.ok(Map.of(
+                "updated", updated
+        ));
     }
 
 }

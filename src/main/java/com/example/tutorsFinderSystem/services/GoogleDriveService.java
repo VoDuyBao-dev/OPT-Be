@@ -1,6 +1,5 @@
 package com.example.tutorsFinderSystem.services;
 
-import com.example.tutorsFinderSystem.entities.User;
 import com.google.api.client.http.InputStreamContent;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
@@ -153,6 +152,34 @@ public class GoogleDriveService {
         }
 
         return avatar;
+    }
+
+    public String uploadLocalFile(java.io.File localFile, String folderKey) throws IOException {
+
+        String folderId = folderMap().get(folderKey);
+        if (folderId == null) {
+            throw new IOException("Invalid folder key: " + folderKey);
+        }
+
+        File fileMeta = new File();
+        fileMeta.setName(localFile.getName());
+        fileMeta.setParents(Collections.singletonList(folderId));
+
+        String contentType = java.nio.file.Files.probeContentType(localFile.toPath());
+        if (contentType == null) {
+            contentType = "application/octet-stream";
+        }
+
+        InputStreamContent mediaContent = new InputStreamContent(contentType, new java.io.FileInputStream(localFile));
+        mediaContent.setLength(localFile.length());
+
+        File uploaded = drive.files()
+                .create(fileMeta, mediaContent)
+                .setFields("id")
+                .setSupportsAllDrives(true)
+                .execute();
+
+        return "https://drive.google.com/uc?id=" + uploaded.getId();
     }
 
 }
