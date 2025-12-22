@@ -528,48 +528,6 @@ INSERT INTO tutor_availability VALUES
 
 
 
-INSERT INTO class_requests
-(request_id, additional_notes, created_at, start_date, total_sessions, end_date,
- status, sessions_per_week, type, updated_at, learner_id, subject_id, tutor_id)
-VALUES
-(1,'','2025-12-20 18:38:33.391675','2025-12-21',1,'2025-12-21','PENDING',1,'TRIAL','2025-12-20 18:38:33.434980',1,1,1),
-(3, 'Học thử lớp toán ', '2025-11-20 19:15:00.000000', '2025-11-24', 1, '2025-11-24', 'PENDING', 1, 'TRIAL','2025-11-20 19:15:00.000000', 1, 1, 1),
-(4, 'Học thử đầu tháng 12', '2025-11-25 20:00:00.000000', '2025-12-01', 1, '2025-12-01', 'PENDING', 1, 'TRIAL', '2025-11-25 20:00:00.000000', 1, 1, 1);
-INSERT INTO classes
-(class_id, completed_sessions, status, request_id)
-VALUES
-(1,0,'PENDING',1),
-(3, 0, 'PENDING', 3),
-(4, 0, 'PENDING', 4);
-
-
-INSERT INTO request_schedules
-(schedule_id, created_at, day_of_week, start_time, end_time, request_id)
-VALUES
-(1,'2025-12-20 18:38:33.520861','SUNDAY','09:30:00.000000','08:00:00.000000',1),
-(3,'2025-11-20 19:15:00.000000', 'MONDAY', '09:30:00.000000', '11:00:00.000000', 3),
-(4,'2025-11-25 20:00:00.000000','MONDAY','09:30:00.000000','11:00:00.000000',4);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

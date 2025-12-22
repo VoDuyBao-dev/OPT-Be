@@ -107,4 +107,14 @@ public interface ClassRequestRepository extends JpaRepository<ClassRequest, Long
             @Param("startTime") LocalTime startTime,
             @Param("endTime") LocalTime endTime);
 
+    @Query("""
+                SELECT COUNT(cr)
+                FROM ClassRequest cr
+                WHERE cr.tutor.tutorId = :tutorId
+                  AND cr.status = com.example.tutorsFinderSystem.enums.ClassRequestStatus.CONFIRMED
+                  AND FUNCTION('YEARWEEK', cr.startDate, 1)
+                      = FUNCTION('YEARWEEK', CURRENT_DATE(), 1)
+            """)
+    int countWeeklyConfirmedClasses(@Param("tutorId") Long tutorId);
+
 }
