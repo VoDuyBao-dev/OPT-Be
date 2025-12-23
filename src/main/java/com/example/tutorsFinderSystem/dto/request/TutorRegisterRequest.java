@@ -5,6 +5,7 @@ import jakarta.validation.constraints.*;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
@@ -49,7 +50,7 @@ public class TutorRegisterRequest {
     @NotNull(message = "PRICE_REQUIRED")
     @Min(value = 50000, message = "PRICE_TOO_LOW")
     @Max(value = 1000000, message = "PRICE_TOO_HIGH")
-    private Integer pricePerHour;
+    private BigDecimal pricePerHour;
 
     @NotEmpty(message = "SUBJECTS_REQUIRED")
     private List<@NotNull(message = "SUBJECT_ID_REQUIRED") Long> subjectIds;

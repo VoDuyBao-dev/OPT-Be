@@ -4,6 +4,7 @@ import com.example.tutorsFinderSystem.dto.ApiResponse;
 import com.example.tutorsFinderSystem.dto.common.ClassRequestDTO;
 import com.example.tutorsFinderSystem.dto.request.OfficialClassRequest;
 import com.example.tutorsFinderSystem.dto.request.TrialRequest;
+import com.example.tutorsFinderSystem.dto.response.OfficialClassPreviewResponse;
 import com.example.tutorsFinderSystem.services.ClassRequestService;
 import jakarta.validation.Valid;
 import lombok.AccessLevel;
@@ -41,12 +42,28 @@ public class ClassRequestController {
                 .build();
     }
 
-    @PostMapping("/create-official-request")
-    public ApiResponse<Void> createOfficialRequest(@Valid @RequestBody OfficialClassRequest officialClassRequest) {
-        classRequestService.createOfficialRequest(officialClassRequest);
-        return ApiResponse.<Void>builder()
+//    trả về thông tin xem trước lớp học chính thức
+    @PostMapping("/official/preview")
+    public ApiResponse<OfficialClassPreviewResponse> previewOfficial(
+            @Valid @RequestBody OfficialClassRequest request) {
+
+        OfficialClassPreviewResponse result =
+                classRequestService.createOfficialRequestWithPayment(request);
+
+        return ApiResponse.<OfficialClassPreviewResponse>builder()
                 .code(200)
-                .message("sent trial class request successfully")
+                .message("Preview official class success")
+                .result(result)
                 .build();
     }
+
+
+//    @PostMapping("/create-official-request")
+//    public ApiResponse<Void> createOfficialRequest(@Valid @RequestBody OfficialClassRequest officialClassRequest) {
+//        classRequestService.createOfficialRequest(officialClassRequest);
+//        return ApiResponse.<Void>builder()
+//                .code(200)
+//                .message("sent trial class request successfully")
+//                .build();
+//    }
 }

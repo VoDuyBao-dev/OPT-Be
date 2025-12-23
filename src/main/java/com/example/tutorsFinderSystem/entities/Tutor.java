@@ -5,6 +5,7 @@ import com.example.tutorsFinderSystem.enums.TutorStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -49,7 +50,7 @@ public class Tutor {
     private String introduction;
 
     @Column(name = "price_per_hour", nullable = false)
-    private Integer pricePerHour;
+    private BigDecimal pricePerHour;
 
     @Builder.Default
     @Enumerated(EnumType.STRING)

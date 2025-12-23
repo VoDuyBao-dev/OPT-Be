@@ -2,6 +2,7 @@ package com.example.tutorsFinderSystem.dto.request;
 
 import jakarta.validation.constraints.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 // import java.util.List;
@@ -28,7 +29,7 @@ public class TutorEducationUpdateRequest {
 
     @NotNull(message = "PRICE_REQUIRED")
     @Min(value = 10000, message = "PRICE_TOO_LOW")
-    private Integer pricePerHour;
+    private BigDecimal pricePerHour;
 
     // private List<TutorCertificateUpdateDTO> certificates;
     private List<TutorEducationResponse.TutorCertificateUpdateDTO> certificates;

@@ -1,5 +1,6 @@
 package com.example.tutorsFinderSystem.dto.response;
 
+import java.math.BigDecimal;
 import java.util.List;
 import lombok.*;
 
@@ -13,7 +14,7 @@ public class TutorEducationResponse {
     private Long tutorId;
     private String university;
     private String introduction;
-    private Integer pricePerHour;
+    private BigDecimal pricePerHour;
 
     private List<CertificateDTO> certificates;
 

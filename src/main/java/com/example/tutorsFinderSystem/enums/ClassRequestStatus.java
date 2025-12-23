@@ -1,5 +1,8 @@
 package com.example.tutorsFinderSystem.enums;
 
 public enum ClassRequestStatus {
-    PENDING, CONFIRMED, CANCELLED
+    PENDING_PAYMENT,
+    PENDING,
+    CONFIRMED,
+    CANCELLED
 }

@@ -2,15 +2,18 @@ package com.example.tutorsFinderSystem.services;
 
 import com.example.tutorsFinderSystem.dto.response.TutorRequestClassResponse;
 import com.example.tutorsFinderSystem.dto.response.TutorRequestStatusUpdateResponse;
+import com.example.tutorsFinderSystem.dto.response.VNPAYResponse;
 import com.example.tutorsFinderSystem.entities.*;
 import com.example.tutorsFinderSystem.enums.ClassRequestStatus;
 import com.example.tutorsFinderSystem.enums.ClassRequestType;
 import com.example.tutorsFinderSystem.enums.ClassStatus;
+import com.example.tutorsFinderSystem.enums.PaymentStatus;
 import com.example.tutorsFinderSystem.exceptions.AppException;
 import com.example.tutorsFinderSystem.exceptions.ErrorCode;
 import com.example.tutorsFinderSystem.mapper.TutorClassRequestMapper;
 import com.example.tutorsFinderSystem.repositories.*;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
@@ -35,6 +38,11 @@ public class TutorClassRequestService {
     private final RequestScheduleRepository requestScheduleRepository;
 
     private final TutorAvailabilityService TutorAvailabilityService;
+    private final PaymentRepository paymentRepository;
+    private final VNPAYService vnpayService;
+
+
+
 
 
 
@@ -75,10 +83,22 @@ public class TutorClassRequestService {
                     .findByTutor_TutorIdAndStatus(tutorId, status, pageable);
         } else if (type != null) {
             requestPage = classRequestRepository
-                    .findByTutor_TutorIdAndType(tutorId, type, pageable);
+                    .findByTutor_TutorIdAndTypeAndStatusIn(tutorId,
+                            type,
+                            List.of(
+                            ClassRequestStatus.PENDING,
+                            ClassRequestStatus.CONFIRMED,
+                            ClassRequestStatus.CANCELLED
+                    ) ,pageable);
         } else {
             requestPage = classRequestRepository
-                    .findByTutor_TutorId(tutorId, pageable);
+                    .findByTutor_TutorIdAndStatusIn(tutorId,
+                            List.of(
+                                    ClassRequestStatus.PENDING,
+                                    ClassRequestStatus.CONFIRMED,
+                                    ClassRequestStatus.CANCELLED
+                            )
+                            ,pageable);
         }
 
         // Map sang DTO + filter theo keyword (tên học viên / tên môn học)
@@ -172,7 +192,7 @@ public class TutorClassRequestService {
      *  - classes.status        = CANCELLED
      */
     @Transactional
-    public TutorRequestStatusUpdateResponse rejectRequestForCurrentTutor(Long requestId) {
+    public TutorRequestStatusUpdateResponse rejectRequestForCurrentTutor(Long requestId, String reason, HttpServletRequest httpRequest) {
         Tutor tutor = getCurrentTutor();
         Long tutorId = tutor.getTutorId();
 
@@ -187,10 +207,34 @@ public class TutorClassRequestService {
             throw new AppException(ErrorCode.INVALID_REQUEST_STATUS);
         }
 
+        // 3. Nếu là OFFICIAL → kiểm tra payment
+        if (request.getType() == ClassRequestType.OFFICIAL) {
+
+            paymentRepository.findByClassRequest(request).ifPresent(payment -> {
+
+                // Chỉ refund khi đã PAID
+                if (payment.getPaymentStatus() == PaymentStatus.PAID) {
+
+                    // Gọi refund
+                    VNPAYResponse refundResponse =
+                            vnpayService.refundWhenTutorReject(
+                                    request.getRequestId(),
+                                    reason,
+                                    httpRequest
+                            );
+
+                    if (!"00".equals(refundResponse.getCode())) {
+                        throw new AppException(ErrorCode.REFUND_FAILED);
+                    }
+                }
+            });
+        }
+
         request.setStatus(ClassRequestStatus.CANCELLED);
         classRequestRepository.save(request);
 
-        ClassEntity classEntity = classRepository.findByClassRequest_RequestId(requestId)
+        ClassEntity classEntity = classRepository
+                .findByClassRequest_RequestId(requestId)
                 .orElseThrow(() -> new AppException(ErrorCode.CLASS_NOT_FOUND));
 
         classEntity.setStatus(ClassStatus.CANCELLED);
