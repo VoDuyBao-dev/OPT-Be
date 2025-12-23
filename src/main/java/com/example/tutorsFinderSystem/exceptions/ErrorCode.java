@@ -214,6 +214,10 @@ PAYMENT_NOT_FOUND(5300, "Payment not found", HttpStatus.BAD_REQUEST),
     INVALID_PAYMENT_AMOUNT(5304, "Số tiền khongo hợp lệ", HttpStatus.BAD_REQUEST),
     REFUND_FAILED(5305, "Hoàn tiền thất bại", HttpStatus.BAD_REQUEST),
 
+//    revenue
+    INVALID_DATE_RANGE(5400, "Invalid date range", HttpStatus.BAD_REQUEST),
+
+
 
 
     // tutor change password
