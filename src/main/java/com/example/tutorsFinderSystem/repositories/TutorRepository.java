@@ -134,4 +134,11 @@ public interface TutorRepository extends JpaRepository<Tutor, Long> {
             LocalDateTime to,
             String role,
             Pageable pageable);
+
+    @Query("""
+        SELECT COUNT(t)
+        FROM Tutor t
+        WHERE t.verificationStatus = 'APPROVED'
+    """)
+    Long countActiveTutors();
 }
