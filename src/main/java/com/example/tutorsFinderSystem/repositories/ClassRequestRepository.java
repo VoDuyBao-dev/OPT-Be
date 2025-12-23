@@ -31,7 +31,7 @@ public interface ClassRequestRepository extends JpaRepository<ClassRequest, Long
 
     
 
-    Page<ClassRequest> findByTutor_TutorId(Long tutorId, Pageable pageable);
+    Page<ClassRequest> findByTutor_TutorIdAndStatusIn(Long tutorId, List<ClassRequestStatus> statuses,Pageable pageable);
 
     Page<ClassRequest> findByTutor_TutorIdAndStatus(
             Long tutorId,
@@ -39,9 +39,10 @@ public interface ClassRequestRepository extends JpaRepository<ClassRequest, Long
             Pageable pageable
     );
 
-    Page<ClassRequest> findByTutor_TutorIdAndType(
+    Page<ClassRequest> findByTutor_TutorIdAndTypeAndStatusIn(
             Long tutorId,
             ClassRequestType type,
+            List<ClassRequestStatus> statuses,
             Pageable pageable
     );
 

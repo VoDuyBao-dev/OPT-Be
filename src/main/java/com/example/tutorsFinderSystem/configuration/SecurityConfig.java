@@ -49,12 +49,14 @@ public class SecurityConfig {
                     "/drive/view/**",
                     "/classes/**",
                     "/public/**",
-                    "/chat/**"
+                    "/chat/**",
+                    "/payment/vnpay/callback"
                 ).permitAll()
                 .requestMatchers(COMMON_URLS).hasAnyAuthority("SCOPE_TUTOR", "SCOPE_LEARNER")
                 .requestMatchers("/tutors/**").hasAuthority("SCOPE_TUTOR")
                 .requestMatchers("/admin/**").hasAuthority("SCOPE_ADMIN")
                 .requestMatchers("/learner/**").hasAuthority("SCOPE_LEARNER")
+                .requestMatchers("/payment/vnpay/**").hasAuthority("SCOPE_LEARNER")
 
 
                     // tất cả request khác phải đăng nhập

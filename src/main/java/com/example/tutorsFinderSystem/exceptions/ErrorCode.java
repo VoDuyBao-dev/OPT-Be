@@ -206,6 +206,16 @@ public enum ErrorCode {
     START_DATE_MUST_BE_FUTURE(5124, "Start date must be future", HttpStatus.BAD_REQUEST),
     SCHEDULE_REQUIRED(5125, "Schedule required", HttpStatus.BAD_REQUEST),
 
+//    Payment
+PAYMENT_NOT_FOUND(5300, "Payment not found", HttpStatus.BAD_REQUEST),
+    PAYMENT_ALREADY_EXISTS(5301, "Lớp học này đã có giao dịch thanh toán", HttpStatus.BAD_REQUEST),
+    REFUND_ALREADY_EXISTS(5302, "Lớp học này đã được hoàn tiền", HttpStatus.BAD_REQUEST),
+    FAILED_TO_CALL_VNPAY(5303, "Gửi yêu cầu hoàn tiền đến VNPAY thất bại", HttpStatus.BAD_REQUEST),
+    INVALID_PAYMENT_AMOUNT(5304, "Số tiền khongo hợp lệ", HttpStatus.BAD_REQUEST),
+    REFUND_FAILED(5305, "Hoàn tiền thất bại", HttpStatus.BAD_REQUEST),
+
+
+
     // tutor change password
     NEW_PASSWORD_SAME_AS_OLD(6002, "New password must be different from the current password", HttpStatus.BAD_REQUEST),
     PASSWORD_CONFIRM_MISMATCH(6003, "New password and confirm password do not match", HttpStatus.BAD_REQUEST),
