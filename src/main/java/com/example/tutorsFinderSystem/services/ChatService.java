@@ -14,11 +14,13 @@ import com.example.tutorsFinderSystem.repositories.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.*;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -28,6 +30,7 @@ public class ChatService {
 	private final UserRepository userRepository;
 	private final GoogleDriveService googleDriveService;
 	private final StickerRepository stickerRepository;
+	private final SimpMessagingTemplate messagingTemplate;
 
 	/**
 	 * Danh sách hội thoại
@@ -86,6 +89,12 @@ public class ChatService {
 				.senderId(msg.getSender().getUserId())
 				.receiverId(msg.getReceiver().getUserId())
 				.content(msg.getContent())
+				.stickerUrl(
+						msg.getSticker() != null
+								? googleDriveService.buildAvatarUrl(
+										msg.getSticker().getImageUrl())
+								: null)
+
 				.sentAt(msg.getSentAt())
 				.build());
 	}
@@ -114,7 +123,7 @@ public class ChatService {
 				.sender(sender)
 				.receiver(receiver)
 				.content(req.getContent())
-				.sticker(sticker)
+				.sticker(sticker) // sticker.imageUrl = fileId
 				.isRead(false)
 				.sentAt(LocalDateTime.now())
 				.build();
@@ -141,22 +150,39 @@ public class ChatService {
 				.sender(sender)
 				.receiver(receiver)
 				.content(req.getContent())
-				.sticker(sticker)
+				.sticker(sticker) // chỉ fileId
 				.isRead(false)
 				.sentAt(LocalDateTime.now())
 				.build();
-		ChatMessage saved = chatMessageRepository.save(message);
 
-    //  CHỈ build URL NẾU CÓ STICKER
-    if (saved.getSticker() != null) {
-        String fileId = saved.getSticker().getImageUrl();
+		return chatMessageRepository.save(message);
+	}
 
-        saved.getSticker().setImageUrl(
-                googleDriveService.buildAvatarUrl(fileId)
-        );
-    }
+	public long countUnread(Long userId) {
+		return chatMessageRepository.countUnreadByReceiver(userId);
+	}
 
-    return saved;
+	/** Push realtime unreadCount cho 1 user (theo email) */
+	public void pushUnread(User user) {
+		long unread = countUnread(user.getUserId());
+
+		messagingTemplate.convertAndSendToUser(
+				user.getEmail(),
+				"/queue/unread",
+				Map.of("unreadCount", unread));
+	}
+
+	@Transactional
+	public int markConversationAsRead(String currentEmail, Long otherUserId) {
+		User me = userRepository.findByEmail(currentEmail)
+				.orElseThrow(() -> new RuntimeException("User not found"));
+
+		int updated = chatMessageRepository.markMessagesAsRead(otherUserId, me.getUserId());
+
+		// push unreadCount mới cho chính mình
+		pushUnread(me);
+
+		return updated;
 	}
 
 }

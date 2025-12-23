@@ -1,6 +1,7 @@
 package com.example.tutorsFinderSystem.dto.chat;
 
 import com.example.tutorsFinderSystem.entities.ChatMessage;
+
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -11,7 +12,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class ChatMessageResponse {
-
     private Long messageId;
     private Long senderId;
     private Long receiverId;
@@ -27,7 +27,7 @@ public class ChatMessageResponse {
     /**
      * Convert Entity -> DTO
      */
-    
+
     public static ChatMessageResponse from(ChatMessage message) {
 
         if (message == null)
@@ -37,7 +37,10 @@ public class ChatMessageResponse {
                 .messageId(message.getMessageId())
                 .senderId(message.getSender().getUserId())
                 .receiverId(message.getReceiver().getUserId())
-                .content(message.getContent())
+                .content(
+                        message.getSticker() != null
+                                ? null
+                                : message.getContent())
                 .stickerId(
                         message.getSticker() != null
                                 ? message.getSticker().getStickerId()

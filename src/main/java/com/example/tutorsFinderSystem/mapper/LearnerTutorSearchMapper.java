@@ -1,37 +1,56 @@
 package com.example.tutorsFinderSystem.mapper;
 
+import com.example.tutorsFinderSystem.dto.common.SubjectDTO;
+// import com.example.tutorsFinderSystem.dto.common.SubjectDTO;
 import com.example.tutorsFinderSystem.dto.response.TutorSearchItemResponse;
 import com.example.tutorsFinderSystem.entities.Subject;
 import com.example.tutorsFinderSystem.entities.Tutor;
 import com.example.tutorsFinderSystem.entities.User;
 
-import java.util.Collection;
+// import java.util.Collection;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import java.util.List;
+// import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface LearnerTutorSearchMapper {
 
-    @Mapping(source = "tutorId", target = "tutorId")
-    @Mapping(source = "user.userId", target = "userId")
-    @Mapping(source = "user.fullName", target = "fullName")
+    @Mapping(source = "tutor.tutorId", target = "tutorId")
+    @Mapping(source = "tutor.user.userId", target = "userId")
+    @Mapping(source = "tutor.user.fullName", target = "fullName")
+    @Mapping(source = "tutor.gender", target = "gender")
+    @Mapping(source = "tutor.address", target = "address")
+    @Mapping(source = "tutor.university", target = "university")
+    @Mapping(source = "tutor.educationalLevel", target = "educationalLevel")
+    @Mapping(source = "tutor.pricePerHour", target = "pricePerHour")
     @Mapping(target = "avatarUrl", expression = "java(buildAvatarUrl(tutor.getUser()))")
-    @Mapping(target = "subjects", expression = "java(mapSubjectNames(tutor.getSubjects()))")
-    TutorSearchItemResponse toItem(Tutor tutor);
+    @Mapping(source = "subject", target = "subject")
+    TutorSearchItemResponse toItem(Tutor tutor, Subject subject);
 
-    List<TutorSearchItemResponse> toItems(List<Tutor> tutors);
+    default SubjectDTO map(Subject subject) {
+        if (subject == null)
+            return null;
 
+        return SubjectDTO.builder()
+                .subjectId(subject.getSubjectId())
+                .subjectName(subject.getSubjectName())
+                .build();
+    }
+    // List<TutorSearchItemResponse> toItems(List<Tutor> tutors);
 
-default List<String> mapSubjectNames(Collection<Subject> subjects) {
-    if (subjects == null || subjects.isEmpty())
-        return List.of();
+    // default List<SubjectDTO> mapSubjects(Collection<Subject> subjects) {
+    // if (subjects == null || subjects.isEmpty()) {
+    // return List.of();
+    // }
 
-    return subjects.stream()
-            .map(Subject::getSubjectName)
-            .toList();
-}
+    // return subjects.stream()
+    // .map(s -> SubjectDTO.builder()
+    // .subjectId(s.getSubjectId())
+    // .subjectName(s.getSubjectName())
+    // .build())
+    // .toList();
+    // }
 
     default String buildAvatarUrl(User user) {
         if (user == null || user.getAvatarImage() == null)

@@ -16,5 +16,6 @@ public class ChatHistoryResponse {
     private Long receiverId;
 
     private String content;
+    private String stickerUrl;     
     private LocalDateTime sentAt;
 }

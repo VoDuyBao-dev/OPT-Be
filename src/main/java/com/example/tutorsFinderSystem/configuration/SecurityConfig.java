@@ -50,6 +50,9 @@ public class SecurityConfig {
                     "/classes/**",
                     "/public/**",
                     "/chat/**",
+                    "/ws/**",
+                    "/ws/chat/**",
+                    "/ws/chat-sockjs/**",
                     "/payment/vnpay/callback"
                 ).permitAll()
                 .requestMatchers(COMMON_URLS).hasAnyAuthority("SCOPE_TUTOR", "SCOPE_LEARNER")
