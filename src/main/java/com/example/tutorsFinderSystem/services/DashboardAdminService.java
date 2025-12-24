@@ -145,45 +145,56 @@ public class DashboardAdminService {
 
 
     public AdminDashboardStatsResponse getDashboardStats() {
-
         LocalDateTime now = LocalDateTime.now();
 
-        LocalDateTime startOfThisMonth =
-                now.withDayOfMonth(1).withHour(0).withMinute(0).withSecond(0);
+        // Tháng này: từ ngày 1 đến cuối ngày hôm nay
+        LocalDateTime startOfThisMonth = now.withDayOfMonth(1)
+                .withHour(0).withMinute(0).withSecond(0).withNano(0);
 
-        LocalDateTime startOfLastMonth =
-                startOfThisMonth.minusMonths(1);
+        LocalDateTime endOfToday = now.withHour(23).withMinute(59)
+                .withSecond(59).withNano(999999999);
 
-        LocalDateTime endOfLastMonth =
-                startOfThisMonth.minusSeconds(1);
+        // Tháng trước: từ ngày 1 đến cuối tháng
+        LocalDateTime startOfLastMonth = startOfThisMonth.minusMonths(1);
+        LocalDateTime endOfLastMonth = startOfThisMonth.minusNanos(1);
 
-        //Doanh thu
-        BigDecimal thisMonthRevenue = paymentRepository.sumAmountByStatusAndPeriod(PaymentStatus.PAID, startOfThisMonth, now);
+        // ===== TỔNG DOANH THU TẤT CẢ THỜI GIAN =====
+        BigDecimal totalRevenue = paymentRepository.sumTotalAmountByStatus(
+                PaymentStatus.PAID
+        );
 
+        // ===== DOANH THU THÁNG NÀY (cho tính % tăng trưởng) =====
+        BigDecimal thisMonthRevenue = paymentRepository.sumAmountByStatusAndPeriod(
+                PaymentStatus.PAID,
+                startOfThisMonth,
+                endOfToday
+        );
+
+        // ===== DOANH THU THÁNG TRƯỚC (cho tính % tăng trưởng) =====
         BigDecimal lastMonthRevenue = paymentRepository.sumAmountByStatusAndPeriod(
-                        PaymentStatus.PAID,
-                        startOfLastMonth,
-                        endOfLastMonth
-                );
+                PaymentStatus.PAID,
+                startOfLastMonth,
+                endOfLastMonth
+        );
 
-        //% tăng trưởng
+        // % tăng trưởng: so sánh tháng này vs tháng trước
         double growthPercent = calculateGrowthPercent(lastMonthRevenue, thisMonthRevenue);
 
-        //Lợi nhuận sàn
-        BigDecimal platformProfit = thisMonthRevenue.multiply(PLATFORM_FEE_RATE);
+        // Lợi nhuận sàn: tính từ TỔNG doanh thu
+        BigDecimal platformProfit = totalRevenue.multiply(PLATFORM_FEE_RATE);
 
-        //Gia sư active
+        // Gia sư active
         Long activeTutors = tutorRepo.countActiveTutors();
 
-        //Chờ thanh toán
+        // Chờ thanh toán
         BigDecimal pendingAmount = paymentRepository.sumPendingAmount();
 
         return AdminDashboardStatsResponse.builder()
-                .totalRevenue(thisMonthRevenue)
-                .platformProfit(platformProfit)
+                .totalRevenue(totalRevenue)           // ← Tổng tất cả thời gian
+                .platformProfit(platformProfit)        // ← 20% của tổng doanh thu
                 .activeTutors(activeTutors)
                 .pendingAmount(pendingAmount)
-                .revenueGrowthPercent(growthPercent)
+                .revenueGrowthPercent(growthPercent)   // ← % tăng trưởng tháng này vs tháng trước
                 .build();
     }
 
