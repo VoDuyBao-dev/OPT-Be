@@ -31,7 +31,7 @@ public class SecurityConfig {
     private CustomAccessDeniedHandler customAccessDeniedHandler;
 
     private final String[] COMMON_URLS = {
-            "/tutors/tutorDetail/**",
+            "/learner/tutordetail/**",
 
 
     };
@@ -55,7 +55,7 @@ public class SecurityConfig {
                     "/ws/chat-sockjs/**",
                     "/payment/vnpay/callback"
                 ).permitAll()
-                .requestMatchers(COMMON_URLS).hasAnyAuthority("SCOPE_TUTOR", "SCOPE_LEARNER")
+                .requestMatchers(COMMON_URLS).hasAnyAuthority("SCOPE_LEARNER","SCOPE_TUTOR")
                 .requestMatchers("/tutors/**").hasAuthority("SCOPE_TUTOR")
                 .requestMatchers("/admin/**").hasAuthority("SCOPE_ADMIN")
                 .requestMatchers("/learner/**").hasAuthority("SCOPE_LEARNER")
