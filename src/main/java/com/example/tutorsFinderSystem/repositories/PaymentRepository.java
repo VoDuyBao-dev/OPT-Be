@@ -46,6 +46,14 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
             LocalDateTime end
     );
 
+    // Tổng doanh thu tất cả thời gian
+    @Query("""
+    SELECT COALESCE(SUM(p.amount), 0)
+    FROM Payment p
+    WHERE p.paymentStatus = :status
+""")
+    BigDecimal sumTotalAmountByStatus(PaymentStatus status);
+
     // Tổng tiền chờ thanh toán
     @Query("""
         SELECT COALESCE(SUM(p.amount), 0)
