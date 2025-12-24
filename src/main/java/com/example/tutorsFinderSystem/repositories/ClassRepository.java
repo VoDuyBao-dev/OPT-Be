@@ -38,20 +38,23 @@ public interface ClassRepository extends JpaRepository<ClassEntity, Long> {
 
     // Lấy danh sách lớp học liên quan (cùng môn học hoặc cùng gia sư)
     @Query("""
-            SELECT c FROM ClassEntity c
-              JOIN c.classRequest r
-              JOIN r.tutor t
-              JOIN r.subject s
-              WHERE (s.subjectId = :subjectId OR t.tutorId = :tutorId)
-              AND c.classId != :excludeClassId
-              AND c.status IN ('ONGOING', 'PENDING')
-              ORDER BY c.classId DESC
-                      """)
+    SELECT c FROM ClassEntity c
+      JOIN c.classRequest r
+      JOIN r.tutor t
+      JOIN r.subject s
+      WHERE
+        (:subjectId IS NULL OR s.subjectId = :subjectId)
+        OR
+        (:tutorId IS NULL OR t.tutorId = :tutorId)
+      AND c.status IN ('ONGOING', 'PENDING')
+      ORDER BY c.classId DESC
+""")
     List<ClassEntity> findRelatedClasses(
             @Param("subjectId") Long subjectId,
             @Param("tutorId") Long tutorId,
-            @Param("excludeClassId") Long excludeClassId,
-            Pageable pageable);
+            Pageable pageable
+    );
+
 
     // Lấy tất cả lớp học đang hoạt động
     @Query("""

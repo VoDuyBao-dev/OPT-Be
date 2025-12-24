@@ -10,10 +10,7 @@ import com.example.tutorsFinderSystem.enums.ClassStatus;
 import com.example.tutorsFinderSystem.exceptions.AppException;
 import com.example.tutorsFinderSystem.exceptions.ErrorCode;
 import com.example.tutorsFinderSystem.mapper.ClassesMapper;
-import com.example.tutorsFinderSystem.repositories.ClassRepository;
-import com.example.tutorsFinderSystem.repositories.LearnerRepository;
-import com.example.tutorsFinderSystem.repositories.RatingRepository;
-import com.example.tutorsFinderSystem.repositories.RatingsRepository;
+import com.example.tutorsFinderSystem.repositories.*;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -36,22 +33,57 @@ public class ClassEntityService {
     UserService userService;
     LearnerRepository learnerRepository;
     RatingsRepository ratingsRepository;
+    TutorRepository tutorRepository;
 
 
-//    Lấy danh sách lớp học liên quan dựa trên môn học và gia sư
+    //    Lấy danh sách lớp học liên quan dựa trên môn học và gia sư
     @Transactional(readOnly = true)
-    public List<RelatedClassDTO> getRelatedClasses(Long classId, Long subjectId, Long tutorId, int limit) {
+    public List<RelatedClassDTO> getRelatedClasses(
+            Long subjectId,
+            Long tutorId,
+            int limit
+    ) {
 
-        if(classId == null || subjectId == null || tutorId == null){
+        if (subjectId == null && tutorId == null) {
             throw new AppException(ErrorCode.INVALID_REQUEST);
         }
+
         Pageable pageable = PageRequest.of(0, limit);
 
-        return classRepository.findRelatedClasses(subjectId, tutorId, classId, pageable)
+        return classRepository
+                .findRelatedClasses(subjectId, tutorId, pageable)
                 .stream()
                 .map(classesMapper::toRelatedClassDTO)
                 .toList();
     }
+
+    @Transactional(readOnly = true)
+    public List<RelatedClassDTO> getRelatedTutors(
+            Long subjectId,
+            Long tutorId,
+            int limit
+    ) {
+
+        if (subjectId == null && tutorId == null) {
+            throw new AppException(ErrorCode.INVALID_REQUEST);
+        }
+
+        Pageable pageable = PageRequest.of(0, limit);
+        List<Tutor> tutors;
+
+        if (subjectId != null) {
+            // Ưu tiên tìm theo môn
+            tutors = tutorRepository.findTutorsBySubject(subjectId, pageable);
+        } else {
+            // Tìm các gia sư cùng môn với tutor hiện tại
+            tutors = tutorRepository.findRelatedTutorsByTutor(tutorId, pageable);
+        }
+
+        return tutors.stream()
+                .map(classesMapper::toRelatedClassDTOFromTutor)
+                .toList();
+    }
+
 
     public List<CompletedClassResponse> getCompletedClassesForLearner() {
 

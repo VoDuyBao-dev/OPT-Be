@@ -141,4 +141,34 @@ public interface TutorRepository extends JpaRepository<Tutor, Long> {
         WHERE t.verificationStatus = 'APPROVED'
     """)
     Long countActiveTutors();
+
+    /**
+     * Lấy gia sư theo môn học
+     */
+    @Query("""
+        SELECT DISTINCT t
+        FROM Tutor t
+        JOIN t.subjects s
+        WHERE s.subjectId = :subjectId
+    """)
+    List<Tutor> findTutorsBySubject(
+            @Param("subjectId") Long subjectId,
+            Pageable pageable
+    );
+
+    /**
+     * Lấy các gia sư cùng môn với tutor hiện tại
+     */
+    @Query("""
+        SELECT DISTINCT t2
+        FROM Tutor t1
+        JOIN t1.subjects s
+        JOIN s.tutors t2
+        WHERE t1.tutorId = :tutorId
+          AND t2.tutorId <> :tutorId
+    """)
+    List<Tutor> findRelatedTutorsByTutor(
+            @Param("tutorId") Long tutorId,
+            Pageable pageable
+    );
 }

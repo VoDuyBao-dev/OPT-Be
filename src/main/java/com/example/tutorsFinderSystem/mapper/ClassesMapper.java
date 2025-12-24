@@ -3,6 +3,8 @@ package com.example.tutorsFinderSystem.mapper;
 import com.example.tutorsFinderSystem.dto.common.RelatedClassDTO;
 import com.example.tutorsFinderSystem.dto.response.CompletedClassResponse;
 import com.example.tutorsFinderSystem.entities.ClassEntity;
+import com.example.tutorsFinderSystem.entities.Subject;
+import com.example.tutorsFinderSystem.entities.Tutor;
 import com.example.tutorsFinderSystem.entities.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -21,11 +23,41 @@ public interface ClassesMapper {
     @Mapping(target = "introduction", source = "classEntity.classRequest.tutor.introduction")
     RelatedClassDTO toRelatedClassDTO(ClassEntity classEntity);
 
+    @Mapping(target = "classId", ignore = true)
+    @Mapping(target = "tutorId", source = "tutor.tutorId")
+    @Mapping(target = "avatarImage", expression = "java(getAvatarFromTutor(tutor))")
+    @Mapping(target = "teacherName", source = "tutor.user.fullName")
+    @Mapping(target = "educationalLevel", source = "tutor.educationalLevel")
+    @Mapping(target = "university", source = "tutor.university")
+    @Mapping(target = "pricePerHour", source = "tutor.pricePerHour")
+    @Mapping(target = "introduction", source = "tutor.introduction")
+    @Mapping(target = "subjectName", expression = "java(getFirstSubjectName(tutor))")
+    RelatedClassDTO toRelatedClassDTOFromTutor(Tutor tutor);
+
+
+
     // Custom xử lý avatar rỗng
     default String getAvatar(ClassEntity c) {
         User user = c.getClassRequest().getTutor().getUser();
         return user.getAvatarImage() != null ? user.getAvatarImage() : "";
     }
+
+    default String getAvatarFromTutor(Tutor tutor) {
+        User user = tutor.getUser();
+        return user != null && user.getAvatarImage() != null
+                ? user.getAvatarImage()
+                : "";
+    }
+
+    // Lấy 1 môn đại diện (môn đầu tiên)
+    default String getFirstSubjectName(Tutor tutor) {
+        if (tutor.getSubjects() == null || tutor.getSubjects().isEmpty()) {
+            return "";
+        }
+        Subject subject = tutor.getSubjects().iterator().next();
+        return subject.getSubjectName();
+    }
+
 
     @Mappings({
             @Mapping(target = "classId", source = "classEntity.classId"),
