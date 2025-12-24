@@ -176,7 +176,6 @@ public class EbookService {
         Pageable pageable = PageRequest.of(page, size, Sort.by("createdAt").descending());
 
         Page<Ebook> ebookPage = ebookRepository.searchEbooks(
-                subjectId,
                 type,
                 createdDate,
                 pageable);

@@ -32,16 +32,13 @@ public interface EbookRepository extends JpaRepository<Ebook, Long> {
     Page<Ebook> findByTypeAndTitleContainingIgnoreCase(EbookType type, String keyword, Pageable pageable);
 
     @Query("""
-                SELECT e FROM Ebook e
-                JOIN Tutor t ON e.uploadedBy.userId = t.user.userId
-                JOIN t.subjects s
-                WHERE (:subjectId IS NULL OR s.subjectId = :subjectId)
-                  AND (:type IS NULL OR e.type = :type)
-                  AND (:createdDate IS NULL OR DATE(e.createdAt) = :createdDate)
-            """)
+    SELECT e FROM Ebook e
+    WHERE (:type IS NULL OR e.type = :type)
+      AND (:createdDate IS NULL OR DATE(e.createdAt) = :createdDate)
+""")
     Page<Ebook> searchEbooks(
-            @Param("subjectId") Long subjectId,
             @Param("type") EbookType type,
             @Param("createdDate") LocalDate createdDate,
-            Pageable pageable);
+            Pageable pageable
+    );
 }
