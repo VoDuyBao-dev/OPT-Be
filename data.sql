@@ -1,30 +1,23 @@
 -- USE tutors_finder_system;
 
 -- mật khẩu 12345678 
-INSERT INTO users (full_name, email, password_hash, phone_number, status, updated_at, avatar_image, created_at, enabled)
-VALUES
-('Nguyễn Văn Admin', 'admin1@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0901111222', 'Active', NOW(), "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp", NOW(), true),
-('Trần Thị B', 'tutor1@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0903333444', 'Active', NOW(), "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp", NOW(), true),
-('Lê Văn C', 'tutor2@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0905555666', 'Active', NOW(), "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp", NOW(), true),
-('Phạm Thị D', 'tutor3@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0907777888', 'inActive', NOW(), "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp", NOW(), true),
-('Ngô Minh E', 'parent1@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0911111222', 'Active', NOW(), "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp", NOW(), true),
-('Trần Anh F', 'parent2@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0913333444', 'Active', NOW(), "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp", NOW(), true),
-('Hoàng Văn G', 'parent3@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0915555666', 'Active', NOW(), "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp", NOW(), true),
-('Vũ Thị H', 'tutor4@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0908888999','Active', NOW(), "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp", NOW(), true),
-('Nguyễn Minh I', 'tutor5@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0902222333', 'Active', NOW(), "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp", NOW(), true),
-('Lâm Thị K', 'parent4@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0917777888', 'Active', NOW(), "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp", NOW(), true),
-('Lâm Văn H', 'parent5@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0917777999', 'Active', NOW(), "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp", NOW(), true);
+INSERT INTO users (full_name, email, password_hash, phone_number, status, updated_at, avatar_image, created_at, enabled)   Value     https://drive.google.com/file/d//view?usp=drive_link
+('Nguyễn Văn Admin', 'admin1@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0901111222', 'Active',"2025-11-01 09:00:00", "https://drive.google.com/uc?id=1pCczdue83GVPUBGRtJEip2ROUrDvjvvs","2025-11-01 09:00:00", true),
+('Trần Thị B', 'tutor1@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0903333444', 'Active',"2025-11-01 09:00:00", "https://drive.google.com/uc?id=1MyH_zuWDrc78Mp8QDUx0XgQwIK4KxZPn","2025-11-01 09:00:00", true),
+('Lê Văn C', 'tutor2@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0905555666', 'Active',"2025-11-01 09:00:00", "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ","2025-11-01 09:00:00", true),
+('Phạm Thị D', 'tutor3@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0907777888', 'Active',"2025-11-01 09:00:00", "https://drive.google.com/uc?id=14ogv2vM63qEmc7O7_22QB1ll9NSGkQZx","2025-11-01 09:00:00", true),
+('Ngô Minh E', 'parent1@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0911111122', 'Active',"2025-11-01 09:00:00", "https://drive.google.com/uc?id=1keipNHNbccm1-1gPOP5G4ZzNdFAcbV0d","2025-11-01 09:00:00", true),
+('Trần Anh F', 'parent2@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0913333444', 'Active',"2025-11-01 09:00:00", "https://drive.google.com/uc?id=17GDMG6kkNBxkNwjfTVlwNsf3OtCqzUx9","2025-11-01 09:00:00", true),
+('Hoàng Văn G', 'parent3@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0915555666', 'Active',"2025-11-01 09:00:00", "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ","2025-11-01 09:00:00", true),
+('Vũ Thị H', 'tutor4@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0908888999','Active',"2025-11-01 09:00:00", "https://drive.google.com/uc?id=1MgrdULYoP7WM5uotEVVG_hEKGQFbsuro","2025-11-01 09:00:00", true),
+('Nguyễn Minh I', 'tutor5@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0902222333', 'Active',"2025-11-01 09:00:00", "https://drive.google.com/uc?id=1keipNHNbccm1-1gPOP5G4ZzNdFAcbV0d","2025-11-01 09:00:00", true),
+('Lâm Thị K', 'parent4@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0917777888', 'Active',"2025-11-01 09:00:00", "https://drive.google.com/uc?id=1DZNIZsagdFNqnRQfTPUANAbz1U_sAz6P","2025-11-01 09:00:00", true),
+('Lâm Văn H', 'parent5@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0917777999', 'Active',"2025-11-01 09:00:00", "https://drive.google.com/uc?id=1keipNHNbccm1-1gPOP5G4ZzNdFAcbV0d","2025-11-01 09:00:00", true);
 
 
 INSERT INTO user_roles (user_id, role) 
-VALUES  (1,  'ADMIN'), (2,  'TUTOR'), (3,  'TUTOR'),(4,  'TUTOR'),
-          (5,  'LEARNER'),
-          (6,  'LEARNER'),
-          (7,  'LEARNER'),
-          (8,  'TUTOR'),
-          (9,  'TUTOR'),
-          (10, 'LEARNER'),
-          (11, 'LEARNER');
+VALUES  (1,  'ADMIN'), (2,  'TUTOR'), (3,  'TUTOR'),(4,  'TUTOR'), (5,  'LEARNER'),
+		(6,  'LEARNER'), (7,  'LEARNER'), (8,  'TUTOR'), (9,  'TUTOR'), (10, 'LEARNER'), (11, 'LEARNER');
 
 
 
@@ -79,9 +72,9 @@ INSERT INTO tutors (user_id, gender, address, university, educational_level, int
 VALUES
 (2, 'FEMALE', 'Hà Nội', 'ĐH Sư phạm Hà Nội', 'Đại học', 'Kinh nghiệm 3 năm dạy Toán', 150000, 'APPROVED'),
 (3, 'MALE', 'TP.HCM', 'ĐH Bách Khoa', 'Đại học', 'Dạy Lý chuyên cấp 3', 180000, 'APPROVED'),
-(4, 'FEMALE', 'Đà Nẵng', 'ĐH Sư phạm Đà Nẵng', 'Đại học', 'Dạy Hóa cơ bản', 160000, 'PENDING'),
-(8, 'FEMALE', 'Cần Thơ', 'ĐH Cần Thơ', 'Cao học', 'Dạy tiếng Anh giao tiếp', 200000, 'APPROVED'),
-(9, 'MALE', 'Huế', 'ĐH Khoa học Huế', 'Đại học', 'Gia sư luyện thi TOEIC', 220000, 'APPROVED');
+(4, 'FEMALE', 'Đà Nẵng', 'ĐH Sư phạm Đà Nẵng', 'Đại học', 'Dạy Hóa nâng cao', 160000, 'APPROVED'),
+(8, 'FEMALE', 'Cần Thơ', 'ĐH Cần Thơ', 'Cao học', 'Dạy tin học cơ bản và hóa nâng cao', 200000, 'APPROVED'),
+(9, 'MALE', 'Huế', 'ĐH Khoa học Huế', 'Đại học', 'Gia sư tin học', 220000, 'APPROVED');
 
 -- ===== CERTIFICATES FOR TUTOR 1 - 5 =====
 INSERT INTO tutor_certificates (certificate_id, tutor_id, certificate_name, approved)
@@ -89,7 +82,7 @@ VALUES
 -- Tutor 1
 (1, 1, 'Chứng chỉ Sư phạm Toán học', TRUE),
 (2, 1, 'IELTS 6.5 Academic', TRUE),
-(3, 1, 'Giấy chứng nhận “Dạy kèm Toán THCS nâng cao”', TRUE),
+(3, 1, 'Giấy chứng nhận “Dạy kèm Toán THCS nâng   cao”', TRUE),
 
 -- Tutor 2
 (4, 2, 'Chứng chỉ Sư phạm Vật Lý', TRUE),
@@ -97,9 +90,9 @@ VALUES
 (6, 2, 'Chứng chỉ Bồi dưỡng phương pháp dạy học STEM', TRUE),
 
 -- Tutor 3
-(7, 3, 'IELTS 7.5 Academic', TRUE),
-(8, 3, 'TESOL Certificate', TRUE),
-(9, 3, 'Chứng chỉ Sư phạm tiếng Anh', TRUE),
+(7, 3, 'Giải Nhất học sỉnh giỏi sinh học cấp tỉnh', TRUE),
+(8, 3, 'Giải Nhất học sinh giỏi vật lí cấp trường trung học cơ sở', TRUE),
+(9, 3, 'Giải Nhì học sinh giỏi sinh học quốc gia', TRUE),
 
 -- Tutor 4
 (10, 4, 'Chứng chỉ Sư phạm Hóa học', TRUE),
@@ -115,29 +108,29 @@ INSERT INTO tutor_certificate_files
 (file_id, certificate_id, file_url, status, is_active, uploaded_at)
 VALUES
 -- Tutor 1
-(1, 1, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(2, 2, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(3, 3, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
+(1, 1, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(2, 2, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(3, 3, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
 
 -- Tutor 2
-(4, 4, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'PENDING', TRUE, NOW()),
-(5, 5, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(6, 6, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
+(4, 4, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(5, 5, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(6, 6, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
 
 -- Tutor 3
-(7, 7, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(8, 8, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(9, 9, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
+(7, 7, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(8, 8, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(9, 9, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
 
 -- Tutor 4
-(10, 10, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'PENDING', TRUE, NOW()),
-(11, 11, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'PENDING', TRUE, NOW()),
-(12, 12, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'PENDING', TRUE, NOW()),
+(10, 10, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(11, 11, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(12, 12, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
 
 -- Tutor 5
-(13, 13, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(14, 14, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(15, 15, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW());
+(13, 13, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(14, 14, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(15, 15, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00");
 
 
 
@@ -148,12 +141,12 @@ VALUES
 (1, 9),  -- Tiếng Anh
 (2, 2),  -- Vật lý
 (3, 3),  -- Hóa học
-(4, 27), -- Tiếng Anh giao tiếp
-(5, 29), -- Luyện thi TOEIC
-(5, 28), -- Luyện thi IELTS
+(4, 3), -- hóa
+(5, 18), -- tin
+-- (5, 28), -- Luyện thi IELTS
 (2, 18), -- Tin học
 (3, 4),  -- Sinh học
-(4, 9);  -- Tiếng Anh
+(4, 18);  -- tin 
 
 
 INSERT INTO learner (user_id, full_name, gender, grade, school, description, address, address_detail)
@@ -164,190 +157,26 @@ VALUES
 (10, 'Lâm Thị K', 'FEMALE', 'Lớp 8', 'THCS Nguyễn Du', 'Cần học tiếng Anh giao tiếp', 'Cần Thơ', '22 Nguyễn Văn Cừ'),
 (11, 'Lâm Văn H', 'MALE', 'Lớp 5', 'Tiểu học Kim Đồng', 'Cần học thêm Toán và Tiếng Việt', 'Hà Nội', '78 Trường Chinh');
 
-INSERT INTO tutor_availability (tutor_id, start_time, end_time, status, created_at, updated_at) VALUES
-(1, '2025-11-03 18:30:00', '2025-11-03 20:00:00', 'AVAILABLE', '2025-11-03 00:00:00', '2025-11-03 00:00:00'),
-(1, '2025-11-05 18:30:00', '2025-11-05 20:00:00', 'BOOKED',    '2025-11-05 00:00:00', '2025-11-05 00:00:00'),
-(2, '2025-11-06 09:30:00', '2025-11-06 11:00:00', 'AVAILABLE', '2025-11-06 00:00:00', '2025-11-06 00:00:00'),
-(2, '2025-11-07 09:30:00', '2025-11-07 11:00:00', 'CANCELLED', '2025-11-07 00:00:00', '2025-11-07 00:00:00'),
-(3, '2025-11-08 14:30:00', '2025-11-08 16:00:00', 'AVAILABLE', '2025-11-08 00:00:00', '2025-11-08 00:00:00'),
-(3, '2025-11-09 14:30:00', '2025-11-09 16:00:00', 'BOOKED',    '2025-11-09 00:00:00', '2025-11-09 00:00:00'),
-(4, '2025-11-10 17:00:00', '2025-11-10 18:30:00', 'AVAILABLE', '2025-11-10 00:00:00', '2025-11-10 00:00:00'),
-(4, '2025-11-12 17:00:00', '2025-11-12 18:30:00', 'AVAILABLE', '2025-11-12 00:00:00', '2025-11-12 00:00:00'),
-(5, '2025-11-13 18:30:00', '2025-11-13 20:00:00', 'AVAILABLE', '2025-11-13 00:00:00', '2025-11-13 00:00:00'),
-(5, '2025-11-14 18:30:00', '2025-11-14 20:00:00', 'BOOKED',    '2025-11-14 00:00:00', '2025-11-14 00:00:00');
-
-
-INSERT INTO tutor_availability (tutor_id, start_time, end_time, status, created_at, updated_at) VALUES
-(1, '2025-12-02 18:30:00', '2025-12-02 20:00:00', 'AVAILABLE', '2025-12-02 00:00:00', '2025-12-02 00:00:00'),
-(1, '2025-12-04 18:30:00', '2025-12-04 20:00:00', 'AVAILABLE', '2025-12-04 00:00:00', '2025-12-04 00:00:00'),
-(1, '2025-12-06 09:30:00', '2025-12-06 11:00:00', 'AVAILABLE', '2025-12-06 00:00:00', '2025-12-06 00:00:00'),
-(1, '2025-12-08 18:30:00', '2025-12-08 20:00:00', 'BOOKED',    '2025-12-08 00:00:00', '2025-12-08 00:00:00'),
-(1, '2025-12-10 17:00:00', '2025-12-10 18:30:00', 'CANCELLED', '2025-12-10 00:00:00', '2025-12-10 00:00:00'),
-
-(2, '2025-12-01 09:30:00', '2025-12-01 11:00:00', 'AVAILABLE', '2025-12-01 00:00:00', '2025-12-01 00:00:00'),
-(2, '2025-12-03 09:30:00', '2025-12-03 11:00:00', 'BOOKED',    '2025-12-03 00:00:00', '2025-12-03 00:00:00'),
-(2, '2025-12-05 14:30:00', '2025-12-05 16:00:00', 'AVAILABLE', '2025-12-05 00:00:00', '2025-12-05 00:00:00'),
-(2, '2025-12-08 09:30:00', '2025-12-08 11:00:00', 'AVAILABLE', '2025-12-08 00:00:00', '2025-12-08 00:00:00'),
-(2, '2025-12-10 13:00:00', '2025-12-10 14:30:00', 'CANCELLED', '2025-12-10 00:00:00', '2025-12-10 00:00:00');
-
-    
-  -- INSERT INTO tutor_recurring_pattern 
-  -- (tutor_id, repeat_type, days_of_week, days_of_month, start_time, end_time, repeat_start, repeat_end)
-  -- VALUES
-  -- (1, 'WEEKLY', '["Monday","Wednesday","Friday"]', NULL, '18:00:00', '20:00:00', '2025-11-01', '2025-12-01'),
-  -- (2, 'WEEKLY', '["Tuesday","Thursday"]', NULL, '09:00:00', '11:00:00', '2025-11-01', '2025-12-15'),
-  -- (3, 'MONTHLY', NULL, '[5,15,25]', '14:00:00', '16:00:00', '2025-11-01', '2026-02-01'),
-  -- (4, 'WEEKLY', '["Saturday"]', NULL, '08:00:00', '10:00:00', '2025-11-01', '2025-11-30'),
-  -- (5, 'MONTHLY', NULL, '[10,20]', '18:00:00', '20:00:00', '2025-11-01', '2026-01-01');
-  -- -- dựa vào 2 bảng trên để hiển thị chính xác những lớp nào mà gia sư bận ở trong giao diện lịch của gia sư
     
 
-INSERT INTO class_requests (learner_id, tutor_id, subject, total_sessions, sessions_per_week, start_date, end_date, additional_notes, status, type)
-VALUES (1, 1, 1, 10, 2, '2025-11-03', '2025-12-10', 'Học tối thứ 2 và 4', 'CONFIRMED', 'OFFICIAL'),
-(2, 2, 2, 8, 2, '2025-11-06', '2025-12-03', 'Ôn thi học kỳ', 'PENDING', 'TRIAL'),
-(3, 3, 3, 12, 3, '2025-11-08', '2026-01-05', 'Học chiều thứ 3,5,7', 'CONFIRMED', 'OFFICIAL'),
-(4, 4, 27, 6, 2, '2025-11-10', '2025-11-30', 'Luyện nói tiếng Anh', 'CONFIRMED', 'OFFICIAL'),
-(5, 5, 28, 15, 3, '2025-11-13', '2026-02-06', 'Luyện thi IELTS 7.0', 'PENDING', 'TRIAL'),
-(1, 2, 18, 5, 2, '2025-12-01', '2025-12-20', 'Học tin học cơ bản', 'CONFIRMED', 'OFFICIAL'),
-(2, 3, 4, 8, 2, '2025-11-09', '2025-12-08', 'Ôn thi học kỳ', 'PENDING', 'TRIAL'),
-(3, 5, 29, 10, 2, '2025-11-13', '2026-01-10', 'Luyện thi TOEIC 700+', 'CONFIRMED', 'OFFICIAL'),
-(4, 1, 9, 6, 2, '2025-12-02', '2025-12-20', 'Học tiếng Anh giao tiếp', 'PENDING', 'OFFICIAL'),
-(5, 4, 1, 12, 3, '2025-11-12', '2026-01-14', 'Học Toán nâng cao', 'PENDING', 'TRIAL'),
-(3, 1, 1, 8, 2, '2025-12-02', '2026-01-05', 'Ôn tập học kỳ', 'PENDING', 'TRIAL'),
-(4, 1, 9, 12, 3, '2025-12-04', '2026-03-10', 'Cải thiện phát âm', 'CONFIRMED', 'OFFICIAL'),
-(1, 2, 2, 6, 2, '2025-12-01', '2026-02-03', 'Lý cơ bản lớp 7', 'PENDING', 'TRIAL'),
-(5, 2, 18, 10, 3, '2025-12-01', '2026-03-15', 'Lập trình Python cơ bản', 'CONFIRMED', 'OFFICIAL');
-
-INSERT INTO calendar_class
-(request_id, day_of_week, start_time, end_time, study_date, created_at, updated_at)
-VALUES
-(1, 'MONDAY',    '18:30:00', '20:00:00', '2025-12-01', '2025-12-01 06:00:00', '2025-12-01 06:10:00'),
-(1, 'WEDNESDAY', '18:30:00', '20:00:00', '2025-12-03', '2025-12-03 06:00:00', '2025-12-03 06:10:00'),
-
-(2, 'TUESDAY',   '17:00:00', '18:30:00', '2025-12-02', '2025-12-02 06:00:00', '2025-12-02 06:10:00'),
-
-(3, 'THURSDAY',  '14:30:00', '16:00:00', '2025-12-04', '2025-12-04 06:00:00', '2025-12-04 06:10:00'),
-
-(4, 'FRIDAY',    '18:30:00', '20:00:00', '2025-12-05', '2025-12-05 06:00:00', '2025-12-05 06:10:00'),
-
-(5, 'SATURDAY',  '09:30:00', '11:00:00', '2025-12-06', '2025-12-06 06:00:00', '2025-12-06 06:10:00'),
-
-(6, 'SUNDAY',    '14:30:00', '16:00:00', '2025-12-07', '2025-12-07 06:00:00', '2025-12-07 06:10:00'),
-
-(7, 'MONDAY',    '08:00:00', '09:30:00', '2025-12-08', '2025-12-08 06:00:00', '2025-12-08 06:10:00'),
-
-(8, 'WEDNESDAY', '18:30:00', '20:00:00', '2025-12-10', '2025-12-10 06:00:00', '2025-12-10 06:10:00'),
-
-(9, 'FRIDAY',    '08:00:00', '09:30:00', '2025-12-12', '2025-12-12 06:00:00', '2025-12-12 06:10:00');
 
 
--- Tutor 1 – các request 11, 12 (tối)
-INSERT INTO calendar_class 
-(request_id, day_of_week, start_time, end_time, study_date, created_at, updated_at)
-VALUES
--- Request 11
-(11, 'MONDAY',   '18:30:00', '20:00:00', '2025-12-01', '2025-12-01 06:00:00', '2025-12-01 06:10:00'),
-(11, 'THURSDAY', '18:30:00', '20:00:00', '2025-12-04', '2025-12-04 06:00:00', '2025-12-04 06:10:00'),
-
--- Request 12
-(12, 'TUESDAY',  '18:30:00', '20:00:00', '2025-12-02', '2025-12-02 06:00:00', '2025-12-02 06:10:00'),
-(12, 'FRIDAY',   '18:30:00', '20:00:00', '2025-12-05', '2025-12-05 06:00:00', '2025-12-05 06:10:00');
-
-
--- Tutor 2 – các request 13, 14 (sáng & chiều)
-INSERT INTO calendar_class 
-(request_id, day_of_week, start_time, end_time, study_date, created_at, updated_at)
-VALUES
--- Request 13
-(13, 'WEDNESDAY', '09:30:00', '11:00:00', '2025-12-03', '2025-12-03 06:00:00', '2025-12-03 06:10:00'),
-(13, 'FRIDAY',    '09:30:00', '11:00:00', '2025-12-05', '2025-12-05 06:00:00', '2025-12-05 06:10:00'),
-
--- Request 14
-(14, 'SATURDAY',  '14:30:00', '16:00:00', '2025-12-06', '2025-12-06 06:00:00', '2025-12-06 06:10:00'),
-(14, 'SUNDAY',    '14:30:00', '16:00:00', '2025-12-07', '2025-12-07 06:00:00', '2025-12-07 06:10:00');
-
-
-INSERT INTO request_schedules (request_id, day_of_week, start_time, end_time)
-VALUES (1, 'MONDAY',    '18:30:00', '20:00:00'),
-(1, 'WEDNESDAY', '18:30:00', '20:00:00'),
-(2, 'TUESDAY',   '17:00:00', '18:30:00'),
-(3, 'THURSDAY',  '14:30:00', '16:00:00'),
-(4, 'FRIDAY',    '18:30:00', '20:00:00'),
-(5, 'SATURDAY',  '09:30:00', '11:00:00'),
-(6, 'SUNDAY',    '14:30:00', '16:00:00'),
-(7, 'MONDAY',    '08:00:00', '09:30:00'),
-(8, 'WEDNESDAY', '18:30:00', '20:00:00'),
-(9, 'FRIDAY',    '08:00:00', '09:30:00');
-
--- Tutor 1 – các request 11, 12 (tối)
-INSERT INTO request_schedules (request_id, day_of_week, start_time, end_time)
-VALUES
-(11, 'MONDAY',   '18:30:00', '20:00:00'),
-(11, 'THURSDAY', '18:30:00', '20:00:00'),
-(12, 'TUESDAY',  '18:30:00', '20:00:00'),
-(12, 'FRIDAY',   '18:30:00', '20:00:00');
-
--- Tutor 2 – các request 13, 14 (sáng & chiều)
-INSERT INTO request_schedules (request_id, day_of_week, start_time, end_time)
-VALUES
-(13, 'WEDNESDAY', '09:30:00', '11:00:00'),
-(13, 'FRIDAY',    '09:30:00', '11:00:00'),
-(14, 'SATURDAY',  '14:30:00', '16:00:00'),
-(14, 'SUNDAY',    '14:30:00', '16:00:00');
-
-
-
-  INSERT INTO classes (request_id, status, completed_sessions)
-  VALUES
-  (1, 'ONGOING', 3),
-  (2, 'ONGOING', 1),
-  (3, 'COMPLETED', 12),
-  (4, 'ONGOING', 5),
-  (5, 'PENDING', 0),
-  (6, 'ONGOING', 2),
-  (7, 'CANCELLED', 0),
-  (8, 'COMPLETED', 10),
-  (9, 'PENDING', 4),
-  (10, 'PENDING', 0),
-  (11, 'PENDING', 0),
-  (12, 'ONGOING', 1),
-  (13, 'PENDING', 0),
-  (14, 'ONGOING', 2); 
-
-
-
-INSERT INTO ratings (class_id, score, comment)
-VALUES
-(1, 4.5, 'Gia sư dạy nhiệt tình'),
-(2, 5.0, 'Rất dễ hiểu'),
-(3, 4.0, 'Ổn nhưng hơi nhanh'),
-(4, 4.8, 'Tốt'),
-(5, 3.5, 'Chưa rõ ràng lắm'),
-(6, 4.9, 'Tận tâm'),
-(7, 4.7, 'Giải thích kỹ'),
-(8, 5.0, 'Rất tốt'),
-(9, 4.6, 'Giỏi và thân thiện'),
-(10, 4.2, 'Hài lòng'),
-(12, 4.7, 'Gia sư nhiệt tình và giảng dễ hiểu'),
-(14, 4.9, 'Giảng chi tiết, dễ thực hành');
-
-
-INSERT INTO notifications (user_id, type, title, content, is_read)
-VALUES
-(1, 'ACCOUNT_VERIFIED', 'Tài khoản admin đã được xác minh', 'Quyền quản trị đã sẵn sàng.', TRUE),
-(2, 'REQUEST_ACCEPTED', 'Yêu cầu học đã được chấp nhận', 'Bạn đã chấp nhận một yêu cầu học mới.', FALSE),
-(3, 'NEW_REQUEST', 'Bạn có yêu cầu lớp học mới', 'Phụ huynh vừa gửi yêu cầu môn Vật lý.', FALSE),
-(4, 'REQUEST_REJECTED', 'Yêu cầu bị từ chối', 'Bạn đã từ chối một yêu cầu không phù hợp.', TRUE),
-(5, 'CLASS_CONFIRMED', 'Lớp học đã được xác nhận', 'Lịch học Toán bắt đầu từ 2025-11-01.', FALSE),
-(6, 'SESSION_REMINDER', 'Nhắc lịch học tối nay', 'Buổi học lúc 18:00–19:30 hôm nay.', FALSE),
-(7, 'RATING_RECEIVED', 'Bạn nhận được đánh giá mới', 'Điểm: 4.8 – “Giải thích dễ hiểu”.', TRUE),
-(8, 'MATERIAL_SHARED', 'Gia sư đã chia sẻ tài liệu', 'File “Tiếng Anh giao tiếp.pdf” đã được tải lên.', FALSE),
-(9, 'MESSAGE', 'Bạn có tin nhắn mới', 'Phụ huynh vừa nhắn tin: “Hẹn giờ học CN?”', FALSE),
-(10, 'CLASS_CANCELLED', 'Một buổi học đã bị hủy', 'Buổi học Chủ nhật 14:00–15:30 đã hủy.', TRUE),
-(3, 'NEW_REQUEST', 'Bạn có yêu cầu học mới', 'Học viên lớp 7 muốn học Toán', FALSE),
-(4, 'NEW_REQUEST', 'Bạn có yêu cầu học mới', 'Học viên lớp 8 muốn học Tiếng Anh', FALSE),
-(2, 'NEW_REQUEST', 'Bạn có yêu cầu học mới', 'Phụ huynh lớp 7 cần học Lý', FALSE),
-(2, 'CLASS_CONFIRMED', 'Lịch học mới', 'Lớp Tin học nâng cao đã xác nhận', FALSE);
+-- INSERT INTO notifications (user_id, type, title, content, is_read)
+-- VALUES
+-- (1, 'ACCOUNT_VERIFIED', 'Tài khoản admin đã được xác minh', 'Quyền quản trị đã sẵn sàng.', TRUE),
+-- (2, 'REQUEST_ACCEPTED', 'Yêu cầu học đã được chấp nhận', 'Bạn đã chấp nhận một yêu cầu học mới.', FALSE),
+-- (3, 'NEW_REQUEST', 'Bạn có yêu cầu lớp học mới', 'Phụ huynh vừa gửi yêu cầu môn Vật lý.', FALSE),
+-- (4, 'REQUEST_REJECTED', 'Yêu cầu bị từ chối', 'Bạn đã từ chối một yêu cầu không phù hợp.', TRUE),
+-- (5, 'CLASS_CONFIRMED', 'Lớp học đã được xác nhận', 'Lịch học Toán bắt đầu từ 2025-11-01.', FALSE),
+-- (6, 'SESSION_REMINDER', 'Nhắc lịch học tối nay', 'Buổi học lúc 18:00–19:30 hôm nay.', FALSE),
+-- (7, 'RATING_RECEIVED', 'Bạn nhận được đánh giá mới', 'Điểm: 4.8 – “Giải thích dễ hiểu”.', TRUE),
+-- (8, 'MATERIAL_SHARED', 'Gia sư đã chia sẻ tài liệu', 'File “Tiếng Anh giao tiếp.pdf” đã được tải lên.', FALSE),
+-- (9, 'MESSAGE', 'Bạn có tin nhắn mới', 'Phụ huynh vừa nhắn tin: “Hẹn giờ học CN?”', FALSE),
+-- (10, 'CLASS_CANCELLED', 'Một buổi học đã bị hủy', 'Buổi học Chủ nhật 14:00–15:30 đã hủy.', TRUE),
+-- (3, 'NEW_REQUEST', 'Bạn có yêu cầu học mới', 'Học viên lớp 7 muốn học Toán', FALSE),
+-- (4, 'NEW_REQUEST', 'Bạn có yêu cầu học mới', 'Học viên lớp 8 muốn học Tiếng Anh', FALSE),
+-- (2, 'NEW_REQUEST', 'Bạn có yêu cầu học mới', 'Phụ huynh lớp 7 cần học Lý', FALSE),
+-- (2, 'CLASS_CONFIRMED', 'Lịch học mới', 'Lớp Tin học nâng cao đã xác nhận', FALSE);
 
 
 
@@ -355,146 +184,18 @@ VALUES
 
 INSERT INTO ebooks (title, type, file_path, uploaded_by, created_at)
 VALUES
-('Toán nâng cao lớp 7', 'SACH_GIAO_KHOA', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 2, NOW()),
-('Vật lý cơ bản', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 2, NOW()),
-('Hóa học thực hành', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 2, NOW()),
-('Tiếng Anh giao tiếp', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 2, NOW()),
-('Ôn thi IELTS 7.0', 'DE_THI_THAM_KHAO', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 2, NOW()),
-('Luyện thi TOEIC 700+', 'DE_THI_THAM_KHAO', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 2, NOW()),
-('Tin học cơ bản', 'SACH_GIAO_KHOA', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 2, NOW()),
-('Kỹ năng học tập hiệu quả', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 2, NOW()),
-('Bài tập Hóa nâng cao', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 2, NOW()),
-('Bộ đề thi THPT Quốc gia', 'DE_THI_THAM_KHAO', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 3, NOW()),
-('Toán chuyên nâng cao', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 2, NOW()),
-('Lý nâng cao 12', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 3, NOW());
-
-
-
-INSERT INTO stickers (image_url) VALUES
-('1eR00OVe0iFYcKSvBHZHPxjMOWKWTx2wG'),
-('1Xn9ZLghV_esQpXBgICW18supTkO0YStR/view?usp=drive_link'),
-('1PSC3bc_UXl5PLiaf51-ded4jNxpbcCZn/view?usp=drive_link'),
-('1_kmZOjZkWMc7gSqZNWcZpNVE6ROGJ0hP/view?usp=drive_link'),
-('https://drive.google.com/file/d/1N_z1MhfVH1Liy2fmKeH2HEZj1hjwzE8H/view?usp=drive_link'),
-('https://drive.google.com/file/d/1P_HHjzWZTsjPcwMD6eimiRxK9aasfvhS/view?usp=drive_link'),
-('https://drive.google.com/file/d/1eJ-ylin9hv19ggHlqEPCAPlhSQljsQ9i/view?usp=drive_link'),
-('https://drive.google.com/file/d/1tBr_8MiymhiaCWH3ZfJanUPSZMdscgFY/view?usp=drive_link'),
-('https://drive.google.com/file/d/1gzAbL8JytOG8GyJKCX-u5ulLdT-NZiqy/view?usp=drive_link'),
-('https://drive.google.com/file/d/12FoMWrASMe1IfX75xgY0d8u1u_2b0YXX/view?usp=drive_link'),
-('https://drive.google.com/file/d/1xwIgc0Bpw4RXzAtT03NJX_xJ5EPoYBVe/view?usp=drive_link'),
-('https://drive.google.com/file/d/1daWOCYErtEzckbJPKtHTBT7FzhVfS8Wy/view?usp=drive_link'),
-('https://drive.google.com/file/d/1NKR1KQDE0gpLx-KLsI2Brmq_aQ0PgOY8/view?usp=drive_link'),
-('https://drive.google.com/file/d/1XfhaFuGfU0Q9COgQJWUEoFdj5O08GJR2/view?usp=drive_link'),
-('https://drive.google.com/file/d/13zzQoWP-ZTVKbkV2tLEscURnWukJyHVx/view?usp=drive_link'),
-('https://drive.google.com/file/d/1GyJcrVaJ-6TV36fPZxFNJAlFGbEP9oyc/view?usp=drive_link'),
-('https://drive.google.com/file/d/1xZFl7C8gBTd9WLpmEBRpMOpPYoQnLmuv/view?usp=drive_link'),
-('https://drive.google.com/file/d/1s2NYo7MXFfMOmv2l8WaqlfpyVB7mInbx/view?usp=drive_link'),
-('https://drive.google.com/file/d/12aXBi8-qfZ4xPt4nJOe9dFHrwhBomZnI/view?usp=drive_link'),
-('https://drive.google.com/file/d/1f8KAzEBPRNNrzYJEqHfhA8kW-30NrbHd/view?usp=drive_link'),
-('https://drive.google.com/file/d/1wnN5Vzj8bF0oW5Xlu6byTeaWd0UHM9_d/view?usp=drive_link'),
-('https://drive.google.com/file/d/1ztRgxfKSujhOfhWZ57YXOjp1xyY6vTdY/view?usp=drive_link'),
-('https://drive.google.com/file/d/1ibm2ahuP0M_xq10-c5ykE7ErVnHf1MPy/view?usp=drive_link'),
-('https://drive.google.com/file/d/1_Q4I_1_hQJkLFp6QYt6gf_RZ-_SDCDWR/view?usp=drive_link'),
-('https://drive.google.com/file/d/1U3ns7Ib2mPhU_3Bo1qEUQ4GRhbLvlZvW/view?usp=drive_link'),
-('https://drive.google.com/file/d/1ZLQg3xpwkLPCa_bXUSTVh5sU48z2aos6/view?usp=drive_link'),
-('https://drive.google.com/file/d/1AR9Hw-pdixNPdlI2E7I_uTG0rQJcflrA/view?usp=drive_link'),
-('https://drive.google.com/file/d/1DYzkPE7ogc7m-9Sa6Dc3nNsQut32YnYD/view?usp=drive_link'),
-('https://drive.google.com/file/d/13fd6T3qlwF7jI9TwiAuHAsTjDDlnkMPp/view?usp=drive_link'),
-('https://drive.google.com/file/d/1kxbqS5PeGrYAoPPa1NRhQTWFP2oMGLs2/view?usp=drive_link'),
-('https://drive.google.com/file/d/1V5Zi5NRHoxxJsxiZUV5LreO-h_TnZoxJ/view?usp=drive_link'),
-('https://drive.google.com/file/d/1BAxpzMGvL-r-qoQ7BFW_nDHD-uJlus_j/view?usp=drive_link'),
-('https://drive.google.com/file/d/1NuhHK77E5rH35axu3LPHCnqhtHqeURVk/view?usp=drive_link'),
-('https://drive.google.com/file/d/1n-pKyqhr4fso68Nssx3AP6jSg5kHTOTO/view?usp=drive_link'),
-('https://drive.google.com/file/d/1X25ll-Nqa_BfIJ7Uun4OzMjEjfiFKlFF/view?usp=drive_link'),
-('https://drive.google.com/file/d/1vZ6I2D0fgmeHXf5ybEKrnEd9T8vTAnYz/view?usp=drive_link'),
-('https://drive.google.com/file/d/1WC2tOvgPWKUwHOqXf4CSe00k2z_BOAhW/view?usp=drive_link'),
-('https://drive.google.com/file/d/1Ne7nzFNtLuj4AOYOuKzntIEUnkcas3_E/view?usp=drive_link'),
-('https://drive.google.com/file/d/1Qr8ONsTe5FJSjTpiFhv8qC26rvAxp58M/view?usp=drive_link'),
-('https://drive.google.com/file/d/15Pi2O-lfYWVivUdla0OPL7NPoK2clMBZ/view?usp=drive_link'),
-('https://drive.google.com/file/d/19_rcypp89nvQngLhBR9HtGZGbR-UeqAe/view?usp=drive_link'),
-('https://drive.google.com/file/d/1YLjGCqYajEQW9nJFK2XeUmMxLoeMG_mk/view?usp=drive_link'),
-('https://drive.google.com/file/d/1SxBHV29XYVmX2XpRDOjUZ-WLbuNQOt73/view?usp=drive_link'),
-('https://drive.google.com/file/d/1By-ZMi9CX4a9X12fKVQyFhdXGmK6YEcN/view?usp=drive_link'),
-('https://drive.google.com/file/d/1hNDhcqoIC5yqrZjevkTbg1vOg_k7E7fL/view?usp=drive_link'),
-('https://drive.google.com/file/d/1bBmkBJ3R_wPesbRqBFe7DLqJHg4J0pPy/view?usp=drive_link'),
-('https://drive.google.com/file/d/131BtwKEujl1oa2NDacM9tgVNWCgL840J/view?usp=drive_link'),
-('https://drive.google.com/file/d/1HpwquYS29ykGrygvNbcdOrYBRTe-Pn9A/view?usp=drive_link'),
-('https://drive.google.com/file/d/12uxznd4puFolZobL2rbQBSEpdfys_nA4/view?usp=drive_link'),
-('https://drive.google.com/file/d/11ikHxuBluk1LXoaDsTg5dOmdkcbJi9SH/view?usp=drive_link'),
-('https://drive.google.com/file/d/1VqIwZ6M1Gj5kGyjVN58gGcobCwD-6C2Y/view?usp=drive_link'),
-('https://drive.google.com/file/d/15Z0JLrebE5zCNTKZK5U5Yc4FnMJqC8RL/view?usp=drive_link'),
-('https://drive.google.com/file/d/1OIb4upB-7yUbufAGr9YkuN1CNlbEktja/view?usp=drive_link'),
-('https://drive.google.com/file/d/1BFI0SORRrXZy7jYZ4MlsGWldR01L4d3E/view?usp=drive_link'),
-('https://drive.google.com/file/d/1NrBAmNbdeToMAlBQXy4op_wA100uriB-/view?usp=drive_link'),
-('https://drive.google.com/file/d/1oo5x9Yl1jQK2U0qDV-6ruRXJ0GcBy6lZ/view?usp=drive_link'),
-('https://drive.google.com/file/d/1zva-T2FgeSoxo4VLjKB1Q4FkfXRa3krm/view?usp=drive_link'),
-('https://drive.google.com/file/d/1hc48o6ZVPxwNgltJ2dXOTyTG1LyfCy-M/view?usp=drive_link'),
-('https://drive.google.com/file/d/1WPpKfeuR0BZiJBC_4n-3zexmYPjVzpl7/view?usp=drive_link'),
-('https://drive.google.com/file/d/1iVq78Igcw92VIi6d7-NgVA8-yCirMwgC/view?usp=drive_link'),
-('https://drive.google.com/file/d/1zdpUWnwP1Vx1Vg9RGOO1nWV7Y_SFqOF6/view?usp=drive_link'),
-('https://drive.google.com/file/d/1yGvFX6qFhVjID5ZsOC9nEZChLdolG5cH/view?usp=drive_link'),
-('https://drive.google.com/file/d/1SxpDtj_mktMgef8UUoxT_x-alNqdFZlV/view?usp=drive_link'),
-('https://drive.google.com/file/d/1vnpvW9Bi0rgKjWvqlU45Es4Ofmz7hrkJ/view?usp=drive_link'),
-('https://drive.google.com/file/d/1NWHyscY-PFo6JTwBeNuuQn8fDts4Ixr6/view?usp=drive_link'),
-('https://drive.google.com/file/d/1ShxJGuoKOYrW1bXSAWp9kVYCjL3alRKg/view?usp=drive_link'),
-('https://drive.google.com/file/d/1u6i82DYIM95jeTlUFiycwxmHSSxUHUWG/view?usp=drive_link'),
-('https://drive.google.com/file/d/1Jz7uGFTOlQz70dRWHTBQIKvxDM4iOgWR/view?usp=drive_link'),
-('https://drive.google.com/file/d/1kgBhq4iqPo0O0_K_v7vpuE4reqQZTHC_/view?usp=drive_link'),
-('https://drive.google.com/file/d/16UBPhbK2X-eEhNeIs453yggSRiU-t0OL/view?usp=drive_link'),
-('https://drive.google.com/file/d/1cNav2n3M6e8q7w5GWTmpoZyenF9wEvQF/view?usp=drive_link'),
-('https://drive.google.com/file/d/13FDlP8MkvvU4Yl4LSbsdCcrICsxrGqin/view?usp=drive_link'),
-('https://drive.google.com/file/d/1pUBWUOP5XjGbCwG6FdX-cXe8Qu-nH0Ny/view?usp=drive_link'),
-('https://drive.google.com/file/d/1nrnyoOYbvPclucv8gUAC5QIvc7d5wk4x/view?usp=drive_link'),
-('https://drive.google.com/file/d/1BWqjFi4gCUpBRjI7rORuvJ_H0iAOMBb1/view?usp=drive_link'),
-('https://drive.google.com/file/d/14LCkr48NbMrRyl_DJwzAMgebCRTJq_Br/view?usp=drive_link'),
-('https://drive.google.com/file/d/1dp3lKR9Rm947B7cDWXU5PUtxT5gMK8Nl/view?usp=drive_link'),
-('https://drive.google.com/file/d/10fU-FO_Z823-Arl1ony6rdAr-xQwNduG/view?usp=drive_link'),
-('https://drive.google.com/file/d/13ODzWwJ8R1tOTumWjwRwTWtopYAuZ5Vp/view?usp=drive_link'),
-('https://drive.google.com/file/d/1LYOonMNIzC8woYLFMsQ9pEt_8RG9kceB/view?usp=drive_link'),
-('https://drive.google.com/file/d/1NHpm4YjXVjOB-sDY4TgrCusSZ48DxLOr/view?usp=drive_link'),
-('https://drive.google.com/file/d/1AmGQ7ohRKujDzpyBzVqiUv4kzb8qP7ce/view?usp=drive_link'),
-('https://drive.google.com/file/d/1TGZv6RYKKjNJBes4lsbpWlr4_E6QGndt/view?usp=drive_link'),
-('https://drive.google.com/file/d/1jc8Y43WvUt2IeV32y2r_d5XSBDh5YKng/view?usp=drive_link'),
-('https://drive.google.com/file/d/1Lfo7FTLipNaNs6V3IXJ-7TL27Gko3mqV/view?usp=drive_link'),
-('https://drive.google.com/file/d/1k51XZPNSyXf3TycDj8s2oZqI-9XnF3m5/view?usp=drive_link'),
-('https://drive.google.com/file/d/1DIqYyyPlUwjHj-iPtcdEXDzMJpARc3IG/view?usp=drive_link'),
-('https://drive.google.com/file/d/15ovXS_aGkQAcYFpqFl5LRV1Z-HDjkxLW/view?usp=drive_link'),
-('https://drive.google.com/file/d/1BjYHPa2HTSIEyj5KVMFtxq_n87auVyT9/view?usp=drive_link'),
-('https://drive.google.com/file/d/1pK5Px5a5RTS1SA2MGOryLQbB4I_P4iNc/view?usp=drive_link'),
-('https://drive.google.com/file/d/1ZEoFa-LSYrfuufRM-oxaQ5EQNR3y1FKp/view?usp=drive_link'),
-('https://drive.google.com/file/d/1rQW3zyJwFUEcBoTbrwSrL28Ge4p0JCyd/view?usp=drive_link'),
-('https://drive.google.com/file/d/1xn2YTqwKO5qtlBCY9laYghzSmKyR-fWD/view?usp=drive_link'),
-('https://drive.google.com/file/d/19fmr3Cs7Xa1xnrHrSbjeA6mi5UBniyor/view?usp=drive_link'),
-('https://drive.google.com/file/d/1Uz-S6YQ5I5G37b-RMxmbAH5WIO4HUAn6/view?usp=drive_link'),
-('https://drive.google.com/file/d/1J5YahosRcvCKGVdWEx-OJEjQEYt5wqLn/view?usp=drive_link'),
-('https://drive.google.com/file/d/1drJTdEzUSJc0Ch-4oEItn6oS0BTHWZDj/view?usp=drive_link');
-
-
-
-INSERT INTO chat_messages (sender_id, receiver_id, sticker_id, content, is_read)
-VALUES
--- Cuộc trò chuyện giữa Tutor A (2) và Parent A (5)
-(5, 2, NULL, 'Chào thầy, em muốn học Toán lớp 8.', FALSE),
-(2, 5, NULL, 'Chào em, thầy có thể dạy vào buổi tối nhé.', TRUE),
-(5, 2, 1, NULL, TRUE),  -- gửi sticker cười
-(2, 5, 3, NULL, TRUE),  -- sticker “ok”
-
--- Cuộc trò chuyện giữa Tutor B (3) và Parent B (6)
-(6, 3, NULL, 'Thầy có thể dạy Lý lớp 12 không?', FALSE),
-(3, 6, NULL, 'Có em nhé, tối thứ 3 và thứ 5 được không?', TRUE),
-(6, 3, NULL, 'Dạ được thầy ạ.', TRUE),
-(3, 6, 2, NULL, TRUE),  -- sticker gật đầu
-
--- Cuộc trò chuyện giữa Tutor C (4) và Parent C (7)
-(7, 4, NULL, 'Em muốn học tiếng Anh giao tiếp, thầy có dạy không?', FALSE),
-(4, 7, NULL, 'Có nhé, thầy dạy theo giáo trình thực hành.', TRUE),
-(7, 4, 4, NULL, TRUE),  -- sticker cảm ơn
-(4, 7, 5, NULL, TRUE),  -- sticker “thumbs up”
-(5, 2,NULL, 'Thầy ơi cho em hỏi lịch học Lý ạ?', FALSE),
-(2, 5,NULL, 'Chúng ta sẽ học thứ 4 và thứ 6 nhé.', TRUE),
-(4, 1,NULL, 'Cô ơi em muốn đổi giờ học được không?', FALSE),
-(1, 4,NULL, 'Được em nhé, cô sẽ cập nhật lại.', TRUE);
-
+('Toán nâng cao lớp 7', 'SACH_GIAO_KHOA', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 1, NOW()),
+('Vật lý cơ bản', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 1, NOW()),
+('Hóa học thực hành', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 1, NOW()),
+('Tiếng Anh giao tiếp', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 1, NOW()),
+('Ôn thi IELTS 7.0', 'DE_THI_THAM_KHAO', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 1, NOW()),
+('Luyện thi TOEIC 700+', 'DE_THI_THAM_KHAO', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 1, NOW()),
+('Tin học cơ bản', 'SACH_GIAO_KHOA', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 1, NOW()),
+('Kỹ năng học tập hiệu quả', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 1, NOW()),
+('Bài tập Hóa nâng cao', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 1, NOW()),
+('Bộ đề thi THPT Quốc gia', 'DE_THI_THAM_KHAO', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 1, NOW()),
+('Toán chuyên nâng cao', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 1, NOW()),
+('Lý nâng cao 12', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 1, NOW());
 
 
 
@@ -502,26 +203,26 @@ VALUES
 -- === 1. Thêm 20 users (10 tutor, 10 learner) ===
 INSERT INTO users (user_id, full_name, email, password_hash, phone_number, status, created_at, updated_at, avatar_image)
 VALUES
-  (12, 'Nguyễn Gia Tutor 1', 'tutor6@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0906000001', 'ACTIVE', '2025-12-01 09:00:00', '2025-12-01 09:15:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (13, 'Trần Minh Tutor 2', 'tutor7@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0907000002', 'ACTIVE', '2025-12-02 09:00:00', '2025-12-02 09:15:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (14, 'Lê Hoài Tutor 3', 'tutor8@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0908000003', 'ACTIVE', '2025-12-03 09:00:00', '2025-12-03 09:15:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (15, 'Phạm Hải Tutor 4', 'tutor9@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0909000004', 'ACTIVE', '2025-12-04 09:00:00', '2025-12-04 09:15:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (16, 'Võ Thái Tutor 5', 'tutor10@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0901000005', 'ACTIVE', '2025-12-05 09:00:00', '2025-12-05 09:15:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (17, 'Đỗ Quang Tutor 6', 'tutor11@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0901100006', 'ACTIVE', '2025-12-06 09:00:00', '2025-12-06 09:15:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (18, 'Hoàng Yến Tutor 7', 'tutor12@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0901200007', 'ACTIVE', '2025-12-07 09:00:00', '2025-12-07 09:15:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (19, 'Bùi Phúc Tutor 8', 'tutor13@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0901300008', 'ACTIVE', '2025-12-08 09:00:00', '2025-12-08 09:15:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (20, 'Đinh Trang Tutor 9', 'tutor14@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0901400009', 'ACTIVE', '2025-12-09 09:00:00', '2025-12-09 09:15:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (21, 'Cao Nhã Tutor 10', 'tutor15@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0901500010', 'ACTIVE', '2025-12-10 09:00:00', '2025-12-10 09:15:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (22, 'Lê Học Learner 1', 'learner6@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0916000001', 'ACTIVE', '2025-12-06 10:00:00', '2025-12-06 10:10:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (23, 'Nguyễn Học Learner 2', 'learner7@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0917000002', 'ACTIVE', '2025-12-07 10:00:00', '2025-12-07 10:10:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (24, 'Trần Học Learner 3', 'learner8@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0918000003', 'ACTIVE', '2025-12-08 10:00:00', '2025-12-08 10:10:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (25, 'Phạm Học Learner 4', 'learner9@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0919000004', 'ACTIVE', '2025-12-09 10:00:00', '2025-12-09 10:10:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (26, 'Huỳnh Học Learner 5', 'learner10@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0911000005', 'ACTIVE', '2025-12-10 10:00:00', '2025-12-10 10:10:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (27, 'Vũ Học Learner 6', 'learner11@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0911100006', 'ACTIVE', '2025-12-11 10:00:00', '2025-12-11 10:10:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (28, 'Đoàn Học Learner 7', 'learner12@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0911200007', 'ACTIVE', '2025-12-12 10:00:00', '2025-12-12 10:10:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (29, 'Lâm Học Learner 8', 'learner13@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0911300008', 'ACTIVE', '2025-12-13 10:00:00', '2025-12-13 10:10:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (30, 'Đặng Học Learner 9', 'learner14@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0911400009', 'ACTIVE', '2025-12-14 10:00:00', '2025-12-14 10:10:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp"),
-  (31, 'Ngô Học Learner 10', 'learner15@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0911500010', 'ACTIVE', '2025-12-15 10:00:00', '2025-12-15 10:10:00', "https://drive.google.com/uc?id=1vPbK0Bk8_TdF4Us0Bo7-PVofUk3SVRrp");
+  (12, 'Nguyễn Gia Tutor 1', 'tutor6@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0906000001', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (13, 'Trần Minh Tutor 2', 'tutor7@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0907000002', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (14, 'Lê Hoài Tutor 3', 'tutor8@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0908000003', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (15, 'Phạm Hải Tutor 4', 'tutor9@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0909000004', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (16, 'Võ Thái Tutor 5', 'tutor10@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0901000005', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (17, 'Đỗ Quang Tutor 6', 'tutor11@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0901100006', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (18, 'Hoàng Yến Tutor 7', 'tutor12@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0901200007', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1DZNIZsagdFNqnRQfTPUANAbz1U_sAz6P"),
+  (19, 'Bùi Phúc Tutor 8', 'tutor13@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0901300008', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (20, 'Đinh Trang Tutor 9', 'tutor14@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0901400009', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1DZNIZsagdFNqnRQfTPUANAbz1U_sAz6P"),
+  (21, 'Cao Nhã Tutor 10', 'tutor15@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0901500010', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1DZNIZsagdFNqnRQfTPUANAbz1U_sAz6P"),
+  (22, 'Lê Học Learner 1', 'learner6@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0916000001', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (23, 'Nguyễn Học Learner 2', 'learner7@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0917000002', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (24, 'Trần Học Learner 3', 'learner8@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0918000003', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (25, 'Phạm Học Learner 4', 'learner9@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0919000004', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (26, 'Huỳnh Học Learner 5', 'learner10@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0911000005', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (27, 'Vũ Học Learner 6', 'learner11@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0911100006', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (28, 'Đoàn Học Learner 7', 'learner12@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0911200007', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (29, 'Lâm Học Learner 8', 'learner13@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0911300008', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (30, 'Đặng Học Learner 9', 'learner14@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0911400009', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ"),
+  (31, 'Ngô Học Learner 10', 'learner15@example.com', '$2a$10$jVKlCQXGAu1AGMBXaM5iJe90dADLpcbTnFw9IiWiNbmfrUz045fsO', '0911500010', 'ACTIVE', '2025-11-01 09:00:00', '2025-11-01 09:00:00', "https://drive.google.com/uc?id=1eLIQMaDWYabC1M4Fl3-XEb8ZZqerBcpZ");
 
 INSERT INTO user_roles (user_id, role) VALUES
 (12, 'TUTOR'),
@@ -617,7 +318,7 @@ VALUES
 (107, 9, 'Chứng chỉ chuyên môn nâng cao 9', TRUE),
 (108, 10, 'Chứng chỉ sư phạm cơ bản 10', TRUE),
 (109, 10, 'Chứng chỉ chuyên môn nâng cao 10', TRUE),
-(110, 11, 'Chứng chỉ sư phạm cơ bản 11', TRUE),
+(110, 11, 'Chứng chỉ sư phạm cơ bản  11', TRUE),
 (111, 11, 'Chứng chỉ chuyên môn nâng cao 11', TRUE),
 (112, 12, 'Chứng chỉ sư phạm cơ bản 12', TRUE),
 (113, 12, 'Chứng chỉ chuyên môn nâng cao 12', TRUE),
@@ -630,348 +331,435 @@ VALUES
 
 INSERT INTO tutor_certificate_files (file_id, certificate_id, file_url, status, is_active, uploaded_at)
 VALUES
-(200, 100, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(201, 101, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(202, 102, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(203, 103, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(204, 104, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(205, 105, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(206, 106, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(207, 107, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
+(200, 100, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(201, 101, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(202, 102, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(203, 103, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(204, 104, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(205, 105, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(206, 106, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(207, 107, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
 
-(208, 108, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(209, 109, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
+(208, 108, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(209, 109, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
 
-(210, 110, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(212, 112, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(213, 113, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
+(210, 110, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(211, 111, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(212, 112, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(213, 113, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
 
-(214, 114, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(215, 115, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
+(214, 114, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(215, 115, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
 
-(216, 116, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(217, 117, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
+(216, 116, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(217, 117, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
 
-(218, 118, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW()),
-(219, 119, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, NOW());
+(218, 118, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00"),
+(219, 119, 'https://drive.google.com/uc?id=1aeQacmvYQMq3cEYj0f4mZoeYUN7mkoXuRhZzXmev3u0', 'APPROVED', TRUE, "2025-11-01 09:00:00");
+
+
+INSERT INTO tutor_availability VALUES
+(1,'2025-11-17 06:00:00','2025-11-17 11:00:00','2025-11-17 09:30:00','AVAILABLE','2025-11-17 06:00:00',1),
+(2,'2025-11-17 06:00:00','2025-11-24 11:00:00','2025-11-24 09:30:00','AVAILABLE','2025-11-17 06:00:00',1),
+(3,'2025-11-17 06:00:00','2025-12-01 11:00:00','2025-12-01 09:30:00','AVAILABLE','2025-11-17 06:00:00',1),
+(4,'2025-11-17 06:00:00','2025-12-08 11:00:00','2025-12-08 09:30:00','AVAILABLE','2025-11-17 06:00:00',1),
+(5,'2025-11-17 06:00:00','2025-12-15 11:00:00','2025-12-15 09:30:00','AVAILABLE','2025-11-17 06:00:00',1),
+(6,'2025-11-17 06:00:00','2025-12-22 11:00:00','2025-12-22 09:30:00','AVAILABLE','2025-11-17 06:00:00',1),
+(7,'2025-11-17 06:00:00','2025-12-29 11:00:00','2025-12-29 09:30:00','AVAILABLE','2025-11-17 06:00:00',1),
+(8,'2025-11-17 06:00:00','2026-01-05 11:00:00','2026-01-05 09:30:00','AVAILABLE','2025-11-17 06:00:00',1),
+(9,'2025-11-17 06:00:00','2026-01-12 11:00:00','2026-01-12 09:30:00','AVAILABLE','2025-11-17 06:00:00',1),
+(10,'2025-11-17 06:00:00','2026-01-19 11:00:00','2026-01-19 09:30:00','AVAILABLE','2025-11-17 06:00:00',1),
+(11,'2025-11-17 06:00:00','2026-01-26 11:00:00','2026-01-26 09:30:00','AVAILABLE','2025-11-17 06:00:00',1),
+(12,'2025-11-17 06:00:00','2026-02-02 11:00:00','2026-02-02 09:30:00','AVAILABLE','2025-11-17 06:00:00',1);
+
+
+INSERT INTO tutor_availability VALUES
+(13,'2025-11-15 07:30:00','2025-11-15 09:30:00','2025-11-15 08:00:00','AVAILABLE','2025-11-15 07:30:00',1),
+(14,'2025-11-15 07:30:00','2025-11-22 09:30:00','2025-11-22 08:00:00','AVAILABLE','2025-11-15 07:30:00',1),
+(15,'2025-11-15 07:30:00','2025-11-29 09:30:00','2025-11-29 08:00:00','AVAILABLE','2025-11-15 07:30:00',1),
+(16,'2025-11-15 07:30:00','2025-12-06 09:30:00','2025-12-06 08:00:00','AVAILABLE','2025-11-15 07:30:00',1),
+(17,'2025-11-15 07:30:00','2025-12-13 09:30:00','2025-12-13 08:00:00','AVAILABLE','2025-11-15 07:30:00',1),
+(18,'2025-11-15 07:30:00','2025-12-20 09:30:00','2025-12-20 08:00:00','AVAILABLE','2025-11-15 07:30:00',1),
+(19,'2025-11-15 07:30:00','2025-12-27 09:30:00','2025-12-27 08:00:00','AVAILABLE','2025-11-15 07:30:00',1),
+(20,'2025-11-15 07:30:00','2026-01-03 09:30:00','2026-01-03 08:00:00','AVAILABLE','2025-11-15 07:30:00',1),
+(21,'2025-11-15 07:30:00','2026-01-10 09:30:00','2026-01-10 08:00:00','AVAILABLE','2025-11-15 07:30:00',1),
+(22,'2025-11-15 07:30:00','2026-01-17 09:30:00','2026-01-17 08:00:00','AVAILABLE','2025-11-15 07:30:00',1),
+(23,'2025-11-15 07:30:00','2026-01-24 09:30:00','2026-01-24 08:00:00','AVAILABLE','2025-11-15 07:30:00',1),
+(24,'2025-11-15 07:30:00','2026-01-31 09:30:00','2026-01-31 08:00:00','AVAILABLE','2025-11-15 07:30:00',1);
+
+
+INSERT INTO tutor_availability VALUES
+(25,'2025-11-13 07:30:00','2025-11-13 09:30:00','2025-11-13 08:00:00','AVAILABLE','2025-11-13 07:30:00',1),
+(26,'2025-11-13 07:30:00','2025-11-20 09:30:00','2025-11-20 08:00:00','AVAILABLE','2025-11-13 07:30:00',1),
+(27,'2025-11-13 07:30:00','2025-11-27 09:30:00','2025-11-27 08:00:00','AVAILABLE','2025-11-13 07:30:00',1),
+(28,'2025-11-13 07:30:00','2025-12-04 09:30:00','2025-12-04 08:00:00','AVAILABLE','2025-11-13 07:30:00',1),
+(29,'2025-11-13 07:30:00','2025-12-11 09:30:00','2025-12-11 08:00:00','AVAILABLE','2025-11-13 07:30:00',1),
+(30,'2025-11-13 07:30:00','2025-12-18 09:30:00','2025-12-18 08:00:00','AVAILABLE','2025-11-13 07:30:00',1),
+(31,'2025-11-13 07:30:00','2025-12-25 09:30:00','2025-12-25 08:00:00','AVAILABLE','2025-11-13 07:30:00',1),
+(32,'2025-11-13 07:30:00','2026-01-01 09:30:00','2026-01-01 08:00:00','AVAILABLE','2025-11-13 07:30:00',1),
+(33,'2025-11-13 07:30:00','2026-01-08 09:30:00','2026-01-08 08:00:00','AVAILABLE','2025-11-13 07:30:00',1),
+(34,'2025-11-13 07:30:00','2026-01-15 09:30:00','2026-01-15 08:00:00','AVAILABLE','2025-11-13 07:30:00',1),
+(35,'2025-11-13 07:30:00','2026-01-22 09:30:00','2026-01-22 08:00:00','AVAILABLE','2025-11-13 07:30:00',1),
+(36,'2025-11-13 07:30:00','2026-01-29 09:30:00','2026-01-29 08:00:00','AVAILABLE','2025-11-13 07:30:00',1);
+
+
+INSERT INTO tutor_availability VALUES
+(37,'2025-11-13 17:30:00','2025-11-13 20:00:00','2025-11-13 18:30:00','AVAILABLE','2025-11-13 17:30:00',1),
+(38,'2025-11-13 17:30:00','2025-11-20 20:00:00','2025-11-20 18:30:00','AVAILABLE','2025-11-13 17:30:00',1),
+(39,'2025-11-13 17:30:00','2025-11-27 20:00:00','2025-11-27 18:30:00','AVAILABLE','2025-11-13 17:30:00',1),
+(40,'2025-11-13 17:30:00','2025-12-04 20:00:00','2025-12-04 18:30:00','AVAILABLE','2025-11-13 17:30:00',1),
+(41,'2025-11-13 17:30:00','2025-12-11 20:00:00','2025-12-11 18:30:00','AVAILABLE','2025-11-13 17:30:00',1),
+(42,'2025-11-13 17:30:00','2025-12-18 20:00:00','2025-12-18 18:30:00','AVAILABLE','2025-11-13 17:30:00',1),
+(43,'2025-11-13 17:30:00','2025-12-25 20:00:00','2025-12-25 18:30:00','AVAILABLE','2025-11-13 17:30:00',1),
+(44,'2025-11-13 17:30:00','2026-01-01 20:00:00','2026-01-01 18:30:00','AVAILABLE','2025-11-13 17:30:00',1),
+(45,'2025-11-13 17:30:00','2026-01-08 20:00:00','2026-01-08 18:30:00','AVAILABLE','2025-11-13 17:30:00',1),
+(46,'2025-11-13 17:30:00','2026-01-15 20:00:00','2026-01-15 18:30:00','AVAILABLE','2025-11-13 17:30:00',1),
+(47,'2025-11-13 17:30:00','2026-01-22 20:00:00','2026-01-22 18:30:00','AVAILABLE','2025-11-13 17:30:00',1),
+(48,'2025-11-13 17:30:00','2026-01-29 20:00:00','2026-01-29 18:30:00','AVAILABLE','2025-11-13 17:30:00',1);
 
 
 
--- === 6. Lịch trống chi tiết (tutor_availability) cho 10 tutors mới ===
-INSERT INTO tutor_availability (tutor_id, created_at, start_time, end_time, status, updated_at)
+INSERT INTO tutor_availability VALUES
+(49,'2025-11-16 07:30:00','2025-11-16 09:30:00','2025-11-16 08:00:00','AVAILABLE','2025-11-16 07:30:00',1),
+(50,'2025-11-16 07:30:00','2025-11-23 09:30:00','2025-11-23 08:00:00','AVAILABLE','2025-11-16 07:30:00',1),
+(51,'2025-11-16 07:30:00','2025-11-30 09:30:00','2025-11-30 08:00:00','AVAILABLE','2025-11-16 07:30:00',1),
+(52,'2025-11-16 07:30:00','2025-12-07 09:30:00','2025-12-07 08:00:00','AVAILABLE','2025-11-16 07:30:00',1),
+(53,'2025-11-16 07:30:00','2025-12-14 09:30:00','2025-12-14 08:00:00','AVAILABLE','2025-11-16 07:30:00',1),
+(54,'2025-11-16 07:30:00','2025-12-21 09:30:00','2025-12-21 08:00:00','AVAILABLE','2025-11-16 07:30:00',1),
+(55,'2025-11-16 07:30:00','2025-12-28 09:30:00','2025-12-28 08:00:00','AVAILABLE','2025-11-16 07:30:00',1),
+(56,'2025-11-16 07:30:00','2026-01-04 09:30:00','2026-01-04 08:00:00','AVAILABLE','2025-11-16 07:30:00',1),
+(57,'2025-11-16 07:30:00','2026-01-11 09:30:00','2026-01-11 08:00:00','AVAILABLE','2025-11-16 07:30:00',1),
+(58,'2025-11-16 07:30:00','2026-01-18 09:30:00','2026-01-18 08:00:00','AVAILABLE','2025-11-16 07:30:00',1),
+(59,'2025-11-16 07:30:00','2026-01-25 09:30:00','2026-01-25 08:00:00','AVAILABLE','2025-11-16 07:30:00',1),
+(60,'2025-11-16 07:30:00','2026-02-01 09:30:00','2026-02-01 08:00:00','AVAILABLE','2025-11-16 07:30:00',1);
+
+
+INSERT INTO tutor_availability VALUES
+(61,'2025-11-16 13:30:00','2025-11-16 16:00:00','2025-11-16 14:30:00','AVAILABLE','2025-11-16 13:30:00',1),
+(62,'2025-11-16 13:30:00','2025-11-23 16:00:00','2025-11-23 14:30:00','AVAILABLE','2025-11-16 13:30:00',1),
+(63,'2025-11-16 13:30:00','2025-11-30 16:00:00','2025-11-30 14:30:00','AVAILABLE','2025-11-16 13:30:00',1),
+(64,'2025-11-16 13:30:00','2025-12-07 16:00:00','2025-12-07 14:30:00','AVAILABLE','2025-11-16 13:30:00',1),
+(65,'2025-11-16 13:30:00','2025-12-14 16:00:00','2025-12-14 14:30:00','AVAILABLE','2025-11-16 13:30:00',1),
+(66,'2025-11-16 13:30:00','2025-12-21 16:00:00','2025-12-21 14:30:00','AVAILABLE','2025-11-16 13:30:00',1),
+(67,'2025-11-16 13:30:00','2025-12-28 16:00:00','2025-12-28 14:30:00','AVAILABLE','2025-11-16 13:30:00',1),
+(68,'2025-11-16 13:30:00','2026-01-04 16:00:00','2026-01-04 14:30:00','AVAILABLE','2025-11-16 13:30:00',1),
+(69,'2025-11-16 13:30:00','2026-01-11 16:00:00','2026-01-11 14:30:00','AVAILABLE','2025-11-16 13:30:00',1),
+(70,'2025-11-16 13:30:00','2026-01-18 16:00:00','2026-01-18 14:30:00','AVAILABLE','2025-11-16 13:30:00',1),
+(71,'2025-11-16 13:30:00','2026-01-25 16:00:00','2026-01-25 14:30:00','AVAILABLE','2025-11-16 13:30:00',1),
+(72,'2025-11-16 13:30:00','2026-02-01 16:00:00','2026-02-01 14:30:00','AVAILABLE','2025-11-16 13:30:00',1);
+
+
+INSERT INTO tutor_availability VALUES
+(73,'2025-11-16 13:30:00','2025-11-16 16:00:00','2025-11-16 14:30:00','AVAILABLE','2025-11-16 13:30:00',2),
+(74,'2025-11-16 13:30:00','2025-11-23 16:00:00','2025-11-23 14:30:00','AVAILABLE','2025-11-16 13:30:00',2),
+(75,'2025-11-16 13:30:00','2025-11-30 16:00:00','2025-11-30 14:30:00','AVAILABLE','2025-11-16 13:30:00',2),
+(76,'2025-11-16 13:30:00','2025-12-07 16:00:00','2025-12-07 14:30:00','AVAILABLE','2025-11-16 13:30:00',2),
+(77,'2025-11-16 13:30:00','2025-12-14 16:00:00','2025-12-14 14:30:00','AVAILABLE','2025-11-16 13:30:00',2),
+(78,'2025-11-16 13:30:00','2025-12-21 16:00:00','2025-12-21 14:30:00','AVAILABLE','2025-11-16 13:30:00',2),
+(79,'2025-11-16 13:30:00','2025-12-28 16:00:00','2025-12-28 14:30:00','AVAILABLE','2025-11-16 13:30:00',2),
+(80,'2025-11-16 13:30:00','2026-01-04 16:00:00','2026-01-04 14:30:00','AVAILABLE','2025-11-16 13:30:00',2),
+(81,'2025-11-16 13:30:00','2026-01-11 16:00:00','2026-01-11 14:30:00','AVAILABLE','2025-11-16 13:30:00',2),
+(82,'2025-11-16 13:30:00','2026-01-18 16:00:00','2026-01-18 14:30:00','AVAILABLE','2025-11-16 13:30:00',2),
+(83,'2025-11-16 13:30:00','2026-01-25 16:00:00','2026-01-25 14:30:00','AVAILABLE','2025-11-16 13:30:00',2),
+(84,'2025-11-16 13:30:00','2026-02-01 16:00:00','2026-02-01 14:30:00','AVAILABLE','2025-11-16 13:30:00',2);
+
+
+INSERT INTO tutor_availability VALUES
+(85,'2025-11-15 13:30:00','2025-11-15 16:00:00','2025-11-15 14:30:00','AVAILABLE','2025-11-15 13:30:00',2),
+(86,'2025-11-15 13:30:00','2025-11-22 16:00:00','2025-11-22 14:30:00','AVAILABLE','2025-11-15 13:30:00',2),
+(87,'2025-11-15 13:30:00','2025-11-29 16:00:00','2025-11-29 14:30:00','AVAILABLE','2025-11-15 13:30:00',2),
+(88,'2025-11-15 13:30:00','2025-12-06 16:00:00','2025-12-06 14:30:00','AVAILABLE','2025-11-15 13:30:00',2),
+(89,'2025-11-15 13:30:00','2025-12-13 16:00:00','2025-12-13 14:30:00','AVAILABLE','2025-11-15 13:30:00',2),
+(90,'2025-11-15 13:30:00','2025-12-20 16:00:00','2025-12-20 14:30:00','AVAILABLE','2025-11-15 13:30:00',2),
+(91,'2025-11-15 13:30:00','2025-12-27 16:00:00','2025-12-27 14:30:00','AVAILABLE','2025-11-15 13:30:00',2),
+(92,'2025-11-15 13:30:00','2026-01-03 16:00:00','2026-01-03 14:30:00','AVAILABLE','2025-11-15 13:30:00',2),
+(93,'2025-11-15 13:30:00','2026-01-10 16:00:00','2026-01-10 14:30:00','AVAILABLE','2025-11-15 13:30:00',2),
+(94,'2025-11-15 13:30:00','2026-01-17 16:00:00','2026-01-17 14:30:00','AVAILABLE','2025-11-15 13:30:00',2),
+(95,'2025-11-15 13:30:00','2026-01-24 16:00:00','2026-01-24 14:30:00','AVAILABLE','2025-11-15 13:30:00',2),
+(96,'2025-11-15 13:30:00','2026-01-31 16:00:00','2026-01-31 14:30:00','AVAILABLE','2025-11-15 13:30:00',2);
+
+
+INSERT INTO tutor_availability VALUES
+(97,'2025-11-16 07:30:00','2025-11-16 09:30:00','2025-11-16 08:00:00','AVAILABLE','2025-11-16 07:30:00',2),
+(98,'2025-11-16 07:30:00','2025-11-23 09:30:00','2025-11-23 08:00:00','AVAILABLE','2025-11-16 07:30:00',2),
+(99,'2025-11-16 07:30:00','2025-11-30 09:30:00','2025-11-30 08:00:00','AVAILABLE','2025-11-16 07:30:00',2),
+(100,'2025-11-16 07:30:00','2025-12-07 09:30:00','2025-12-07 08:00:00','AVAILABLE','2025-11-16 07:30:00',2),
+(101,'2025-11-16 07:30:00','2025-12-14 09:30:00','2025-12-14 08:00:00','AVAILABLE','2025-11-16 07:30:00',2),
+(102,'2025-11-16 07:30:00','2025-12-21 09:30:00','2025-12-21 08:00:00','AVAILABLE','2025-11-16 07:30:00',2),
+(103,'2025-11-16 07:30:00','2025-12-28 09:30:00','2025-12-28 08:00:00','AVAILABLE','2025-11-16 07:30:00',2),
+(104,'2025-11-16 07:30:00','2026-01-04 09:30:00','2026-01-04 08:00:00','AVAILABLE','2025-11-16 07:30:00',2),
+(105,'2025-11-16 07:30:00','2026-01-11 09:30:00','2026-01-11 08:00:00','AVAILABLE','2025-11-16 07:30:00',2),
+(106,'2025-11-16 07:30:00','2026-01-18 09:30:00','2026-01-18 08:00:00','AVAILABLE','2025-11-16 07:30:00',2),
+(107,'2025-11-16 07:30:00','2026-01-25 09:30:00','2026-01-25 08:00:00','AVAILABLE','2025-11-16 07:30:00',2),
+(108,'2025-11-16 07:30:00','2026-02-01 09:30:00','2026-02-01 08:00:00','AVAILABLE','2025-11-16 07:30:00',2);
+
+
+INSERT INTO tutor_availability VALUES
+(109,'2025-11-15 07:30:00','2025-11-15 09:30:00','2025-11-15 08:00:00','AVAILABLE','2025-11-15 07:30:00',2),
+(110,'2025-11-15 07:30:00','2025-11-22 09:30:00','2025-11-22 08:00:00','AVAILABLE','2025-11-15 07:30:00',2),
+(111,'2025-11-15 07:30:00','2025-11-29 09:30:00','2025-11-29 08:00:00','AVAILABLE','2025-11-15 07:30:00',2),
+(112,'2025-11-15 07:30:00','2025-12-06 09:30:00','2025-12-06 08:00:00','AVAILABLE','2025-11-15 07:30:00',2),
+(113,'2025-11-15 07:30:00','2025-12-13 09:30:00','2025-12-13 08:00:00','AVAILABLE','2025-11-15 07:30:00',2),
+(114,'2025-11-15 07:30:00','2025-12-20 09:30:00','2025-12-20 08:00:00','AVAILABLE','2025-11-15 07:30:00',2),
+(115,'2025-11-15 07:30:00','2025-12-27 09:30:00','2025-12-27 08:00:00','AVAILABLE','2025-11-15 07:30:00',2),
+(116,'2025-11-15 07:30:00','2026-01-03 09:30:00','2026-01-03 08:00:00','AVAILABLE','2025-11-15 07:30:00',2),
+(117,'2025-11-15 07:30:00','2026-01-10 09:30:00','2026-01-10 08:00:00','AVAILABLE','2025-11-15 07:30:00',2),
+(118,'2025-11-15 07:30:00','2026-01-17 09:30:00','2026-01-17 08:00:00','AVAILABLE','2025-11-15 07:30:00',2),
+(119,'2025-11-15 07:30:00','2026-01-24 09:30:00','2026-01-24 08:00:00','AVAILABLE','2025-11-15 07:30:00',2),
+(120,'2025-11-15 07:30:00','2026-01-31 09:30:00','2026-01-31 08:00:00','AVAILABLE','2025-11-15 07:30:00',2);
+
+
+INSERT INTO tutor_availability VALUES
+(121,'2025-11-16 17:30:00','2025-11-16 20:00:00','2025-11-16 18:30:00','AVAILABLE','2025-11-16 17:30:00',2),
+(122,'2025-11-16 17:30:00','2025-11-23 20:00:00','2025-11-23 18:30:00','AVAILABLE','2025-11-16 17:30:00',2),
+(123,'2025-11-16 17:30:00','2025-11-30 20:00:00','2025-11-30 18:30:00','AVAILABLE','2025-11-16 17:30:00',2),
+(124,'2025-11-16 17:30:00','2025-12-07 20:00:00','2025-12-07 18:30:00','AVAILABLE','2025-11-16 17:30:00',2),
+(125,'2025-11-16 17:30:00','2025-12-14 20:00:00','2025-12-14 18:30:00','AVAILABLE','2025-11-16 17:30:00',2),
+(126,'2025-11-16 17:30:00','2025-12-21 20:00:00','2025-12-21 18:30:00','AVAILABLE','2025-11-16 17:30:00',2),
+(127,'2025-11-16 17:30:00','2025-12-28 20:00:00','2025-12-28 18:30:00','AVAILABLE','2025-11-16 17:30:00',2),
+(128,'2025-11-16 17:30:00','2026-01-04 20:00:00','2026-01-04 18:30:00','AVAILABLE','2025-11-16 17:30:00',2),
+(129,'2025-11-16 17:30:00','2026-01-11 20:00:00','2026-01-11 18:30:00','AVAILABLE','2025-11-16 17:30:00',2),
+(130,'2025-11-16 17:30:00','2026-01-18 20:00:00','2026-01-18 18:30:00','AVAILABLE','2025-11-16 17:30:00',2),
+(131,'2025-11-16 17:30:00','2026-01-25 20:00:00','2026-01-25 18:30:00','AVAILABLE','2025-11-16 17:30:00',2),
+(132,'2025-11-16 17:30:00','2026-02-01 20:00:00','2026-02-01 18:30:00','AVAILABLE','2025-11-16 17:30:00',2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO stickers (image_url) VALUES
+('https://drive.google.com/uc?id=1RQ4pMOZdIpdwKKAYXe39kBS_E4oONLbe'),
+('https://drive.google.com/uc?id=1wGJbmWAU6Pv3tuoVzaaxwb2Xr3uR8fNq'),
+('https://drive.google.com/uc?id=1RkIYuo9GGISkoUqgTfN1KxBXwS5fGyIm'),
+('https://drive.google.com/uc?id=1-aDcZ6lYuAC2SKMmbLZIAMad0L_2RZ4Z'),
+('https://drive.google.com/uc?id=1l64efPA9I1-GgMb5pTZqeFbHT63hKQCs'),
+('https://drive.google.com/uc?id=1GX2qCeVbMLVaWCmjZpEvG28nOGUSXOlh'),
+('https://drive.google.com/uc?id=1my-_NSYUH6ZdVgiCZAIHP4iveCEDiiAw'),
+('https://drive.google.com/uc?id=1Jw0OEmbKhQMHspNaPpFWoCXRHItpEGUf'),
+('https://drive.google.com/uc?id=1AhdBRvr1puf1gdlXBbuKd0f43mmxqbPm'),
+('https://drive.google.com/uc?id=1DxA-Zu6rBqd3L1zSHfEdPpG2cwpvDK-M'),
+('https://drive.google.com/uc?id=1ZBCOlR6JzcPCrfsc6iSQT3feiNkCaI5p'),
+('https://drive.google.com/uc?id=1XLwTFSBkIt8lb92l36zM9PnYac51xhYO'),
+('https://drive.google.com/uc?id=1Y8Bk3yiYbCOrAF67iqJ8jv2BEzVOqg6w'),
+('https://drive.google.com/uc?id=1bGIOHnWunjt9h0jeYsMw-lPhavQy48FY'),
+('https://drive.google.com/uc?id=1x2JYs2KWSh7mtaeBb1dG-uwBZkN4OxFe'),
+('https://drive.google.com/uc?id=1BD9i-hTGknUpZQTbxSWXVArc2dqdZkTt'),
+('https://drive.google.com/uc?id=1UVw0EDOW5PN56vk6ijMICbEAskTR1ILJ'),
+('https://drive.google.com/uc?id=1NH8iXNQ8O8T-gvWhXuPu4IVtPfcaYt1A'),
+('https://drive.google.com/uc?id=1QF-LoOE4v6is1hdnr4YC70LpNTzB28tm'),
+('https://drive.google.com/uc?id=1G5ky8QTN7KThOPi1MNwdL-qOetK9Aov-'),
+('https://drive.google.com/uc?id=1E-dMg_QRKAXslr99IKwH6AJL38eMrYj5'),
+('https://drive.google.com/uc?id=1qKf3d8ZI_3iYq3EEfTMdL32oVqVa8SB2'),
+('https://drive.google.com/uc?id=1TNDAbR2cWcG7_21MKGuOi_w8A_B2jnL1'),
+('https://drive.google.com/uc?id=1uIvPh94taEqYCNoQPmdmHClMZlfQfY6I'),
+('https://drive.google.com/uc?id=15QNYo2M4fHJ2GG-R_X9bH3Ll4SkLYCYu'),
+('https://drive.google.com/uc?id=1lOgQiDAHi1Uk0ddlqKmX1vHaJLgr6ebC'),
+('https://drive.google.com/uc?id=1WkfjhX7wBbbEO0BitphGrXUjb9p0Gt9b'),
+('https://drive.google.com/uc?id=1I9R75Bnlyt0WfciS96ZlQF_sjhLAe5cx'),
+('https://drive.google.com/uc?id=13uXxAs-J_fiskfXbgesyHZ2B2Rl4a7xf'),
+('https://drive.google.com/uc?id=13AeMP_76lcSiONrcy9VoeXUhrf5A5XZz'),
+('https://drive.google.com/uc?id=1aCYPdEzruQp256SDhtb43MdFbHJRpFA3'),
+('https://drive.google.com/uc?id=1StXdXiekq2ZGXSW4MBJZsN2At4w_DlXh'),
+('https://drive.google.com/uc?id=1MIMyUJTOJV1RDaqw_xnm5V4ADG94Kf--'),
+('https://drive.google.com/uc?id=1VpF0vFuE2xkJ-7695dKf3LlECxT5zVUS'),
+('https://drive.google.com/uc?id=12jQyoifOsq796ofP06surdy91hH3ithU'),
+('https://drive.google.com/uc?id=18jFtB4IRl0y6HxhNSCiNPPPdkLEy7xVF'),
+('https://drive.google.com/uc?id=1ZSfC_DZcAX2sSPdh-KuJ5fdZOeHKsyBu'),
+('https://drive.google.com/uc?id=1I9ZYdxktRaAA-ecHrDX9qEaUOcRBcKIO'),
+('https://drive.google.com/uc?id=1CCMhuEToWB4Uzd78oDxM-P1cjNwDt3SE'),
+('https://drive.google.com/uc?id=1tmNuIReDdI7Qq4AwTtISKg3AFJE4alPJ'),
+('https://drive.google.com/uc?id=15-3iKq7guE9R3ktUfqV4yJlC4Uwe9fUP'),
+('https://drive.google.com/uc?id=16FwNjpwdNYlG64UkVMfpRrgiY2nTALOK'),
+('https://drive.google.com/uc?id=1uZBtbMW9Rcxtx4GRMA-tdf9F_Mt-SxYE'),
+('https://drive.google.com/uc?id=1za3w9eyIAGxROxLp2XDftTI0HY8cak2T'),
+('https://drive.google.com/uc?id=1xqzRMg9F3c3ZPZDHGKNzPpoEFtg45wCk'),
+('https://drive.google.com/uc?id=1q8qdf2mAh6x0ZBy9qTrQMSBbFnnQd4xs'),
+('https://drive.google.com/uc?id=1sLo1qqyTfdl2L5bnWtpnc8yaFZJO1-VH'),
+('https://drive.google.com/uc?id=1NRtMLxSTIYBtbjUwF33ml3-aX9byktlQ'),
+('https://drive.google.com/uc?id=1C3BQ8UlnN-DVXk0H6A5I6__6aIlG0aKV'),
+('https://drive.google.com/uc?id=1K1Isrz_AR93VFlBWnjgMxFVKoScn1T8B'),
+('https://drive.google.com/uc?id=1Z1kiaBFkWoLXEPLvddgMh11NJOUMmyhO'),
+('https://drive.google.com/uc?id=1BA7zQgOeUgCPPVii86miaKoFHRHHiX4q'),
+('https://drive.google.com/uc?id=1CK3PxJF7EsFOjvfKwTx5XdddQ7HRETz2'),
+('https://drive.google.com/uc?id=1rhat0mee7603ol2LjQsMKauyNFkDgTUR'),
+('https://drive.google.com/uc?id=1A8JxpYc7Cg3f3I_RK2E_001UahK0f-lG'),
+('https://drive.google.com/uc?id=1OLJ-fg4eBKCZhNmp-zvKeIL5DaCBF_3-'),
+('https://drive.google.com/uc?id=1qF1OWITvAmAM67lPN1q8BOUdl4wvbsQu'),
+('https://drive.google.com/uc?id=1vIVPVcDXojXX_vKA9fGIeP6NSdGQy7c7'),
+('https://drive.google.com/uc?id=1Cdb5ZHiKnjVftqN4XVEOl8eDuA1FbG8F'),
+('https://drive.google.com/uc?id=1tSfLJdmxnW87TxGatLb65JT-UEYoXmrg'),
+('https://drive.google.com/uc?id=1Bqukzz4E1Cepizkj7eS4dve2BVFs7_zm'),
+('https://drive.google.com/uc?id=1Xkc1oL0FTKSB_eK2z00Ty4GVwDbGIh5v'),
+('https://drive.google.com/uc?id=1ENLf-Ro4KI8kXuboIHYPpM8XuS3C6vvX'),
+('https://drive.google.com/uc?id=100jbTy-mOsQ-VuZxT6mob4Z1esOCCJcw'),
+('https://drive.google.com/uc?id=1JoVtciQ2CVbsGojTuBjEFFhFZZC44UbA'),
+('https://drive.google.com/uc?id=1UMbPgUoANcH2Dr3befTctc5EQX8bXeR1'),
+('https://drive.google.com/uc?id=1f-CT4Kww4bD7tf4QGMSImEwYYDjwL8EU'),
+('https://drive.google.com/uc?id=11Mbpd-Qj7GlcU35aZsJo0QLmFDShP5q0'),
+('https://drive.google.com/uc?id=1-rEg0GPK-nFbnaeaQAVwfkEDMqjAtBT5'),
+('https://drive.google.com/uc?id=1i2FKBrrxKSMgDVIrkQ_t-Y-9QWe_5YN_'),
+('https://drive.google.com/uc?id=1XvJAzXk9oDHcjp3fRtX_7P-aFRnk-S2E'),
+('https://drive.google.com/uc?id=1e_gXh9TdcXlQYAEhgpDqoIWIvKNBW1w0'),
+('https://drive.google.com/uc?id=14snT_FsPtRNAYj3jeMLWdVC6KdKwTR_a'),
+('https://drive.google.com/uc?id=1Jzui2_KsCRci6o_CLkcsSOZaClnG7glj'),
+('https://drive.google.com/uc?id=1ayD3tlDPGtHgk4X3IIi97va6Zs2cAPqE'),
+('https://drive.google.com/uc?id=15vSqC7QA9gB8PTCZeiK5tBS4nwwV7iX7'),
+('https://drive.google.com/uc?id=1U6Ehe3Ur5t0eVQfesNFGHh9_PZ9SKxpM'),
+('https://drive.google.com/uc?id=1Lnf_yjbA8KCoHLVT7RDXl0cWT-1JMcfn'),
+('https://drive.google.com/uc?id=1PoDTY6eQd2L_hvxz8-FLL7PJcjgYHrMT'),
+('https://drive.google.com/uc?id=1XA4t2KtUpvdRGt9A38cN4qZ4fPNwXyOw'),
+('https://drive.google.com/uc?id=1qwa1pWcJt1SKF9O4dTNBBc2atviC7EAu'),
+('https://drive.google.com/uc?id=13n9aRfo1pqP2xQNU698SSEPfPpc5iZbn'),
+('https://drive.google.com/uc?id=1q44Wg_GFyhl6jAzkIvN8pefPtfdEgnGv'),
+('https://drive.google.com/uc?id=1pFPbCrgWUKzZY2DVVkfDky8B4ifzITWj'),
+('https://drive.google.com/uc?id=1ZIdyQIZ9GYNEIn_qri_Dvj7cxdzNt_R3'),
+('https://drive.google.com/uc?id=1QOwFbANvVHGq6_O8Djk6DVcKrDFNqelO'),
+('https://drive.google.com/uc?id=1KEfThp7VORNdqxN1qnwgvYnk7DAir9Zv'),
+('https://drive.google.com/uc?id=1faD7er4Gw8Nyj6IXadZ8P6L_p_3B5QoD'),
+('https://drive.google.com/uc?id=1T44q0Q3wg0-CR6HY5Z-qB4xWBqyw13Vv'),
+('https://drive.google.com/uc?id=105mbm0ZV6xao5suvoQZLo0AoGSehI-Sz'),
+('https://drive.google.com/uc?id=1ccGe2sG5FtMe6dGzdTtbz0DG-j4n_Ww-'),
+('https://drive.google.com/uc?id=1EWjv9zURwAEEhisM8a3LxbL1OUhE-lpO'),
+('https://drive.google.com/uc?id=11Z__sBgUfpRuccuwcBvMIZWFPSWJQgaM'),
+('https://drive.google.com/uc?id=1mQCwUqWAn9rccMQzmz4hHJBKcujmwNWb'),
+('https://drive.google.com/uc?id=1M4qthKyBdwZBxmeH_Q06reNcm9wa7qsl'),
+('https://drive.google.com/uc?id=1_J_it9VBgZTxi2jS3q0vIOtXxakASbdx'),
+('https://drive.google.com/uc?id=15gkMkYPRDk2s4tKhgv4XtBs3Rma9ONvi'),
+('https://drive.google.com/uc?id=1mrCZZXcWpodLroJA2BVyOWjJQP90nnv-'),
+('https://drive.google.com/uc?id=19s6y6xVTupSrR5Q6Zz23M91AXxZECUhv'),
+('https://drive.google.com/uc?id=1IoB7EHzZcMopth4NUO5CFiwaNMYimqrz'),
+('https://drive.google.com/uc?id=1_qlYF0JywANytTr9tNK6_7U3k4QPTIqm'),
+('https://drive.google.com/uc?id=1OmLX2VmD_E6QBt10-NfW9x4GD8gVG4AW'),
+('https://drive.google.com/uc?id=17Db9CcJC5yOxRgTTxkBVu9_up73qLbTD'),
+('https://drive.google.com/uc?id=1Iqvl_5Wq1s3FkDuRPoGxwBV156a9yrRS'),
+('https://drive.google.com/uc?id=1sKMidstXQHlDBzjp4o3VXCb6fWIAF5Ss'),
+('https://drive.google.com/uc?id=1rpE9v86UO-bm2V67PGpDxd5OlENBlvqy'),
+('https://drive.google.com/uc?id=1mBjiYUOJ-YK9zs0hNPbAy209lHTEoArF'),
+('https://drive.google.com/uc?id=1p2vkOJWzUccqpDFsCm3DJ6PAGDvsUrKI'),
+('https://drive.google.com/uc?id=1AIHnmIr6nFXhAORh8z8NPYyD06kZNgd3'),
+('https://drive.google.com/uc?id=1t_F_v-Um6OALGao7PdozD6vSBh2aZp8x'),
+('https://drive.google.com/uc?id=1MJFjm-388iDq37gLB7JiuvZoKC5SJbkY');
+
+
+
+INSERT INTO chat_messages 
+(sender_id, receiver_id, sticker_id, content, sent_at, is_read)
 VALUES
--- TUTOR 6
-(6, '2025-12-01 08:00:00', '2025-12-01 17:00:00', '2025-12-01 18:30:00', 'AVAILABLE', '2025-12-01 08:05:00'),
-(6, '2025-12-02 08:00:00', '2025-12-02 17:00:00', '2025-12-02 18:30:00', 'BOOKED', '2025-12-02 08:05:00'),
-(6, '2025-12-03 08:00:00', '2025-12-03 18:30:00', '2025-12-03 20:00:00', 'AVAILABLE', '2025-12-03 08:05:00'),
+-- Learner mở đầu cuộc trò chuyện
+(5, 2, NULL, 'Chào thầy, em muốn hỏi về lịch học Toán lớp 9.', 
+ '2025-12-10 19:05:00', TRUE),
 
--- TUTOR 7
-(7, '2025-12-03 08:00:00', '2025-12-03 17:00:00', '2025-12-03 18:30:00', 'AVAILABLE', '2025-12-03 08:05:00'),
-(7, '2025-12-04 08:00:00', '2025-12-04 17:00:00', '2025-12-04 18:30:00', 'BOOKED', '2025-12-04 08:05:00'),
-(7, '2025-12-05 08:00:00', '2025-12-05 18:30:00', '2025-12-05 20:00:00', 'AVAILABLE', '2025-12-05 08:05:00'),
+-- Tutor trả lời
+(2, 5, NULL, 'Chào em, thầy hiện đang rảnh tối thứ 2, 4 và 6.', 
+ '2025-12-10 19:07:00', TRUE),
 
--- TUTOR 8
-(8, '2025-12-05 08:00:00', '2025-12-05 09:30:00', '2025-12-05 11:00:00', 'AVAILABLE', '2025-12-05 08:05:00'),
-(8, '2025-12-06 08:00:00', '2025-12-06 17:00:00', '2025-12-06 18:30:00', 'BOOKED', '2025-12-06 08:05:00'),
-(8, '2025-12-07 08:00:00', '2025-12-07 14:30:00', '2025-12-07 16:00:00', 'AVAILABLE', '2025-12-07 08:05:00'),
+-- Learner hỏi thêm chi tiết
+(5, 2, NULL, 'Dạ học phí một buổi khoảng bao nhiêu ạ?', 
+ '2025-12-10 19:08:30', TRUE),
 
--- TUTOR 9
-(9, '2025-12-07 08:00:00', '2025-12-07 17:00:00', '2025-12-07 18:30:00', 'AVAILABLE', '2025-12-07 08:05:00'),
-(9, '2025-12-08 08:00:00', '2025-12-08 17:00:00', '2025-12-08 18:30:00', 'BOOKED', '2025-12-08 08:05:00'),
-(9, '2025-12-09 08:00:00', '2025-12-09 18:30:00', '2025-12-09 20:00:00', 'AVAILABLE', '2025-12-09 08:05:00'),
+-- Tutor trả lời học phí
+(2, 5, NULL, 'Học phí là 220.000đ / buổi, mỗi buổi 90 phút.', 
+ '2025-12-10 19:10:00', TRUE),
 
--- TUTOR 10
-(10, '2025-12-09 08:00:00', '2025-12-09 14:30:00', '2025-12-09 16:00:00', 'AVAILABLE', '2025-12-09 08:05:00'),
-(10, '2025-12-10 08:00:00', '2025-12-10 17:00:00', '2025-12-10 18:30:00', 'BOOKED', '2025-12-10 08:05:00'),
-(10, '2025-12-11 08:00:00', '2025-12-11 18:30:00', '2025-12-11 20:00:00', 'AVAILABLE', '2025-12-11 08:05:00'),
+-- Learner gửi sticker đồng ý
+(5, 2, 1, NULL, 
+ '2025-12-10 19:10:20', TRUE),
 
--- TUTOR 11
-(11, '2025-12-11 08:00:00', '2025-12-11 14:30:00', '2025-12-11 16:00:00', 'AVAILABLE', '2025-12-11 08:05:00'),
-(11, '2025-12-12 08:00:00', '2025-12-12 17:00:00', '2025-12-12 18:30:00', 'BOOKED', '2025-12-12 08:05:00'),
-(11, '2025-12-13 08:00:00', '2025-12-13 18:30:00', '2025-12-13 20:00:00', 'AVAILABLE', '2025-12-13 08:05:00'),
+-- Tutor xác nhận
+(2, 5, NULL, 'Nếu em đồng ý, thầy sẽ tạo lịch học chính thức cho mình.', 
+ '2025-12-10 19:12:00', FALSE);
 
--- TUTOR 12
-(12, '2025-12-13 08:00:00', '2025-12-13 09:30:00', '2025-12-13 11:00:00', 'AVAILABLE', '2025-12-13 08:05:00'),
-(12, '2025-12-14 08:00:00', '2025-12-14 17:00:00', '2025-12-14 18:30:00', 'BOOKED', '2025-12-14 08:05:00'),
-(12, '2025-12-15 08:00:00', '2025-12-15 18:30:00', '2025-12-15 20:00:00', 'AVAILABLE', '2025-12-15 08:05:00'),
 
--- TUTOR 13
-(13, '2025-12-15 08:00:00', '2025-12-15 14:30:00', '2025-12-15 16:00:00', 'AVAILABLE', '2025-12-15 08:05:00'),
-(13, '2025-12-16 08:00:00', '2025-12-16 17:00:00', '2025-12-16 18:30:00', 'BOOKED', '2025-12-16 08:05:00'),
-(13, '2025-12-17 08:00:00', '2025-12-17 18:30:00', '2025-12-17 20:00:00', 'AVAILABLE', '2025-12-17 08:05:00'),
-
--- TUTOR 14
-(14, '2025-12-17 08:00:00', '2025-12-17 09:30:00', '2025-12-17 11:00:00', 'AVAILABLE', '2025-12-17 08:05:00'),
-(14, '2025-12-18 08:00:00', '2025-12-18 17:00:00', '2025-12-18 18:30:00', 'BOOKED', '2025-12-18 08:05:00'),
-(14, '2025-12-19 08:00:00', '2025-12-19 18:30:00', '2025-12-19 20:00:00', 'AVAILABLE', '2025-12-19 08:05:00'),
-
--- TUTOR 15
-(15, '2025-12-19 08:00:00', '2025-12-19 14:30:00', '2025-12-19 16:00:00', 'AVAILABLE', '2025-12-19 08:05:00'),
-(15, '2025-12-20 08:00:00', '2025-12-20 17:00:00', '2025-12-20 18:30:00', 'BOOKED', '2025-12-20 08:05:00'),
-(15, '2025-12-21 08:00:00', '2025-12-21 18:30:00', '2025-12-21 20:00:00', 'AVAILABLE', '2025-12-21 08:05:00');
-
--- -- === 7. Mẫu lịch lặp lại (tutor_recurring_pattern) cho một số tutors mới ===
--- INSERT INTO tutor_recurring_pattern (tutor_id, repeat_type, days_of_week, days_of_month, start_time, end_time, repeat_start, repeat_end)
--- VALUES
---   (6, 'WEEKLY', '["Monday","Wednesday"]', NULL, '18:00:00', '20:00:00', '2025-12-01', '2025-12-20'),
---   (7, 'WEEKLY', '["Tuesday","Thursday"]', NULL, '19:00:00', '21:00:00', '2025-12-02', '2025-12-19'),
---   (8, 'MONTHLY', NULL, '[5,10,15]', '17:00:00', '19:00:00', '2025-12-01', '2025-12-20'),
---   (9, 'WEEKLY', '["Friday"]', NULL, '08:00:00', '10:00:00', '2025-12-05', '2025-12-19'),
---   (10, 'MONTHLY', NULL, '[3,13]', '09:00:00', '11:00:00', '2025-12-03', '2025-12-20');
-
--- === 8. Yêu cầu lớp học (class_requests) giữa learners & tutors mới ===
-INSERT INTO class_requests 
-(request_id, additional_notes, created_at, end_date, sessions_per_week, 
- start_date, status, total_sessions, type, updated_at, learner_id, subject, tutor_id)
+INSERT INTO chat_messages
+(sender_id, receiver_id, sticker_id, content, sent_at, is_read)
 VALUES
-  (100, 'Yêu cầu học thêm môn với request 100', '2025-12-02 07:30:00', '2025-12-12', 2, '2025-12-02',
-   'CONFIRMED', 6, 'OFFICIAL', '2025-12-02 07:45:00', 6, 1, 6),
+-- ===== NGÀY 1: TÌM HIỂU BAN ĐẦU =====
+(5, 2, NULL, 'Chào thầy, em muốn tìm gia sư Toán cho em trai lớp 9.', 
+ '2025-12-10 19:05:00', TRUE),
 
-  (101, 'Yêu cầu học thêm môn với request 101', '2025-12-03 07:30:00', '2025-12-13', 3, '2025-12-03',
-   'PENDING', 7, 'TRIAL', '2025-12-03 07:45:00', 7, 2, 7),
+(2, 5, NULL, 'Chào em, thầy đang dạy Toán lớp 9 và lớp 10.', 
+ '2025-12-10 19:07:00', TRUE),
 
-  (102, 'Yêu cầu học thêm môn với request 102', '2025-12-04 07:30:00', '2025-12-14', 4, '2025-12-04',
-   'CONFIRMED', 8, 'OFFICIAL', '2025-12-04 07:45:00', 8, 3, 8),
+(5, 2, NULL, 'Dạ em muốn học để chuẩn bị thi vào lớp 10 ạ.', 
+ '2025-12-10 19:08:30', TRUE),
 
-  -- Sửa status: PENDING → CANCELLED (vì lớp đã CANCELLED)
-  (103, 'Yêu cầu học thêm môn với request 103', '2025-12-05 07:30:00', '2025-12-15', 2, '2025-12-05',
-   'CANCELLED', 9, 'TRIAL', '2025-12-05 07:45:00', 9, 4, 9),
+(2, 5, NULL, 'Rất phù hợp, thầy có giáo trình luyện thi riêng.', 
+ '2025-12-10 19:10:00', TRUE),
 
-  (104, 'Yêu cầu học thêm môn với request 104', '2025-12-06 07:30:00', '2025-12-16', 3, '2025-12-06',
-   'CONFIRMED', 10, 'OFFICIAL', '2025-12-06 07:45:00', 10, 9, 10),
+(5, 2, NULL, 'Thầy cho em hỏi học phí và thời lượng mỗi buổi được không ạ?', 
+ '2025-12-10 19:11:30', TRUE),
 
-  (105, 'Yêu cầu học thêm môn với request 105', '2025-12-07 07:30:00', '2025-12-17', 4, '2025-12-07',
-   'PENDING', 11, 'TRIAL', '2025-12-07 07:45:00', 11, 18, 11),
+(2, 5, NULL, '220.000đ/buổi, mỗi buổi 90 phút em nhé.', 
+ '2025-12-10 19:13:00', TRUE),
 
-  (106, 'Yêu cầu học thêm môn với request 106', '2025-12-08 07:30:00', '2025-12-18', 2, '2025-12-08',
-   'CONFIRMED', 12, 'OFFICIAL', '2025-12-08 07:45:00', 12, 27, 12),
+-- ===== NGÀY 2: THỐNG NHẤT LỊCH =====
+(5, 2, NULL, 'Dạ lịch học thì mình học mấy buổi một tuần ạ?', 
+ '2025-12-11 20:00:00', TRUE),
 
-  -- Sửa status: PENDING → CANCELLED (vì lớp đã CANCELLED)
-  (107, 'Yêu cầu học thêm môn với request 107', '2025-12-09 07:30:00', '2025-12-19', 3, '2025-12-09',
-   'CANCELLED', 13, 'TRIAL', '2025-12-09 07:45:00', 13, 28, 13),
+(2, 5, NULL, 'Thường là 2–3 buổi/tuần, tùy khả năng tiếp thu của học sinh.', 
+ '2025-12-11 20:02:00', TRUE),
 
-  (108, 'Yêu cầu học thêm môn với request 108', '2025-12-10 07:30:00', '2025-12-20', 4, '2025-12-10',
-   'CONFIRMED', 14, 'OFFICIAL', '2025-12-10 07:45:00', 14, 29, 14),
+(5, 2, NULL, 'Dạ em muốn học 3 buổi/tuần cho nhanh tiến bộ.', 
+ '2025-12-11 20:03:30', TRUE),
 
-  (109, 'Yêu cầu học thêm môn với request 109', '2025-12-11 07:30:00', '2025-12-20', 2, '2025-12-11',
-   'PENDING', 15, 'TRIAL', '2025-12-11 07:45:00', 15, 1, 15);
+(2, 5, NULL, 'Được em, mình có thể học tối thứ 2, 4 và 6.', 
+ '2025-12-11 20:05:00', TRUE),
 
--- === 9. Thời khóa biểu lớp (calendar_class) cho các request mới ===
-INSERT INTO calendar_class
-(calendar_class_id, request_id, day_of_week, start_time, end_time, study_date, created_at, updated_at)
-VALUES
--- Request 100
-(1000, 100, 'MONDAY',    '17:00:00', '18:30:00', '2025-12-01', '2025-12-01 06:00:00', '2025-12-01 06:10:00'),
-(1001, 100, 'TUESDAY',   '18:30:00', '20:00:00', '2025-12-02', '2025-12-02 06:00:00', '2025-12-02 06:10:00'),
+(5, 2, 1, NULL, 
+ '2025-12-11 20:05:20', TRUE),
 
--- Request 101
-(1002, 101, 'TUESDAY',   '17:00:00', '18:30:00', '2025-12-02', '2025-12-02 06:00:00', '2025-12-02 06:10:00'),
-(1003, 101, 'WEDNESDAY', '18:30:00', '20:00:00', '2025-12-03', '2025-12-03 06:00:00', '2025-12-03 06:10:00'),
+-- ===== NGÀY 3: XÁC NHẬN CHÍNH THỨC =====
+(5, 2, NULL, 'Dạ vậy tuần sau mình bắt đầu được không thầy?', 
+ '2025-12-12 18:45:00', TRUE),
 
--- Request 102
-(1004, 102, 'WEDNESDAY', '17:00:00', '18:30:00', '2025-12-03', '2025-12-03 06:00:00', '2025-12-03 06:10:00'),
-(1005, 102, 'THURSDAY',  '18:30:00', '20:00:00', '2025-12-04', '2025-12-04 06:00:00', '2025-12-04 06:10:00'),
+(2, 5, NULL, 'Được em, thầy sẽ tạo lớp học chính thức trên hệ thống.', 
+ '2025-12-12 18:47:00', TRUE),
 
--- Request 103
-(1006, 103, 'THURSDAY',  '17:00:00', '18:30:00', '2025-12-04', '2025-12-04 06:00:00', '2025-12-04 06:10:00'),
-(1007, 103, 'FRIDAY',    '18:30:00', '20:00:00', '2025-12-05', '2025-12-05 06:00:00', '2025-12-05 06:10:00'),
+(5, 2, NULL, 'Dạ em cảm ơn thầy nhiều ạ.', 
+ '2025-12-12 18:48:30', TRUE),
 
--- Request 104
-(1008, 104, 'FRIDAY',    '17:00:00', '18:30:00', '2025-12-05', '2025-12-05 06:00:00', '2025-12-05 06:10:00'),
-(1009, 104, 'SATURDAY',  '18:30:00', '20:00:00', '2025-12-06', '2025-12-06 06:00:00', '2025-12-06 06:10:00'),
+-- ===== NGÀY 5: SAU BUỔI HỌC ĐẦU =====
+(2, 5, NULL, 'Hôm nay em học khá tốt, cần luyện thêm phần phương trình.', 
+ '2025-12-14 21:15:00', TRUE),
 
--- Request 105
-(1010, 105, 'SATURDAY',  '17:00:00', '18:30:00', '2025-12-06', '2025-12-06 06:00:00', '2025-12-06 06:10:00'),
-(1011, 105, 'SUNDAY',    '18:30:00', '20:00:00', '2025-12-07', '2025-12-07 06:00:00', '2025-12-07 06:10:00'),
+(5, 2, NULL, 'Dạ em thấy bài này hơi khó, thầy cho em thêm bài tập nhé.', 
+ '2025-12-14 21:17:00', TRUE),
 
--- Request 106
-(1012, 106, 'SUNDAY',    '17:00:00', '18:30:00', '2025-12-07', '2025-12-07 06:00:00', '2025-12-07 06:10:00'),
-(1013, 106, 'MONDAY',    '18:30:00', '20:00:00', '2025-12-08', '2025-12-08 06:00:00', '2025-12-08 06:10:00'),
+(2, 5, NULL, 'Ok em, thầy sẽ gửi thêm bài tập sau buổi học.', 
+ '2025-12-14 21:18:30', TRUE),
 
--- Request 107
-(1014, 107, 'MONDAY',    '17:00:00', '18:30:00', '2025-12-08', '2025-12-08 06:00:00', '2025-12-08 06:10:00'),
-(1015, 107, 'TUESDAY',   '18:30:00', '20:00:00', '2025-12-09', '2025-12-09 06:00:00', '2025-12-09 06:10:00'),
-
--- Request 108
-(1016, 108, 'TUESDAY',   '17:00:00', '18:30:00', '2025-12-09', '2025-12-09 06:00:00', '2025-12-09 06:10:00'),
-(1017, 108, 'WEDNESDAY', '18:30:00', '20:00:00', '2025-12-10', '2025-12-10 06:00:00', '2025-12-10 06:10:00'),
-
--- Request 109
-(1018, 109, 'WEDNESDAY', '17:00:00', '18:30:00', '2025-12-10', '2025-12-10 06:00:00', '2025-12-10 06:10:00'),
-(1019, 109, 'THURSDAY',  '18:30:00', '20:00:00', '2025-12-11', '2025-12-11 06:00:00', '2025-12-11 06:10:00');
-
-INSERT INTO request_schedules (request_schedules_id, created_at, day_of_week, end_time, start_time, request_id)
-VALUES
-  -- Request 100 (tutor 6): MON, TUE
-  (1000, '2025-12-01 06:00:00', 'MONDAY',   '18:30:00', '17:00:00',  100),
-  (1001, '2025-12-02 06:00:00', 'TUESDAY',  '20:00:00', '18:30:00',  100),
-  -- Request 101 (tutor 7): TUE, WE
-  (1002, '2025-12-02 06:00:00', 'TUESDAY',  '18:30:00', '17:00:00',  101),
-  (1003, '2025-12-03 06:00:00', 'WEDNESDAY','20:00:00', '18:30:00',  101),
-  -- Request 102 (tutor 8): WED, TH
-  (1004, '2025-12-03 06:00:00', 'WEDNESDAY','18:30:00', '17:00:00',  102),
-  (1005, '2025-12-04 06:00:00', 'THURSDAY', '20:00:00', '18:30:00',  102),
-  -- Request 103 (tutor 9): THU, FR
-  (1006, '2025-12-04 06:00:00', 'THURSDAY', '18:30:00', '17:00:00',  103),
-  (1007, '2025-12-05 06:00:00', 'FRIDAY',   '20:00:00', '18:30:00',  103),
-  -- Request 104 (tutor 10): FRI, SA
-  (1008, '2025-12-05 06:00:00', 'FRIDAY',   '18:30:00', '17:00:00',  104),
-  (1009, '2025-12-06 06:00:00', 'SATURDAY', '20:00:00', '18:30:00',  104),
-  -- Request 105 (tutor 11): SAT, SU
-  (1010, '2025-12-06 06:00:00', 'SATURDAY', '18:30:00', '17:00:00',  105),
-  (1011, '2025-12-07 06:00:00', 'SUNDAY',   '20:00:00', '18:30:00',  105),
-  -- Request 106 (tutor 12): SUN, MO
-  (1012, '2025-12-07 06:00:00', 'SUNDAY',   '18:30:00', '17:00:00',  106),
-  (1013, '2025-12-08 06:00:00', 'MONDAY',   '20:00:00', '18:30:00',  106),
-  -- Request 107 (tutor 13): MON, TU
-  (1014, '2025-12-08 06:00:00', 'MONDAY',   '18:30:00', '17:00:00',  107),
-  (1015, '2025-12-09 06:00:00', 'TUESDAY',  '20:00:00', '18:30:00',  107),
-  -- Request 108 (tutor 14): TUE, WE
-  (1016, '2025-12-09 06:00:00', 'TUESDAY',  '18:30:00', '17:00:00',  108),
-  (1017, '2025-12-10 06:00:00', 'WEDNESDAY','20:00:00', '18:30:00',  108),
-  -- Request 109 (tutor 15): WED, TH
-  (1018, '2025-12-10 06:00:00', 'WEDNESDAY','18:30:00', '17:00:00',  109),
-  (1019, '2025-12-11 06:00:00', 'THURSDAY', '20:00:00', '18:30:00',  109);
-
--- === 10. Bản ghi classes cho các request mới ===
-INSERT INTO classes (class_id, completed_sessions, status, request_id)
-VALUES
-  (100, 1, 'ONGOING', 100),
-  (101, 0, 'PENDING', 101),
-  (102, 3, 'COMPLETED', 102),
-  (103, 0, 'CANCELLED', 103),
-  (104, 5, 'ONGOING', 104),
-  (105, 0, 'PENDING', 105),
-  (106, 7, 'COMPLETED', 106),
-  (107, 0, 'CANCELLED', 107),
-  (108, 9, 'ONGOING', 108),
-  (109, 0, 'PENDING', 109);
-
--- === 11. Đánh giá (ratings) cho một số lớp mới ===
-INSERT INTO ratings (rating_id, comment, created_at, score, class_id)
-VALUES
-  (100, 'Gia sư dạy dễ hiểu, đúng giờ.', '2025-12-06 20:30:00', 4.5, 100),
-  (101, 'Buổi học diễn ra tốt, học viên tiến bộ.', '2025-12-07 20:30:00', 4.8, 101),
-  (102, 'Cần thêm bài tập về nhà, nhưng nhìn chung ổn.', '2025-12-08 20:30:00', 4.0, 102),
-  (103, 'Rất nhiệt tình và hỗ trợ ngoài giờ.', '2025-12-09 20:30:00', 5.0, 103),
-  (104, 'Bài giảng sinh động, nhiều ví dụ thực tế.', '2025-12-10 20:30:00', 4.7, 104);
-
--- === 12. Thông báo (notifications) cho 20 users mới ===
-INSERT INTO notifications (notification_id, content, created_at, is_read, title, type, user_id)
-VALUES
-  (1000, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 12.', '2025-12-04 12:00:00', 0, 'Thông báo cho user 12', 'SYSTEM', 12),
-  (1001, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 13.', '2025-12-05 12:00:00', 1, 'Thông báo cho user 13', 'CLASS_UPDATE', 13),
-  (1002, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 14.', '2025-12-06 12:00:00', 0, 'Thông báo cho user 14', 'MESSAGE', 14),
-  (1003, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 15.', '2025-12-07 12:00:00', 1, 'Thông báo cho user 15', 'RATING', 15),
-  (1004, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 16.', '2025-12-08 12:00:00', 0, 'Thông báo cho user 16', 'REMINDER', 16),
-  (1005, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 17.', '2025-12-09 12:00:00', 1, 'Thông báo cho user 17', 'SYSTEM', 17),
-  (1006, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 18.', '2025-12-10 12:00:00', 0, 'Thông báo cho user 18', 'CLASS_UPDATE', 18),
-  (1007, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 19.', '2025-12-11 12:00:00', 1, 'Thông báo cho user 19', 'MESSAGE', 19),
-  (1008, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 20.', '2025-12-12 12:00:00', 0, 'Thông báo cho user 20', 'RATING', 20),
-  (1009, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 21.', '2025-12-13 12:00:00', 1, 'Thông báo cho user 21', 'REMINDER', 21),
-  (1010, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 22.', '2025-12-05 12:00:00', 0, 'Thông báo cho user 22', 'SYSTEM', 22),
-  (1011, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 23.', '2025-12-06 12:00:00', 1, 'Thông báo cho user 23', 'CLASS_UPDATE', 23),
-  (1012, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 24.', '2025-12-07 12:00:00', 0, 'Thông báo cho user 24', 'MESSAGE', 24),
-  (1013, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 25.', '2025-12-08 12:00:00', 1, 'Thông báo cho user 25', 'RATING', 25),
-  (1014, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 26.', '2025-12-09 12:00:00', 0, 'Thông báo cho user 26', 'REMINDER', 26),
-  (1015, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 27.', '2025-12-10 12:00:00', 1, 'Thông báo cho user 27', 'SYSTEM', 27),
-  (1016, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 28.', '2025-12-11 12:00:00', 0, 'Thông báo cho user 28', 'CLASS_UPDATE', 28),
-  (1017, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 29.', '2025-12-12 12:00:00', 1, 'Thông báo cho user 29', 'MESSAGE', 29),
-  (1018, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 30.', '2025-12-13 12:00:00', 0, 'Thông báo cho user 30', 'RATING', 30),
-  (1019, 'Đây là thông báo hệ thống liên quan đến tài khoản user_id = 31.', '2025-12-03 12:00:00', 1, 'Thông báo cho user 31', 'REMINDER', 31);
-
--- === 13. Tin nhắn (chat_messages) giữa tutors & learners mới ===
-INSERT INTO chat_messages (message_id, content, is_read, sent_at, receiver_id, sender_id, sticker_id)
-VALUES
-  (1000, 'Chào thầy/cô, em muốn hỏi về lịch học ạ.', 0, '2025-12-03 19:00:00', 12, 22, NULL),
-  (1001, NULL, 1, '2025-12-03 19:10:00', 22, 12, 1),
-  (1002, 'Buổi tối thứ 3 cô còn trống không ạ?', 0, '2025-12-04 19:00:00', 13, 23, NULL),
-  (1003, NULL, 1, '2025-12-04 19:10:00', 23, 13, 2),
-  (1004, 'Thầy cho em thêm bài tập được không ạ?', 0, '2025-12-05 19:00:00', 14, 24, NULL),
-  (1005, NULL, 1, '2025-12-05 19:10:00', 24, 14, 3),
-  (1006, 'Em cảm ơn thầy vì buổi học hôm trước.', 0, '2025-12-06 19:00:00', 15, 25, NULL),
-  (1007, NULL, 1, '2025-12-06 19:10:00', 25, 15, 4),
-  (1008, 'Tuần này mình có thể học thêm 1 buổi không ạ?', 0, '2025-12-07 19:00:00', 16, 26, NULL),
-  (1009, NULL, 1, '2025-12-07 19:10:00', 26, 16, 5),
-  (1010, 'Em bận thi nên xin dời lịch ạ.', 0, '2025-12-08 19:00:00', 17, 27, NULL),
-  (1011, NULL, 1, '2025-12-08 19:10:00', 27, 17, 1),
-  (1012, 'Thầy/cô cho em xin tài liệu ôn tập với ạ.', 0, '2025-12-09 19:00:00', 18, 28, NULL),
-  (1013, NULL, 1, '2025-12-09 19:10:00', 28, 18, 2),
-  (1014, 'Bài kiểm tra của em được 9 điểm rồi ạ.', 0, '2025-12-10 19:00:00', 19, 29, NULL),
-  (1015, NULL, 1, '2025-12-10 19:10:00', 29, 19, 3),
-  (1016, 'Em muốn đăng ký thêm môn Tiếng Anh.', 0, '2025-12-11 19:00:00', 20, 30, NULL),
-  (1017, NULL, 1, '2025-12-11 19:10:00', 30, 20, 4),
-  (1018, 'Cô góp ý giúp em về phát âm được không ạ?', 0, '2025-12-12 19:00:00', 21, 31, NULL),
-  (1019, NULL, 1, '2025-12-12 19:10:00', 31, 21, 5);
-
--- === 14. Ebooks mới do tutors mới upload ===
-INSERT INTO ebooks (title, type, file_path, uploaded_by, created_at)
-VALUES
-  ('Chuyên đề Toán THCS nâng cao', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 12, '2025-12-05 16:00:00'),
-  ('Bài tập Vật lí luyện thi', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 13, '2025-12-06 16:00:00'),
-  ('Hóa học cơ bản cho THPT', 'SACH_GIAO_KHOA', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 14, '2025-12-07 16:00:00'),
-  ('Tiếng Anh giao tiếp hàng ngày', 'TAI_LIEU', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 15, '2025-12-08 16:00:00'),
-  ('Tài liệu luyện thi IELTS 6.5+', 'DE_THI_THAM_KHAO', 'https://drive.google.com/uc?id=1xSAlqzBTv7BQ4drOuCG56IxHWYyxCblg9yXs7eC8Pzo', 16, '2025-12-09 16:00:00');
-
-UPDATE `tutors_finder_system`.`tutors` SET `verification_status` = 'PENDING' WHERE (`tutor_id` = '4');
-
-
-
-INSERT INTO notifications (user_id, type, title, content, is_read, created_at) VALUES
-(1, 'SYSTEM', 'Hệ thống khởi tạo thành công',
- 'Hệ thống Online Private Tutors Finder System đã được khởi tạo và sẵn sàng hoạt động.',
- FALSE, '2025-12-01 08:00:00'),
-
-(1, 'ACCOUNT_VERIFIED', 'Tài khoản quản trị được xác minh',
- 'Tài khoản ADMIN đã được xác minh toàn quyền quản lý hệ thống.',
- TRUE, '2025-12-02 09:00:00');
-
-
-INSERT INTO notifications (user_id, type, title, content, is_read, created_at) VALUES
-(2, 'NEW_REQUEST', 'Bạn có yêu cầu học mới',
- 'Một học viên vừa gửi yêu cầu học Toán. Vui lòng kiểm tra và phản hồi.',
- FALSE, '2025-12-03 18:00:00'),
-
-(2, 'REQUEST_ACCEPTED', 'Yêu cầu học đã được xác nhận',
- 'Bạn đã chấp nhận yêu cầu học. Lịch học đã được cập nhật.',
- TRUE, '2025-12-04 19:00:00'),
-
-(2, 'SESSION_REMINDER', 'Nhắc lịch học hôm nay',
- 'Bạn có buổi học từ 18:30 đến 20:00 hôm nay.',
- FALSE, '2025-12-05 12:00:00');
-
-
-INSERT INTO notifications (user_id, type, title, content, is_read, created_at) VALUES
-(5, 'CLASS_CONFIRMED', 'Lớp học đã được xác nhận',
- 'Gia sư đã xác nhận yêu cầu học của bạn. Lịch học bắt đầu từ tuần này.',
- FALSE, '2025-12-03 20:00:00'),
-
-(5, 'SESSION_REMINDER', 'Nhắc lịch học',
- 'Bạn có buổi học từ 18:30 đến 20:00 hôm nay. Vui lòng chuẩn bị trước.',
- FALSE, '2025-12-05 12:00:00'),
-
-(5, 'RATING_REQUEST', 'Đánh giá buổi học',
- 'Vui lòng đánh giá chất lượng buổi học để giúp cải thiện hệ thống.',
- TRUE, '2025-12-06 21:00:00');
-
+-- ===== NGÀY 7: TIN NHẮN CHƯA ĐỌC (TEST REALTIME) =====
+(2, 5, NULL, 'Ngày mai mình học sớm hơn 30 phút được không em?', 
+ '2025-12-16 19:30:00', FALSE);
 
 
 INSERT INTO chat_messages
 (sender_id, receiver_id, sticker_id, content, is_read, sent_at)
 VALUES
--- Cuộc trò chuyện chính giữa Tutor (2) và Learner/Parent (5)
+-- =========================
+-- Cuộc trò chuyện: user 6 ↔ user 2
+-- =========================
+(6, 2, NULL, 'Chào thầy, em muốn hỏi về lịch học Toán ạ.', b'0', '2025-12-12 18:30:00'),
+(2, 6, NULL, 'Chào em, hiện tại thầy trống tối thứ 2 và thứ 4.', b'1', '2025-12-12 18:32:00'),
+(6, 2, NULL, 'Dạ, tối thứ 4 học từ mấy giờ vậy thầy?', b'0', '2025-12-12 18:33:30'),
+(2, 6, NULL, 'Từ 18:30 đến 20:00 em nhé.', b'1', '2025-12-12 18:35:00'),
+(6, 2, 1, NULL, b'1', '2025-12-12 18:36:00'),   
+(2, 6, 3, NULL, b'1', '2025-12-12 18:36:30'),   
 
-(5, 2, NULL, 'Chào thầy, em muốn học Toán lớp 8.', b'0', '2025-12-10 18:30:00'),
-(2, 5, NULL, 'Chào em, thầy có thể dạy vào buổi tối nhé.', b'1', '2025-12-10 18:32:00'),
-
--- gửi sticker
-(5, 2, 1, NULL, b'1', '2025-12-10 18:33:00'),   -- sticker cười
-(2, 5, 3, NULL, b'1', '2025-12-10 18:34:00'),   -- sticker OK
-
--- tiếp tục trao đổi về lịch học
-(5, 2, NULL, 'Thầy ơi cho em hỏi lịch học Lý ạ?', b'0', '2025-12-11 19:00:00'),
-(2, 5, NULL, 'Chúng ta sẽ học thứ 4 và thứ 6 nhé.', b'1', '2025-12-11 19:02:00'),
-
--- xác nhận lại
-(5, 2, NULL, 'Dạ vâng, em cảm ơn thầy.', b'1', '2025-12-11 19:03:30'),
-(2, 5, 5, NULL, b'1', '2025-12-11 19:04:00');   -- sticker thumbs up
+-- =========================
+-- Cuộc trò chuyện: user 7 ↔ user 2
+-- =========================
+(7, 2, NULL, 'Thầy ơi, em muốn đăng ký học Lý lớp 12.', b'0', '2025-12-13 19:00:00'),
+(2, 7, NULL, 'Chào em, thầy có thể dạy Lý vào tối thứ 3 và thứ 5.', b'1', '2025-12-13 19:02:00'),
+(7, 2, NULL, 'Dạ, lịch đó phù hợp với em ạ.', b'1', '2025-12-13 19:03:00'),
+(2, 7, NULL, 'Vậy thầy sẽ tạo lớp học cho em nhé.', b'1', '2025-12-13 19:04:30'),
+(7, 2, 4, NULL, b'1', '2025-12-13 19:05:00'),   
+(2, 7, 5, NULL, b'1', '2025-12-13 19:05:30');   

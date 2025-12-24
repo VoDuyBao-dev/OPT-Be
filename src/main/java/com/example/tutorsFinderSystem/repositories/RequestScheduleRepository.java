@@ -1,8 +1,10 @@
 package com.example.tutorsFinderSystem.repositories;
 
+import com.example.tutorsFinderSystem.entities.CalendarClass;
 import com.example.tutorsFinderSystem.entities.ClassRequest;
 import com.example.tutorsFinderSystem.entities.Learner;
 import com.example.tutorsFinderSystem.entities.RequestSchedule;
+import com.example.tutorsFinderSystem.entities.Tutor;
 import com.example.tutorsFinderSystem.enums.DayOfWeek;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -16,6 +18,8 @@ import java.util.List;
 @Repository
 public interface RequestScheduleRepository extends JpaRepository<RequestSchedule, Long> {
     List<RequestSchedule> findByClassRequest(ClassRequest classRequest);
+
+    // List<RequestSchedule> findByClassRequest_RequestId(Long requestId);
 
     void deleteByClassRequest(ClassRequest classRequest);
 
@@ -84,4 +88,22 @@ public interface RequestScheduleRepository extends JpaRepository<RequestSchedule
     List<RequestSchedule> findActiveLearnerSchedulesByDay(@Param("learnerId") Long learnerId,
             @Param("dayOfWeek") DayOfWeek dayOfWeek);
 
+    @Query("""
+                SELECT COUNT(rs) > 0
+                FROM RequestSchedule rs
+                JOIN rs.classRequest cr
+                WHERE cr.tutor = :tutor
+                  AND cr.status IN (
+                        com.example.tutorsFinderSystem.enums.ClassRequestStatus.PENDING,
+                        com.example.tutorsFinderSystem.enums.ClassRequestStatus.CONFIRMED
+                  )
+                  AND rs.dayOfWeek = :dayOfWeek
+                  AND rs.startTime < :endTime
+                  AND rs.endTime > :startTime
+            """)
+    boolean existsTimeConflict(
+            @Param("tutor") Tutor tutor,
+            @Param("dayOfWeek") DayOfWeek dayOfWeek,
+            @Param("startTime") LocalTime startTime,
+            @Param("endTime") LocalTime endTime);
 }

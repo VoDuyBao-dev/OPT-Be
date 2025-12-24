@@ -50,11 +50,19 @@ public class TutorDashboardService {
 	// totalClasses);
 	// }
 
+	// public int getWeeklyScheduleCount() {
+
+	// Tutor tutor = getTutor();
+
+	// return availabilityRepository.countWeeklySchedules(tutor.getTutorId());
+	// }
+
 	public int getWeeklyScheduleCount() {
 
 		Tutor tutor = getTutor();
 
-		return availabilityRepository.countWeeklySchedules(tutor.getTutorId());
+		return classRequestRepository
+				.countWeeklyConfirmedClasses(tutor.getTutorId());
 	}
 
 	public int getNewRequestCount() {

@@ -28,6 +28,7 @@ import com.example.tutorsFinderSystem.repositories.TutorRepository;
 import com.example.tutorsFinderSystem.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import java.time.LocalDateTime;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -53,6 +54,8 @@ public class AdminTutorService {
     private final TutorCertificateFileRepository tutorCertificateFileRepository;
     private final AdminTutorMapper adminTutorMapper;
     private final TutorCertificateRepository tutorCertificateRepository;
+    private final EmailService emailService;
+    private final UserService userService;
 
     // 1) Danh sách tutor cho admin
     @Transactional
@@ -231,6 +234,7 @@ public class AdminTutorService {
 
                 if (file.getFileId().equals(newestFile.getFileId())) {
                     file.setIsActive(true);
+                    // file.setUploadedAt(LocalDateTime.now());
                 } else {
                     file.setIsActive(false);
                 }
@@ -256,7 +260,7 @@ public class AdminTutorService {
     }
 
     @Transactional
-    public void rejectTutor(Long tutorId) {
+    public void rejectTutor(Long tutorId, String reason) {
 
         Tutor tutor = tutorRepository.findById(tutorId)
                 .orElseThrow(() -> new AppException(ErrorCode.TUTOR_NOT_FOUND));
@@ -293,6 +297,14 @@ public class AdminTutorService {
         // 5) LƯU USER & TUTOR
         userRepository.save(user);
         tutorRepository.save(tutor);
+
+        emailService.sendTutorRejectedEmail(
+                user.getEmail(),
+                user.getFullName(),
+                reason,
+                userService.getCurrentUser() // admin
+        );
+
     }
 
     @Transactional
