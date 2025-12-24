@@ -27,5 +27,6 @@ public class ClassRequestDTO {
     private String status;
     private String type;
     private LocalDateTime createdAt;
+    private String rejectionReason ;
 
 }
