@@ -4,6 +4,7 @@ import com.example.tutorsFinderSystem.dto.common.ClassRequestDTO;
 import com.example.tutorsFinderSystem.dto.common.WeeklyScheduleDTO;
 import com.example.tutorsFinderSystem.dto.request.OfficialClassRequest;
 import com.example.tutorsFinderSystem.dto.request.TrialRequest;
+import com.example.tutorsFinderSystem.dto.response.OfficialClassPreviewResponse;
 import com.example.tutorsFinderSystem.entities.*;
 import com.example.tutorsFinderSystem.enums.ClassRequestStatus;
 import com.example.tutorsFinderSystem.enums.ClassRequestType;
@@ -23,6 +24,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -127,8 +129,8 @@ public class ClassRequestService {
 
     }
 
-//    Learner gửi yêu cầu học chính thức
-    public void createOfficialRequest(OfficialClassRequest officialClassRequest) {
+//    Learner gửi yêu cầu học chính thức, tạo các class liên quan và trả về thông tin liên quan để thanh toán
+    public OfficialClassPreviewResponse createOfficialRequestWithPayment(OfficialClassRequest officialClassRequest) {
 
         String learnerEmail = SecurityContextHolder.getContext().getAuthentication().getName();
 
@@ -271,7 +273,7 @@ public class ClassRequestService {
                 .tutor(tutor)
                 .subject(subject)
                 .type(ClassRequestType.OFFICIAL)
-                .status(ClassRequestStatus.PENDING)
+                .status(ClassRequestStatus.PENDING_PAYMENT)
                 .startDate(officialClassRequest.getStartDate())
                 .endDate(officialClassRequest.getEndDate())
                 .sessionsPerWeek(officialClassRequest.getSchedules().size())
@@ -303,7 +305,36 @@ public class ClassRequestService {
                 .build();
 
         classRepository.save(classEntity);
+
+        BigDecimal amount = calculateAmount(
+                tutor.getPricePerHour(),
+                sessionDates.size()
+        );
+
+        return OfficialClassPreviewResponse.builder()
+                .classRequestId(request.getRequestId())
+                .totalAmount(amount)
+                .totalSessions(sessionDates.size())
+                .tutorName(tutor.getUser().getFullName())
+                .subjectName(subject.getSubjectName())
+                .startDate(officialClassRequest.getStartDate())
+                .endDate(officialClassRequest.getEndDate())
+                .schedules(officialClassRequest.getSchedules())
+                .additionalNotes(officialClassRequest.getAdditionalNotes())
+                .build();
     }
+
+    public BigDecimal calculateAmount(
+            BigDecimal pricePerHour,
+            int totalSessions) {
+
+        BigDecimal hoursPerSession = BigDecimal.valueOf(1.5);
+
+        return pricePerHour
+                .multiply(hoursPerSession)
+                .multiply(BigDecimal.valueOf(totalSessions));
+    }
+
 
 
 
@@ -388,7 +419,7 @@ public class ClassRequestService {
     }
 
     // tạo tất cả các ngày buổi học theo nhiều lịch hàng tuần, gộp và loại bỏ trùng lặp, sắp xếp
-    private List<LocalDate> generateAllSessionDates(LocalDate start, LocalDate end, List<WeeklyScheduleDTO> schedules) {
+    public List<LocalDate> generateAllSessionDates(LocalDate start, LocalDate end, List<WeeklyScheduleDTO> schedules) {
         Set<LocalDate> set = new HashSet<>();
         for (WeeklyScheduleDTO s : schedules) {
             set.addAll(generateDatesForSingleSchedule(start, end, s));

@@ -223,6 +223,16 @@ public enum ErrorCode {
 
         // tutor lịch rảnh
         AVAILABILITY_NOT_FOUND(9003, "không có lịch rảnh ở khung giờ này", HttpStatus.NOT_FOUND),
+//    Payment
+PAYMENT_NOT_FOUND(5300, "Payment not found", HttpStatus.BAD_REQUEST),
+    PAYMENT_ALREADY_EXISTS(5301, "Lớp học này đã có giao dịch thanh toán", HttpStatus.BAD_REQUEST),
+    REFUND_ALREADY_EXISTS(5302, "Lớp học này đã được hoàn tiền", HttpStatus.BAD_REQUEST),
+    FAILED_TO_CALL_VNPAY(5303, "Gửi yêu cầu hoàn tiền đến VNPAY thất bại", HttpStatus.BAD_REQUEST),
+    INVALID_PAYMENT_AMOUNT(5304, "Số tiền khongo hợp lệ", HttpStatus.BAD_REQUEST),
+    REFUND_FAILED(5305, "Hoàn tiền thất bại", HttpStatus.BAD_REQUEST),
+
+//    revenue
+    INVALID_DATE_RANGE(5400, "Invalid date range", HttpStatus.BAD_REQUEST),
 
 
         

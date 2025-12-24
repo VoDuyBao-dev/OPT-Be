@@ -1,12 +1,14 @@
 package com.example.tutorsFinderSystem.controller.tutor;
 
 import com.example.tutorsFinderSystem.dto.ApiResponse;
+import com.example.tutorsFinderSystem.dto.request.RejectRequest;
 import com.example.tutorsFinderSystem.dto.response.TutorRequestStatusUpdateResponse;
 import com.example.tutorsFinderSystem.dto.response.TutorRequestClassResponse;
 import com.example.tutorsFinderSystem.enums.ClassRequestStatus;
 import com.example.tutorsFinderSystem.enums.ClassRequestType;
 import com.example.tutorsFinderSystem.security.RequireApprovedTutor;
 import com.example.tutorsFinderSystem.services.TutorClassRequestService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -58,9 +60,9 @@ public class TutorClassRequestController {
 
     @PatchMapping("/{requestId}/reject")
     public ResponseEntity<ApiResponse<TutorRequestStatusUpdateResponse>> rejectRequest(
-            @PathVariable Long requestId) {
+            @PathVariable Long requestId, @RequestBody RejectRequest rejectRequest, HttpServletRequest request) {
 
-        TutorRequestStatusUpdateResponse result = tutorClassRequestService.rejectRequestForCurrentTutor(requestId);
+        TutorRequestStatusUpdateResponse result = tutorClassRequestService.rejectRequestForCurrentTutor(requestId, rejectRequest.getReason(), request);
 
         return ResponseEntity.ok(
                 ApiResponse.<TutorRequestStatusUpdateResponse>builder()

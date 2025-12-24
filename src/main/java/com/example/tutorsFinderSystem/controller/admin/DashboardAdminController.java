@@ -1,12 +1,16 @@
 package com.example.tutorsFinderSystem.controller.admin;
+import com.example.tutorsFinderSystem.dto.response.AdminDashboardStatsResponse;
 import com.example.tutorsFinderSystem.dto.response.DashboardAdminResponse;
 import com.example.tutorsFinderSystem.dto.ApiResponse;
+import com.example.tutorsFinderSystem.dto.response.TransactionResponse;
 import com.example.tutorsFinderSystem.services.DashboardAdminService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -26,5 +30,17 @@ public class DashboardAdminController {
                 .result(dashboardService.getDashboard())
                 .build()
         );
+    }
+
+    @GetMapping("/stats")
+    public ApiResponse<AdminDashboardStatsResponse> getStats() {
+
+        AdminDashboardStatsResponse stats = dashboardService.getDashboardStats();
+
+        return ApiResponse.<AdminDashboardStatsResponse>builder()
+                .code(200)
+                .message("get stats success")
+                .result(stats)
+                .build();
     }
 }
