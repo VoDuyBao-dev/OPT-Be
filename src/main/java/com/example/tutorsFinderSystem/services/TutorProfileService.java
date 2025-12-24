@@ -256,6 +256,7 @@ public class TutorProfileService {
 
         // LƯU DB
         user.setAvatarImage(avatarUrl);
+        user.setUpdatedAt(LocalDateTime.now());
         userRepository.save(user);
 
         return TutorAvatarUpdateResponse.builder()
@@ -297,6 +298,7 @@ public class TutorProfileService {
 
         // 4. Update
         user.setPasswordHash(passwordEncoder.encode(request.getNewPassword()));
+        user.setUpdatedAt(LocalDateTime.now());
         userRepository.save(user);
     }
 

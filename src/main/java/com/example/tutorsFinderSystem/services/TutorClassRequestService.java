@@ -44,9 +44,6 @@ public class TutorClassRequestService {
 
 
 
-
-
-
     /**
      * Lấy tutor hiện tại từ SecurityContext (qua UserService),
      * sau đó tìm Tutor tương ứng với User đó.
@@ -108,7 +105,7 @@ public class TutorClassRequestService {
                             .findByClassRequest_RequestId(request.getRequestId())
                             .orElseThrow(() -> new AppException(ErrorCode.CLASS_NOT_FOUND));
 
-                    List<CalendarClass> slots = calendarClassRepository
+                    List<RequestSchedule> slots = requestScheduleRepository
                             .findByClassRequest_RequestId(request.getRequestId());
 
                     return mapper.toSummary(request, classEntity, slots);
@@ -130,8 +127,8 @@ public class TutorClassRequestService {
 
     /**
      * Tutor hiện tại chấp nhận yêu cầu:
-     *  - class_requests.status = CONFIRMED
-     *  - classes.status        = ONGOING
+     * - class_requests.status = CONFIRMED
+     * - classes.status = ONGOING
      */
     @Transactional
     public TutorRequestStatusUpdateResponse acceptRequestForCurrentTutor(Long requestId) {
@@ -150,6 +147,32 @@ public class TutorClassRequestService {
             throw new AppException(ErrorCode.INVALID_REQUEST_STATUS);
         }
 
+        // ===== 1. Lấy schedule của request hiện tại =====
+        List<RequestSchedule> schedules = requestScheduleRepository
+                .findByClassRequest_RequestId(requestId);
+
+        if (schedules.isEmpty()) {
+            throw new AppException(ErrorCode.SCHEDULE_NOT_FOUND);
+        }
+
+        // ===== 2. Check trùng lịch =====
+        for (RequestSchedule rs : schedules) {
+            boolean hasConflict = !classRequestRepository
+                    .findConflictingRequests(
+                            tutorId,
+                            requestId,
+                            request.getStartDate(),
+                            request.getEndDate(),
+                            rs.getDayOfWeek(),
+                            rs.getStartTime(),
+                            rs.getEndTime())
+                    .isEmpty();
+
+            if (hasConflict) {
+                throw new AppException(ErrorCode.SCHEDULE_CONFLICT);
+            }
+        }
+
         request.setStatus(ClassRequestStatus.CONFIRMED);
         classRequestRepository.save(request);
 
@@ -166,7 +189,7 @@ public class TutorClassRequestService {
 
         List<CalendarClass> calendars;
 
-        //Tạo calendar học thử/ chính thức
+        // Tạo calendar học thử/ chính thức
         if (request.getType() == ClassRequestType.TRIAL) {
             calendars = calendarClassService.createTrialCalendar(request, schedule);
         } else {
@@ -175,8 +198,7 @@ public class TutorClassRequestService {
 
         TutorAvailabilityService.bookAvailabilityForCalendars(
                 request.getTutor(),
-                calendars
-        );
+                calendars);
 
         return TutorRequestStatusUpdateResponse.builder()
                 .requestId(request.getRequestId())
@@ -188,8 +210,8 @@ public class TutorClassRequestService {
 
     /**
      * Tutor hiện tại từ chối yêu cầu:
-     *  - class_requests.status = CANCELLED
-     *  - classes.status        = CANCELLED
+     * - class_requests.status = CANCELLED
+     * - classes.status = CANCELLED
      */
     @Transactional
     public TutorRequestStatusUpdateResponse rejectRequestForCurrentTutor(Long requestId, String reason, HttpServletRequest httpRequest) {
@@ -248,27 +270,29 @@ public class TutorClassRequestService {
                 .build();
     }
 
-    // Nếu sau này cần xem chi tiết, bạn có thể bật lại và đổi sang dùng getCurrentTutor():
+    // Nếu sau này cần xem chi tiết, bạn có thể bật lại và đổi sang dùng
+    // getCurrentTutor():
 
     // @Transactional(readOnly = true)
-    // public TutorRequestDetailResponse getRequestDetailForCurrentTutor(Long requestId) {
-    //     Tutor tutor = getCurrentTutor();
-    //     Long tutorId = tutor.getTutorId();
+    // public TutorRequestDetailResponse getRequestDetailForCurrentTutor(Long
+    // requestId) {
+    // Tutor tutor = getCurrentTutor();
+    // Long tutorId = tutor.getTutorId();
     //
-    //     ClassRequest request = classRequestRepository.findById(requestId)
-    //             .orElseThrow(() -> new AppException(ErrorCode.CLASS_REQUEST_NOT_FOUND));
+    // ClassRequest request = classRequestRepository.findById(requestId)
+    // .orElseThrow(() -> new AppException(ErrorCode.CLASS_REQUEST_NOT_FOUND));
     //
-    //     if (!request.getTutor().getTutorId().equals(tutorId)) {
-    //         throw new AppException(ErrorCode.ACCESS_DENIED);
-    //     }
+    // if (!request.getTutor().getTutorId().equals(tutorId)) {
+    // throw new AppException(ErrorCode.ACCESS_DENIED);
+    // }
     //
-    //     ClassEntity classEntity =
-    //             classRepository.findByClassRequest_RequestId(requestId)
-    //                     .orElseThrow(() -> new AppException(ErrorCode.CLASS_NOT_FOUND));
+    // ClassEntity classEntity =
+    // classRepository.findByClassRequest_RequestId(requestId)
+    // .orElseThrow(() -> new AppException(ErrorCode.CLASS_NOT_FOUND));
     //
-    //     List<CalendarClass> slots =
-    //             calendarClassRepository.findByClassRequest_RequestId(requestId);
+    // List<CalendarClass> slots =
+    // calendarClassRepository.findByClassRequest_RequestId(requestId);
     //
-    //     return mapper.toDetail(request, classEntity, slots);
+    // return mapper.toDetail(request, classEntity, slots);
     // }
 }

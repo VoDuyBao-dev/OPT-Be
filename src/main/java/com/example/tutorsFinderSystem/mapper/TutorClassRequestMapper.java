@@ -4,6 +4,8 @@ import com.example.tutorsFinderSystem.dto.response.TutorRequestClassResponse;
 import com.example.tutorsFinderSystem.entities.CalendarClass;
 import com.example.tutorsFinderSystem.entities.ClassEntity;
 import com.example.tutorsFinderSystem.entities.ClassRequest;
+import com.example.tutorsFinderSystem.entities.RequestSchedule;
+
 import org.mapstruct.*;
 
 import java.time.format.DateTimeFormatter;
@@ -38,9 +40,9 @@ public interface TutorClassRequestMapper  {
     @Mapping(target = "createdAt", source = "request.createdAt")
 
     @Mapping(target = "scheduleDescription", expression = "java(buildScheduleDescription(calendar))")
-    TutorRequestClassResponse toSummary(ClassRequest request, ClassEntity classEntity, List<CalendarClass> calendar);
+    TutorRequestClassResponse toSummary(ClassRequest request, ClassEntity classEntity, List<RequestSchedule> calendar);
 
-    default String buildScheduleDescription(List<CalendarClass> slots) {
+    default String buildScheduleDescription(List<RequestSchedule> slots) {
         if (slots == null || slots.isEmpty())
             return null;
 
