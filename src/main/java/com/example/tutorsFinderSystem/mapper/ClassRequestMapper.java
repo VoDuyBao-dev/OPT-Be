@@ -19,6 +19,7 @@ public interface ClassRequestMapper {
     @Mapping(target = "endDate", source = "endDate")
     @Mapping(target = "additionalNotes", source = "additionalNotes")
     @Mapping(target = "createdAt", source = "createdAt")
+    @Mapping(target = "rejectionReason", source = "rejectionReason")
     ClassRequestDTO toClassRequestDTO(ClassRequest classRequest);
 
     default String convertTypeClassRequestToString(ClassRequestType type) {

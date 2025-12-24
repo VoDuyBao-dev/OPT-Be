@@ -253,6 +253,7 @@ public class TutorClassRequestService {
         }
 
         request.setStatus(ClassRequestStatus.CANCELLED);
+        request.setRejectionReason(reason);
         classRequestRepository.save(request);
 
         ClassEntity classEntity = classRepository

@@ -52,6 +52,14 @@ public class ClassRequest {
     @Column(name = "additional_notes", columnDefinition = "TEXT")
     private String additionalNotes;
 
+    @Column(
+            name = "rejection_reason",
+            columnDefinition = "TEXT",
+            nullable = true
+    )
+    @Builder.Default
+    private String rejectionReason = null;
+
     @Builder.Default
     @Enumerated(EnumType.STRING)
     @Column(name = "status", length = 20)
