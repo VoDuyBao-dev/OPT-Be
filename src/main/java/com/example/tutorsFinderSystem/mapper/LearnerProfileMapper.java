@@ -15,6 +15,7 @@ public interface LearnerProfileMapper {
     // @Mapping(target = "roleLabel", expression = "java(\"Người học\")")
     // @Mapping(target = "address", expression = "java(buildFullAddress(learner))")
     @Mapping(target = "address", source = "learner.address")
+    @Mapping(target = "avatarUrl", expression = "java(buildAvatarUrl(user))")
     LearnerProfileResponse toResponse(Learner learner, User user);
 
     // default String buildFullAddress(Learner learner) {
@@ -31,4 +32,25 @@ public interface LearnerProfileMapper {
     //     }
     //     return detail + ", " + address;
     // }
+
+    default String buildAvatarUrl(User user) {
+        if (user == null || user.getAvatarImage() == null)
+            return null;
+
+        String avatar = user.getAvatarImage();
+
+        if (!avatar.contains("http")) {
+            return "http://localhost:8080/tutorsFinder/drive/view/" + avatar;
+        }
+
+        if (avatar.contains("id=")) {
+            String id = avatar.substring(avatar.indexOf("id=") + 3);
+            int idx = id.indexOf("&");
+            if (idx != -1) id = id.substring(0, idx);
+
+            return "http://localhost:8080/tutorsFinder/drive/view/" + id;
+        }
+
+        return avatar;
+    }
 }
