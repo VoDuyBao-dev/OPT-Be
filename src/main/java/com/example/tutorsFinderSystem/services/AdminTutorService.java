@@ -54,6 +54,8 @@ public class AdminTutorService {
     private final TutorCertificateFileRepository tutorCertificateFileRepository;
     private final AdminTutorMapper adminTutorMapper;
     private final TutorCertificateRepository tutorCertificateRepository;
+    private final EmailService emailService;
+    private final UserService userService;
 
     // 1) Danh sách tutor cho admin
     @Transactional
@@ -258,7 +260,7 @@ public class AdminTutorService {
     }
 
     @Transactional
-    public void rejectTutor(Long tutorId) {
+    public void rejectTutor(Long tutorId, String reason) {
 
         Tutor tutor = tutorRepository.findById(tutorId)
                 .orElseThrow(() -> new AppException(ErrorCode.TUTOR_NOT_FOUND));
@@ -295,6 +297,14 @@ public class AdminTutorService {
         // 5) LƯU USER & TUTOR
         userRepository.save(user);
         tutorRepository.save(tutor);
+
+        emailService.sendTutorRejectedEmail(
+                user.getEmail(),
+                user.getFullName(),
+                reason,
+                userService.getCurrentUser() // admin
+        );
+
     }
 
     @Transactional

@@ -234,7 +234,7 @@ PAYMENT_NOT_FOUND(5300, "Payment not found", HttpStatus.BAD_REQUEST),
 //    revenue
     INVALID_DATE_RANGE(5400, "Invalid date range", HttpStatus.BAD_REQUEST),
 
-
+Reason_required(5401, "Reason required", HttpStatus.BAD_REQUEST),
         
         ;
 

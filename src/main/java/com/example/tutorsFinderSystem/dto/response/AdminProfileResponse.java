@@ -1,10 +1,12 @@
 package com.example.tutorsFinderSystem.dto.response;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 @Getter
+@Setter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class AdminProfileResponse {
 
     private String fullName;

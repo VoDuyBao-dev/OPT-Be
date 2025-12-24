@@ -46,6 +46,7 @@ public class ClassRequestService {
     LearnerRepository learnerRepository;
     TutorRepository tutorRepository;
     SubjectRepository subjectRepository;
+    TutorAvailabilityRepository tutorAvailabilityRepository;
 
     public Page<ClassRequestDTO> getClassRequestDetails(int page, int size) {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -57,7 +58,7 @@ public class ClassRequestService {
 
     }
 
-//    learner gửi yêu cầu học thử
+    // learner gửi yêu cầu học thử
     public void createTrialRequest(TrialRequest trialRequest) {
         String learnerEmail = SecurityContextHolder.getContext().getAuthentication().getName();
 
@@ -72,20 +73,26 @@ public class ClassRequestService {
         Subject subject = subjectRepository.findById(trialRequest.getSubjectId())
                 .orElseThrow(() -> new AppException(ErrorCode.SUBJECT_NOT_EXISTED));
 
-        //Check tutor có dạy môn này không
+        // Check tutor có dạy môn này không
         validateTutorTeachesSubject(tutor, subject);
 
-        //Check time hợp lệ
+        // Check time hợp lệ
         validateTimeSlot(trialRequest.getStartTime(), trialRequest.getEndTime());
 
-        //Check duplicate TRIAL cùng môn cùng tutor (chỉ PENDING)
+        // Check duplicate TRIAL cùng môn cùng tutor (chỉ PENDING)
         validateNoDuplicateTrialRequest(learner, tutor, subject);
 
-        //Check time conflict với lịch tutor
+        // Check time conflict với lịch tutor
         validateHasTimeConflictTutor(tutor, trialRequest);
 
-//        Check learner conflict (học viên có bận hay không)
+        // Check learner conflict (học viên có bận hay không)
         ValidateHasLearnerTimeConflict(learner, trialRequest);
+
+        // Tutor có availability không
+        validateTutorIsAvailable(tutor, trialRequest);
+
+        // Không trùng request_schedules
+        validateNoRequestScheduleConflict(tutor, trialRequest);
 
         ClassRequest classRequest = ClassRequest.builder()
                 .learner(learner)
@@ -103,7 +110,6 @@ public class ClassRequestService {
                 .build();
 
         classRequest = classRequestRepository.save(classRequest);
-
 
         ClassEntity classEntity = ClassEntity.builder()
                 .classRequest(classRequest)
@@ -124,12 +130,13 @@ public class ClassRequestService {
 
         requestScheduleRepository.save(schedule);
 
-        log.info("Trial request created successfully with ID: {}", classRequest.getRequestId());
-
+        // log.info("Trial request created successfully with ID: {}",
+        // classRequest.getRequestId());
 
     }
 
-//    Learner gửi yêu cầu học chính thức, tạo các class liên quan và trả về thông tin liên quan để thanh toán
+    // Learner gửi yêu cầu học chính thức, tạo các class liên quan và trả về thông
+    // tin liên quan để thanh toán
     public OfficialClassPreviewResponse createOfficialRequestWithPayment(OfficialClassRequest officialClassRequest) {
 
         String learnerEmail = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -162,8 +169,7 @@ public class ClassRequestService {
         List<LocalDate> sessionDates = generateAllSessionDates(
                 officialClassRequest.getStartDate(),
                 officialClassRequest.getEndDate(),
-                officialClassRequest.getSchedules()
-        );
+                officialClassRequest.getSchedules());
 
         if (sessionDates.isEmpty()) {
             throw new AppException(ErrorCode.NO_SESSION_GENERATED);
@@ -176,33 +182,29 @@ public class ClassRequestService {
             List<LocalDate> datesForThisDay = generateDatesForSingleSchedule(
                     officialClassRequest.getStartDate(),
                     officialClassRequest.getEndDate(),
-                    sched
-            );
+                    sched);
 
             for (LocalDate d : datesForThisDay) {
 
                 // Kiểm tra trùng với lịch đã được xác nhận (calendar) của tutor
                 boolean tutorConflictInCalendar = calendarClassRepository.hasTimeConflictForTutorOnDate(
-                        tutor, sched.getDayOfWeek(), d, sched.getStartTime(), sched.getEndTime()
-                );
+                        tutor, sched.getDayOfWeek(), d, sched.getStartTime(), sched.getEndTime());
                 if (tutorConflictInCalendar) {
                     throw new AppException(ErrorCode.TUTOR_TIME_CONFLICT);
                 }
 
                 // Kiểm tra trùng lịch đã xác nhận trong calendar của learner
                 boolean learnerConflictInCalendar = calendarClassRepository.hasTimeConflictForLearnerOnDate(
-                        learner, sched.getDayOfWeek(), d, sched.getStartTime(), sched.getEndTime()
-                );
+                        learner, sched.getDayOfWeek(), d, sched.getStartTime(), sched.getEndTime());
                 if (learnerConflictInCalendar) {
                     throw new AppException(ErrorCode.LEARNER_TIME_CONFLICT);
                 }
 
-                // Kiểm tra trùng với các request đang hoạt động (PENDING hoặc CONFIRMED chưa completed) của tutor
-                List<RequestSchedule> tutorActiveReqSchedules =
-                        requestScheduleRepository.findActiveTutorSchedulesByDay(
-                                tutor.getTutorId(),
-                                sched.getDayOfWeek()
-                        );
+                // Kiểm tra trùng với các request đang hoạt động (PENDING hoặc CONFIRMED chưa
+                // completed) của tutor
+                List<RequestSchedule> tutorActiveReqSchedules = requestScheduleRepository.findActiveTutorSchedulesByDay(
+                        tutor.getTutorId(),
+                        sched.getDayOfWeek());
 
                 for (RequestSchedule existing : tutorActiveReqSchedules) {
 
@@ -234,11 +236,10 @@ public class ClassRequestService {
                 }
 
                 // Kiểm tra trùng với các request đang hoạt động của learner
-                List<RequestSchedule> learnerActiveReqSchedules =
-                        requestScheduleRepository.findActiveLearnerSchedulesByDay(
+                List<RequestSchedule> learnerActiveReqSchedules = requestScheduleRepository
+                        .findActiveLearnerSchedulesByDay(
                                 learner.getLearnerId(),
-                                sched.getDayOfWeek()
-                        );
+                                sched.getDayOfWeek());
 
                 for (RequestSchedule existing : learnerActiveReqSchedules) {
 
@@ -267,7 +268,7 @@ public class ClassRequestService {
             }
         }
 
-        //tạo ClassRequest
+        // tạo ClassRequest
         ClassRequest request = ClassRequest.builder()
                 .learner(learner)
                 .tutor(tutor)
@@ -308,8 +309,7 @@ public class ClassRequestService {
 
         BigDecimal amount = calculateAmount(
                 tutor.getPricePerHour(),
-                sessionDates.size()
-        );
+                sessionDates.size());
 
         return OfficialClassPreviewResponse.builder()
                 .classRequestId(request.getRequestId())
@@ -334,9 +334,6 @@ public class ClassRequestService {
                 .multiply(hoursPerSession)
                 .multiply(BigDecimal.valueOf(totalSessions));
     }
-
-
-
 
     private void validateTutorTeachesSubject(Tutor tutor, Subject subject) {
         if (!tutor.getSubjects().contains(subject)) {
@@ -365,9 +362,7 @@ public class ClassRequestService {
                         tutor,
                         subject,
                         ClassRequestType.TRIAL,
-                        List.of(ClassRequestStatus.PENDING)
-                );
-
+                        List.of(ClassRequestStatus.PENDING));
 
         if (hasPendingTrial) {
             throw new AppException(ErrorCode.DUPLICATE_TRIAL_REQUEST);
@@ -380,8 +375,7 @@ public class ClassRequestService {
                 trialRequest.getDayOfWeek(),
                 trialRequest.getTrialDate(),
                 trialRequest.getStartTime(),
-                trialRequest.getEndTime()
-        );
+                trialRequest.getEndTime());
 
         if (hasConflict) {
             throw new AppException(ErrorCode.TUTOR_TIME_CONFLICT);
@@ -395,8 +389,7 @@ public class ClassRequestService {
                 trialRequest.getDayOfWeek(),
                 trialRequest.getTrialDate(),
                 trialRequest.getStartTime(),
-                trialRequest.getEndTime()
-        );
+                trialRequest.getEndTime());
         if (learnerConflict) {
             throw new AppException(ErrorCode.LEARNER_TIME_CONFLICT);
         }
@@ -406,7 +399,8 @@ public class ClassRequestService {
         return existingStart.isBefore(newEnd) && newStart.isBefore(existingEnd);
     }
 
-    // tạo ngày cho một Lịch hàng tuần (ví dụ: mỗi thứ Hai giữa ngày bắt đầu và kết thúc)
+    // tạo ngày cho một Lịch hàng tuần (ví dụ: mỗi thứ Hai giữa ngày bắt đầu và kết
+    // thúc)
     private List<LocalDate> generateDatesForSingleSchedule(LocalDate start, LocalDate end, WeeklyScheduleDTO sched) {
         java.time.DayOfWeek target = sched.getDayOfWeek().toJavaDayOfWeek();
         LocalDate first = start.with(TemporalAdjusters.nextOrSame(target));
@@ -418,7 +412,8 @@ public class ClassRequestService {
         return res;
     }
 
-    // tạo tất cả các ngày buổi học theo nhiều lịch hàng tuần, gộp và loại bỏ trùng lặp, sắp xếp
+    // tạo tất cả các ngày buổi học theo nhiều lịch hàng tuần, gộp và loại bỏ trùng
+    // lặp, sắp xếp
     public List<LocalDate> generateAllSessionDates(LocalDate start, LocalDate end, List<WeeklyScheduleDTO> schedules) {
         Set<LocalDate> set = new HashSet<>();
         for (WeeklyScheduleDTO s : schedules) {
@@ -429,48 +424,74 @@ public class ClassRequestService {
         return list;
     }
 
+    private void validateTutorIsAvailable(Tutor tutor, TrialRequest request) {
 
+        LocalDateTime start = LocalDateTime.of(
+                request.getTrialDate(),
+                request.getStartTime());
+        LocalDateTime end = LocalDateTime.of(
+                request.getTrialDate(),
+                request.getEndTime());
 
-//    private void validateDateRange(LocalDate start, LocalDate end) {
-//        if (end.isBefore(start)) {
-//            throw new BusinessException("End date must be after start date");
-//        }
-//
-//        // Optional: validate minimum duration (e.g., at least 1 month)
-//        long weeks = ChronoUnit.WEEKS.between(start, end);
-//        if (weeks < 4) {
-//            throw new BusinessException("Official class must be at least 4 weeks long");
-//        }
-//    }
-//
-//    private void validateSchedulesMatchSessionsPerWeek(
-//            List<OfficialClassRequestDTO.ScheduleSlotDTO> schedules,
-//            Integer sessionsPerWeek) {
-//
-//        if (schedules.size() != sessionsPerWeek) {
-//            throw new BusinessException(
-//                    String.format("Number of schedules (%d) must match sessions per week (%d)",
-//                            schedules.size(), sessionsPerWeek)
-//            );
-//        }
-//    }
-//
-//    private void validateTutorOwnsRequest(Long tutorId, ClassRequest request) {
-//        if (!request.getTutor().getTutorId().equals(tutorId)) {
-//            throw new BusinessException("You don't have permission to perform this action");
-//        }
-//    }
-//
-//    private void validateRequestIsPending(ClassRequest request) {
-//        if (request.getStatus() != ClassRequestStatus.PENDING) {
-//            throw new BusinessException(
-//                    String.format("Can only approve/reject pending requests. Current status: %s",
-//                            request.getStatus())
-//            );
-//        }
-//    }
+        boolean available = tutorAvailabilityRepository
+                .isTutorAvailable(tutor, start, end);
 
+        if (!available) {
+            throw new AppException(ErrorCode.TUTOR_AVAILABILITY_NOT_FOUND);
+        }
+    }
 
+    private void validateNoRequestScheduleConflict(Tutor tutor, TrialRequest request) {
 
+        boolean conflict = requestScheduleRepository.existsTimeConflict(
+                tutor,
+                request.getDayOfWeek(),
+                request.getStartTime(),
+                request.getEndTime());
+
+        if (conflict) {
+            throw new AppException(ErrorCode.SCHEDULE_CONFLICT);
+        }
+    }
+
+    // private void validateDateRange(LocalDate start, LocalDate end) {
+    // if (end.isBefore(start)) {
+    // throw new BusinessException("End date must be after start date");
+    // }
+    //
+    // // Optional: validate minimum duration (e.g., at least 1 month)
+    // long weeks = ChronoUnit.WEEKS.between(start, end);
+    // if (weeks < 4) {
+    // throw new BusinessException("Official class must be at least 4 weeks long");
+    // }
+    // }
+    //
+    // private void validateSchedulesMatchSessionsPerWeek(
+    // List<OfficialClassRequestDTO.ScheduleSlotDTO> schedules,
+    // Integer sessionsPerWeek) {
+    //
+    // if (schedules.size() != sessionsPerWeek) {
+    // throw new BusinessException(
+    // String.format("Number of schedules (%d) must match sessions per week (%d)",
+    // schedules.size(), sessionsPerWeek)
+    // );
+    // }
+    // }
+    //
+    // private void validateTutorOwnsRequest(Long tutorId, ClassRequest request) {
+    // if (!request.getTutor().getTutorId().equals(tutorId)) {
+    // throw new BusinessException("You don't have permission to perform this
+    // action");
+    // }
+    // }
+    //
+    // private void validateRequestIsPending(ClassRequest request) {
+    // if (request.getStatus() != ClassRequestStatus.PENDING) {
+    // throw new BusinessException(
+    // String.format("Can only approve/reject pending requests. Current status: %s",
+    // request.getStatus())
+    // );
+    // }
+    // }
 
 }
