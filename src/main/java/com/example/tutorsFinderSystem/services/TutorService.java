@@ -7,6 +7,7 @@ import com.example.tutorsFinderSystem.dto.response.EbookResponse;
 import com.example.tutorsFinderSystem.dto.response.NotificationResponse;
 import com.example.tutorsFinderSystem.dto.response.FeaturedTutorResponse;
 import com.example.tutorsFinderSystem.entities.Ratings;
+import com.example.tutorsFinderSystem.entities.Subject;
 import com.example.tutorsFinderSystem.entities.Tutor;
 import com.example.tutorsFinderSystem.entities.User;
 import com.example.tutorsFinderSystem.exceptions.AppException;
@@ -46,10 +47,17 @@ public class TutorService {
     private final NotificationMapper notificationMapper;
 
     @Transactional(readOnly = true)
-    public TutorDetailDTO getTutorDetail(Long tutorId) {
+    public TutorDetailDTO getTutorDetail(Long tutorId, Long subjectId) {
         // Lấy thông tin tutor
         Tutor tutor = tutorRepository.findTutorWithCertificates(tutorId)
                 .orElseThrow(() -> new AppException(ErrorCode.TUTOR_NOT_FOUND));
+
+        Subject selectedSubject = tutor.getSubjects().stream()
+                .filter(s -> s.getSubjectId().equals(subjectId))
+                .findFirst()
+                .orElseThrow(() -> new AppException(ErrorCode.TUTOR_NOT_TEACH_SUBJECT));
+
+
 
         tutorRepository.findCertificatesWithFiles(tutorId);
 
@@ -62,7 +70,11 @@ public class TutorService {
                 PageRequest.of(0, 10));
 
         // Map sang DTO
-        return tutorMapper.toTutorDetailDTO(tutor, statistics, recentReviews);
+        TutorDetailDTO dto = tutorMapper.toTutorDetailDTO(tutor, statistics, recentReviews);
+        dto.setSubjectId(selectedSubject.getSubjectId());
+        dto.setSubjectName(selectedSubject.getSubjectName());
+
+        return dto;
     }
 
     private RatingStatisticsDTO calculateRatingStatistics(Long tutorId) {

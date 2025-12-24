@@ -10,6 +10,8 @@ import java.util.List;
 @Builder
 public class TutorDetailDTO {
     private Long tutorId;
+    private Long subjectId;
+    private String subjectName;
     private String fullName;
     private String email;
     private String phoneNumber;
