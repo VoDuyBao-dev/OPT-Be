@@ -25,7 +25,7 @@ public interface ClassesMapper {
 
     @Mapping(target = "classId", ignore = true)
     @Mapping(target = "tutorId", source = "tutor.tutorId")
-    @Mapping(target = "avatarImage", expression = "java(getAvatarFromTutor(tutor))")
+    @Mapping(target = "avatarImage", expression = "java(buildAvatarUrl(getAvatarFromTutor(tutor)))")
     @Mapping(target = "teacherName", source = "tutor.user.fullName")
     @Mapping(target = "educationalLevel", source = "tutor.educationalLevel")
     @Mapping(target = "university", source = "tutor.university")
@@ -34,19 +34,18 @@ public interface ClassesMapper {
     @Mapping(target = "subjectName", expression = "java(getFirstSubjectName(tutor))")
     RelatedClassDTO toRelatedClassDTOFromTutor(Tutor tutor);
 
-
-
     // Custom xử lý avatar rỗng
     default String getAvatar(ClassEntity c) {
         User user = c.getClassRequest().getTutor().getUser();
         return user.getAvatarImage() != null ? user.getAvatarImage() : "";
     }
 
-    default String getAvatarFromTutor(Tutor tutor) {
+    default User getAvatarFromTutor(Tutor tutor) {
         User user = tutor.getUser();
-        return user != null && user.getAvatarImage() != null
-                ? user.getAvatarImage()
-                : "";
+        return user;
+        // return user != null && user.getAvatarImage() != null
+        //         ? user.getAvatarImage()
+        //         : "";
     }
 
     // Lấy 1 môn đại diện (môn đầu tiên)
@@ -58,6 +57,27 @@ public interface ClassesMapper {
         return subject.getSubjectName();
     }
 
+    default String buildAvatarUrl(User user) {
+        if (user == null || user.getAvatarImage() == null)
+            return null;
+
+        String avatar = user.getAvatarImage();
+
+        if (!avatar.contains("http")) {
+            return "http://localhost:8080/tutorsFinder/drive/view/" + avatar;
+        }
+
+        if (avatar.contains("id=")) {
+            String id = avatar.substring(avatar.indexOf("id=") + 3);
+            int idx = id.indexOf("&");
+            if (idx != -1)
+                id = id.substring(0, idx);
+
+            return "http://localhost:8080/tutorsFinder/drive/view/" + id;
+        }
+
+        return avatar;
+    }
 
     @Mappings({
             @Mapping(target = "classId", source = "classEntity.classId"),
